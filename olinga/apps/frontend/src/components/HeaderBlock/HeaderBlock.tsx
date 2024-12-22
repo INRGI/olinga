@@ -16,6 +16,7 @@ import {
   Languege,
   DropdownLanguages,
   LanguageOption,
+  NavLinkStyled,
 } from "./HeaderBlock.styled";
 import { NavLink } from "react-router-dom";
 import NavBar from "../NavBar";
@@ -51,9 +52,9 @@ const HeaderBlock: React.FC = () => {
     <>
       <HeaderWrapper>
         <LogoWrapper>
-          <NavLink to="/">
+          <NavLinkStyled to="/">
             <img src="/public/logo1.webp" alt="Logo" />
-          </NavLink>
+          </NavLinkStyled>
         </LogoWrapper>
 
         <HeaderBox>

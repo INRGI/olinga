@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderWrapper = styled.header`
   font-family: 'Montserrat', sans-serif;
@@ -36,6 +37,11 @@ export const LogoWrapper = styled.div`
   @media only screen and (max-width: 426px) {
     width: 40%;
   }
+`;
+
+export const NavLinkStyled = styled(NavLink)`
+  display: flex;
+  align-items: center;
 `;
 
 export const HeaderBox = styled.div`

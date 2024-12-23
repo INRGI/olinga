@@ -6,6 +6,7 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TranslationModule } from './Language/translation.module';
+import { AuthModule } from './Auth/auth.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { TranslationModule } from './Language/translation.module';
       inject: [ConfigService],
     }),
     TranslationModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],

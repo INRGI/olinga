@@ -1,13 +1,21 @@
-import i18n from "i18next";
-import i18nBackend from "i18next-http-backend";
-import { initReactI18next } from "react-i18next";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import HttpApi from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+const apiUrl = `${window.location.protocol}//${window.location.hostname}:3000`;
+
 
 i18n
-  .use(i18nBackend)
+  .use(HttpApi)
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: "ua",
-    lng: "ua",
+    fallbackLng: 'pl',
+    supportedLngs: ['pl', 'uk', 'ru'],
+    backend: {
+      loadPath: `${apiUrl}/translations?language={{lng}}`,
+    },
     interpolation: {
       escapeValue: false,
     },

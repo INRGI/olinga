@@ -1,6 +1,13 @@
-import React from "react";
-import { SidebarContainer, SidebarContent, CloseButton, Overlay, LogoWrapper } from "./NavBar.styled";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import {
+  SidebarContainer,
+  SidebarContent,
+  CloseButton,
+  Overlay,
+  LogoWrapper,
+} from './NavBar.styled';
+import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface NavbarProps {
   isOpen: boolean;
@@ -8,6 +15,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
+  const { t } = useTranslation();
   return (
     <>
       <Overlay isOpen={isOpen} onClick={onClose} />
@@ -17,10 +25,36 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
           <LogoWrapper>
             <img src="/public/logo2.webp" alt="Logo" />
           </LogoWrapper>
-          <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Home</NavLink>
-          <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>About</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Contact</NavLink>
-          <NavLink to="/services" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Services</NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          >
+            {t('sidebar.main')}
+          </NavLink>
+          <NavLink
+            to="/massages"
+            className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          >
+            {t('sidebar.massages')}
+          </NavLink>
+          <NavLink
+            to="/school"
+            className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          >
+            {t('sidebar.school')}
+          </NavLink>
+          <NavLink
+            to="/services"
+            className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          >
+            {t('sidebar.abonement')}
+          </NavLink>
+          <NavLink
+            to="/contacts"
+            className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+          >
+            {t('sidebar.contacts')}
+          </NavLink>
         </SidebarContent>
       </SidebarContainer>
     </>

@@ -15,8 +15,11 @@ import {
   FaPhone,
   FaRegIdCard,
 } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <FooterContainer>
       <LogoContainer>
@@ -29,31 +32,31 @@ const Footer: React.FC = () => {
           to="/"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
-          Головна
+          {t('footer.nav_main')}
         </NavLink>
         <NavLink
-          to="/about"
+          to="/massages"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
-          Види Масажу
+          {t('footer.nav_massages')}
         </NavLink>
         <NavLink
-          to="/contact"
+          to="/school"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
-          Школа Масажу
-        </NavLink>
-        <NavLink
-          to="/services"
-          className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-        >
-          Абонименти
+          {t('footer.nav_school')}
         </NavLink>
         <NavLink
           to="/services"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
-          Контакти
+          {t('footer.nav_abonement')}
+        </NavLink>
+        <NavLink
+          to="/contacts"
+          className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+        >
+          {t('footer.nav_contacts')}
         </NavLink>
       </LinksContainer>
       <InfoContainer>
@@ -91,16 +94,14 @@ const Footer: React.FC = () => {
         <NavLink
           to="/"
         >
-          Privacy Policy
+          {t('footer.nav_policy')}
         </NavLink>
         <NavLink
           to="/"
         >
-          Terms and Conditions
+          {t('footer.nav_terms')}
         </NavLink>
         <p>&copy; 2024 Olinga. All rights reserved.</p>
-          
-        
       </PrivacyContainer>
     </FooterContainer>
   );

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { GoTriangleDown } from "react-icons/go";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -18,14 +19,20 @@ import {
   LanguageOption,
   NavLinkStyled,
 } from "./HeaderBlock.styled";
-import { NavLink } from "react-router-dom";
 import NavBar from "../NavBar";
 
 const HeaderBlock: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [isContactsOpen, setContactsOpen] = useState(false);
   const [isNavbarOpen, setNavbarOpen] = useState(false);
   const [isLanguagesOpen, setLanguagesOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState("UA");
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("language") || "pl"
+  );
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedLanguage);
+  }, [selectedLanguage, i18n]);
 
   const toggleNavbar = () => {
     setNavbarOpen((prev) => !prev);
@@ -35,7 +42,7 @@ const HeaderBlock: React.FC = () => {
     setContactsOpen((prev) => !prev);
   };
 
-  const toggleLanguages = (event: React.MouseEvent) => {
+  const toggleLanguages = () => {
     if (!isLanguagesOpen) {
       setLanguagesOpen(true);
     } else {
@@ -45,6 +52,7 @@ const HeaderBlock: React.FC = () => {
 
   const changeLanguage = (language: string) => {
     setSelectedLanguage(language);
+    localStorage.setItem("language", language);
     setLanguagesOpen(false);
   };
 
@@ -62,7 +70,8 @@ const HeaderBlock: React.FC = () => {
             <ContactItem onClick={toggleContacts}>
               <FaPhoneAlt size={20} />
               <ContactNumber>
-                Адміністратор: <a href="tel:+48515732832">+48 515 732 832</a>
+                {t("header.administrator_role")}:{" "}
+                <a href="tel:+48515732832">+48 515 732 832</a>
               </ContactNumber>
               <GoTriangleDown
                 size={16}
@@ -76,13 +85,13 @@ const HeaderBlock: React.FC = () => {
               <DropdownContacts>
                 <DropdownItem>
                   <div>
-                    <FaPhoneAlt size={14} /> Олексій:
+                    <FaPhoneAlt size={14} /> {t("header.administrator_name1")}:
                   </div>{" "}
                   <a href="tel:+48515432123">+48 515 432 123</a>
                 </DropdownItem>
                 <DropdownItem>
                   <div>
-                    <FaPhoneAlt size={14} /> Інга:
+                    <FaPhoneAlt size={14} /> {t("header.administrator_name2")}:
                   </div>{" "}
                   <a href="tel:+48765432123">+48 765 432 123</a>
                 </DropdownItem>
@@ -91,7 +100,7 @@ const HeaderBlock: React.FC = () => {
           </ContactUsBlock>
 
           <LanguegeBlock onClick={toggleLanguages}>
-            <Languege>{selectedLanguage}</Languege>
+            <Languege>{selectedLanguage.toUpperCase()}</Languege>
             <GoTriangleDown
               size={16}
               style={{
@@ -102,20 +111,20 @@ const HeaderBlock: React.FC = () => {
             {isLanguagesOpen && (
               <DropdownLanguages>
                 <LanguageOption
-                  isSelected={selectedLanguage === "UA"}
-                  onClick={() => changeLanguage("UA")}
+                  isSelected={selectedLanguage === "uk"}
+                  onClick={() => changeLanguage("uk")}
                 >
                   UA
                 </LanguageOption>
                 <LanguageOption
-                  isSelected={selectedLanguage === "PL"}
-                  onClick={() => changeLanguage("PL")}
+                  isSelected={selectedLanguage === "pl"}
+                  onClick={() => changeLanguage("pl")}
                 >
                   PL
                 </LanguageOption>
                 <LanguageOption
-                  isSelected={selectedLanguage === "RU"}
-                  onClick={() => changeLanguage("RU")}
+                  isSelected={selectedLanguage === "ru"}
+                  onClick={() => changeLanguage("ru")}
                 >
                   RU
                 </LanguageOption>
@@ -125,7 +134,7 @@ const HeaderBlock: React.FC = () => {
 
           <MenuBlock onClick={toggleNavbar}>
             <CgMenuRightAlt size={30} />
-            <span>Меню</span>
+            <span>{t("header.menu")}</span>
           </MenuBlock>
         </HeaderBox>
       </HeaderWrapper>

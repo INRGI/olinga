@@ -9,7 +9,7 @@ export const toastSuccess = (text: string) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'light',
+    theme: 'dark',
     transition: Bounce,
   });
 };
@@ -23,7 +23,7 @@ export const toastError = (text: string) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    theme: 'light',
+    theme: 'dark',
     transition: Bounce,
   });
 };

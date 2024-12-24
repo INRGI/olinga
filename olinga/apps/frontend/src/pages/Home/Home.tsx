@@ -1,4 +1,5 @@
 import React from 'react';
+import ConsultationForm from '../../components/ConsultationForm';
 
 const Home: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Home: React.FC = () => {
       <br></br>
       <br></br>
       <br></br>
+      <ConsultationForm />
     </>
   );
 };

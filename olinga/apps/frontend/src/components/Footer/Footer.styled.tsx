@@ -12,7 +12,7 @@ export const FooterContainer = styled.footer`
   column-gap: 40px;
   @media only screen and (max-width: 425px) {
     flex-direction: column;
-    height: 250px;
+    height: 300px;
     gap: 20px;
   }
 

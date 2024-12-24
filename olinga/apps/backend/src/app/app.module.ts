@@ -7,6 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TranslationModule } from './Language/translation.module';
 import { AuthModule } from './Auth/auth.module';
+import { ConsultationModule } from './Сonsultation/consultation.module';
 
 @Module({
   imports: [
@@ -26,7 +27,8 @@ import { AuthModule } from './Auth/auth.module';
       inject: [ConfigService],
     }),
     TranslationModule,
-    AuthModule
+    AuthModule,
+    ConsultationModule,
   ],
   controllers: [AppController],
   providers: [AppService],

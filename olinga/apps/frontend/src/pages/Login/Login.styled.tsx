@@ -8,6 +8,9 @@ export const FormContainer = styled.div`
   background-color: #2b2b2b;
   background-image: linear-gradient(to bottom right, #1e1e1e, #3a3a3a);
   font-family: 'Arial', sans-serif;
+  @media only screen and (max-width: 480px) {
+    padding: 10px;
+  }
 `;
 
 export const Form = styled.div`

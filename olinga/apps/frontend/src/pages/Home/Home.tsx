@@ -1,5 +1,7 @@
 import React from 'react';
 import ConsultationForm from '../../components/ConsultationForm';
+import MapBlock from '../../components/MapBlock';
+import { ToastContainer } from 'react-toastify';
 
 const Home: React.FC = () => {
   return (
@@ -12,7 +14,9 @@ const Home: React.FC = () => {
       <br></br>
       <br></br>
       <br></br>
-      <ConsultationForm />
+      {/* <ConsultationForm /> */}
+      <MapBlock />
+      <ToastContainer />
     </>
   );
 };

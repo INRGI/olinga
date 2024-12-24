@@ -117,8 +117,8 @@ export const Checkbox = styled.input`
   transition: background-color 0.3s, border-color 0.3s;
 
   &:checked {
-    background-color: #6a5acd;
-    border-color: #6a5acd;
+    background-color: #c6caa6;
+    border-color: #c6caa6;
   }
 
   &:focus {
@@ -127,7 +127,7 @@ export const Checkbox = styled.input`
 
   &::after {
     content: '✓';
-    color: #fff;
+    color: #2b2b2b;
     font-size: 16px;
     display: none;
   }

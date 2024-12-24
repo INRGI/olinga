@@ -12,7 +12,6 @@ import {
   Tooltip,
 } from './ConsultationForm.styled';
 import { useTranslation } from 'react-i18next';
-import { ToastContainer } from 'react-toastify';
 import { toastError, toastSuccess } from '../../helpers/toastify';
 import { apiUrl } from '../../i18n';
 
@@ -86,7 +85,7 @@ const ConsultationForm: React.FC = () => {
         </CheckboxContainer>
         <Button type="submit">{t('consultation.button')}</Button>
       </Form>
-      <ToastContainer />
+      
     </>
   );
 };

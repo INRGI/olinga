@@ -142,10 +142,91 @@ export const defaultTranslations = [
   },
   {
     key: 'consultation.error',
-    translations: { pl: 'Sprawdz poprawnosc wprowadzonych danych', uk: 'Перевір правильність введених даних', ru: 'Проверьте правильность введенных данных' },
+    translations: {
+      pl: 'Sprawdz poprawnosc wprowadzonych danych',
+      uk: 'Перевір правильність введених даних',
+      ru: 'Проверьте правильность введенных данных',
+    },
   },
   {
     key: 'consultation.success',
-    translations: { pl: 'Dziekujemy, zamówienie zostało złożone', uk: 'Ви успішно замовили консультацю', ru: 'Вы успешно заказали консультацию' },
+    translations: {
+      pl: 'Dziekujemy, zamówienie zostało złożone',
+      uk: 'Ви успішно замовили консультацю',
+      ru: 'Вы успешно заказали консультацию',
+    },
+  },
+  // Reviews
+  {
+    key: 'reviews.head',
+    translations: {
+      pl: 'Opinie naszych klientów',
+      uk: 'Відгуки наших клієнтів',
+      ru: 'Отзывы наших клиентов',
+    },
+  },
+  {
+    key: 'reviews.sub_head',
+    translations: {
+      pl: 'Co mówią o nas',
+      uk: 'Що про нас говорять',
+      ru: 'Что о нас говорят',
+    },
+  },
+  {
+    key: 'reviews.text1',
+    translations: {
+      pl: 'Polecam studio masażu. Aleksiej jest mistrzem swojego rzemiosła. Po jednej sesji usunął ból w plecach, czuję lekkość, łatwiej mi oddychać. Z pewnością wrócę tutaj ponownie. Doskonała atmosfera i profesjonalizm, wszystko na najwyższym poziomie.',
+      uk: 'Рекомендую студію масажу. Олексій майстер своєї справи. За один сеанс прибрали біль у спині, відчуваю легкість, легше дихати. Безперечно, повернуся сюди знову. Прекрасна атмосфера та професіоналізм, все на найвищому рівні.',
+      ru: 'Рекомендую студию массажа. Алексей — мастер своего дела. За один сеанс убрал боль в спине, чувствую лёгкость, легче дышать. Несомненно вернусь сюда снова. Прекрасная атмосфера и профессионализм, всё на высшем уровне.',
+    },
+  },
+  {
+    key: 'reviews.name1',
+    translations: { pl: 'Julia', uk: 'Юлія', ru: 'Юля' },
+  },
+  {
+    key: 'reviews.text2',
+    translations: {
+      pl: 'Dziękuję bardzo. Aleksiej uwolnił mnie od bólu w plecach! Tabletki już nie pomagały. Uważny, delikatny – profesjonalista w swoim fachu.',
+      uk: 'Дуже дякую. Олексій позбавив мене від болю в спині! Уже таблетки не допомагали.',
+      ru: 'Спасибо большое. Алексей избавил меня от боли в спине! Таблетки уже не помогали. Внимательный, деликатный — профессионал в своём деле.',
+    },
+  },
+  {
+    key: 'reviews.name2',
+    translations: { pl: 'Tetyana', uk: 'Тетяна', ru: 'Таня' },
+  },
+  {
+    key: 'reviews.text3',
+    translations: {
+      pl: 'Wszystko mi się podobało. Miła administratorka, uważny i delikatny masażysta. Rozgrzali herbatą i uśmiechami. Dziękuję bardzo.',
+      uk: 'Все сподобалося. Приємна адміністратор, уважний та делікатний масажист. Відігріли чаєм та посмішками. Дякую велике.',
+      ru: 'Всё понравилось. Приятная администратор, внимательный и деликатный массажист. Напоили чаем и осыпали улыбками. Спасибо большое.',
+    },
+  },
+  {
+    key: 'reviews.name3',
+    translations: { pl: 'Peter', uk: 'Петро', ru: 'Петр' },
+  },
+  {
+    key: 'reviews.text4',
+    translations: {
+      pl: 'Wielkie dzięki dla Witalija, który od razu usunął ból. Naprawdę profesjonalista. Dziękuję personelowi za ciepło i uwagę. Polecam salon!',
+      uk: 'Велике Дякую Віталію з першого разу зняв біль. Дійсно профі. Дякую персоналу за тепло і увагу.Рекомендую салон!',
+      ru: 'Большое спасибо Виталию, который с первого раза снял боль. Действительно профессионал. Спасибо персоналу за тепло и внимание. Рекомендую салон!',
+    },
+  },
+  {
+    key: 'reviews.name4',
+    translations: { pl: 'Yarosh', uk: 'Ярош', ru: 'Yarosh' },
+  },
+  {
+    key: 'reviews.more',
+    translations: {
+      pl: 'Zobacz opinie',
+      uk: 'Дивитись відгуки',
+      ru: 'Смотреть отзывы',
+    },
   },
 ];

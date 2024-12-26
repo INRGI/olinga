@@ -270,4 +270,21 @@ export const defaultTranslations = [
       ru: 'Больше',
     },
   },
+  // Galery
+  {
+    key: 'galery.title',
+    translations: {
+      pl: 'MISTRZOWIE W PRACY',
+      uk: 'МАЙСТРИ ЗА РОБОТОЮ',
+      ru: 'Мастера за работой',
+    },
+  },
+  {
+    key: 'galery.description',
+    translations: {
+      pl: 'Galeria zdjęć',
+      uk: 'Фотогалерея',
+      ru: 'Фотогалерея',
+    },
+  },
 ];

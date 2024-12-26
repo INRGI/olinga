@@ -229,4 +229,45 @@ export const defaultTranslations = [
       ru: 'Смотреть отзывы',
     },
   },
+  // Statistic
+  {
+    key: 'statistic.title1',
+    translations: {
+      pl: 'zadowolonych klientów',
+      uk: 'Задоволенних клієнтів',
+      ru: 'довольных клиентов',
+    },
+  },
+  {
+    key: 'statistic.title2',
+    translations: {
+      pl: 'USŁUG MASAŻU',
+      uk: 'МАСАЖНИХ ПОСЛУГ',
+      ru: 'МАССАЖНЫХ УСЛУГ',
+    },
+  },
+  {
+    key: 'statistic.title3',
+    translations: {
+      pl: 'LAT DOŚWIADCZENIA ZAWODOWEGO',
+      uk: 'РОКІВ ПРОФЕСІЙНОГО ДОСВІДУ',
+      ru: 'ЛЕТ ПРОФЕССИОНАЛЬНОГО ОПЫТА',
+    },
+  },
+  {
+    key: 'statistic.title4',
+    translations: {
+      pl: 'MISTRZÓW SWOJEGO RZEMIOSŁA',
+      uk: 'майстрів своєї справи',
+      ru: 'Мастеров своего дела',
+    },
+  },
+  {
+    key: 'statistic.more',
+    translations: {
+      pl: 'WIĘCEJ',
+      uk: 'Більше',
+      ru: 'Больше',
+    },
+  },
 ];

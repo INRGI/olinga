@@ -27,6 +27,7 @@ const Reviews: React.FC = () => {
             <Icons
               href="https://studiomasazuzdrowiaiurodyolinga.booksy.com"
               aria-label="Booksy"
+              target="_blank"
             >
               <img
               src="/public/booksy_review.png"
@@ -37,6 +38,7 @@ const Reviews: React.FC = () => {
             <Icons
               href="https://maps.app.goo.gl/QqRgVHA97KVUng5K7"
               aria-label="Google Reviews"
+              target="_blank"
             >
               <FaGoogle size={26}/>
             </Icons>

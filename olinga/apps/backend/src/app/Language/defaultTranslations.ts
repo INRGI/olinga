@@ -373,4 +373,29 @@ export const defaultTranslations = [
       ru:`Приходя в наш салон, вас встретят опытные массажисты с огромным опытом, чуткие и внимательные, готовые подобрать для вас нужную именно вам лечебную или оздоровительную программу.`,
     },
   },
+  // Sertificate
+  {
+    key: 'sertificate.head',
+    translations: {
+      pl: 'Certyfikaty prezentowe',
+      uk: 'Подарункові сертифікати',
+      ru: 'Подарочные сертификаты',
+    },
+  },
+  {
+    key: 'sertificate.text',
+    translations: {
+      pl: 'Certyfikat prezentowy w salonie masażu OLINGA to wspaniały prezent, który daje ludziom możliwość cieszenia się uczuciem relaksu i dbania o swoje ciało. Ogólnie rzecz biorąc, certyfikat prezentowy w salonie masażu jest eleganckim i pożądanym podarunkiem, który przynosi uczucie odprężenia i troski o siebie.',
+      uk: 'Подарунковий сертифікат у салоні масажу OLINGA - це прекрасний подарунок, який дарує людям можливість насолодитися відчуттям розслаблення та догляду за своїм тілом. В цілому, подарунковий сертифікат у салоні масажу є вишуканим та бажаним подарунком, який дарує відчуття розслаблення та дбайливого ставлення до себе.',
+      ru: 'Подарочный сертификат в салоне массажа OLINGA - это прекрасный подарок, который дарит людям возможность насладиться ощущением расслабления и ухода за своим телом. В целом, подарочный сертификат в салоне массажа является изысканным и желанным подарком, который дарит ощущение расслабления и бережного отношения к себе.',
+    },
+  },
+  {
+    key: 'sertificate.button',
+    translations: {
+      pl: 'Zamówić certyfikat',
+      uk: 'Замовити сертифікат',
+      ru: 'Заказать сертификат ',
+    },
+  },
 ];

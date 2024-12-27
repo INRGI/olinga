@@ -5,6 +5,7 @@ import Reviews from '../../components/Reviews';
 import Statistic from '../../components/Statistic';
 import Galery from '../../components/Galery';
 import AboutUs from '../../components/AboutUs';
+import Sertificate from '../../components/Sertificate';
 
 const Home: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
       <br></br>
       <br></br>
       <br></br>
+      <Sertificate />
       <AboutUs />
       <Galery />
       <Statistic />

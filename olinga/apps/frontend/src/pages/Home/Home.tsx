@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import Reviews from '../../components/Reviews';
 import Statistic from '../../components/Statistic';
 import Galery from '../../components/Galery';
+import AboutUs from '../../components/AboutUs';
 
 const Home: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
       <br></br>
       <br></br>
       <br></br>
+      <AboutUs />
       <Galery />
       <Statistic />
       <Reviews />

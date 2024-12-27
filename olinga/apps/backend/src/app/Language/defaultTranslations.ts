@@ -287,4 +287,90 @@ export const defaultTranslations = [
       ru: 'Фотогалерея',
     },
   },
+  // About Us
+  {
+    key: 'aboutUs.head',
+    translations: {
+      pl: 'O nas',
+      uk: 'Про нас',
+      ru: 'О нас',
+    },
+  },
+  {
+    key: 'aboutUs.description1',
+    translations: {
+      pl: `Doświadczeni specjaliści masażu leczniczego z salonu OLINGA są Twoimi przewodnikami do zdrowia i harmonii!\n
+  W naszym salonie podstawą jest indywidualne podejście do każdego klienta. Rozumiemy, że Twoje ciało wymaga szczególnej uwagi, dlatego oferujemy różnorodne programy masażu leczniczego, specjalnie opracowane, aby sprostać różnym potrzebom.\n
+  Nasi masażyści mają wieloletnie doświadczenie w pracy z różnymi problemami układu mięśniowo-szkieletowego. Zawsze są gotowi, aby zapewnić Ci wykwalifikowaną pomoc i wsparcie w dążeniu do zdrowia.\n
+  Nasi specjaliści masażu leczniczego stosują swoje autorskie techniki. Obejmują one intensywne i głębokie opracowanie mięśni oraz powięzi, masaż punktów spustowych oraz inne skuteczne metody. To intensywny rodzaj masażu, a pierwsze rezultaty są zazwyczaj odczuwalne już po pierwszej sesji!\n
+  Nie odkładaj swojego dobrostanu na później! Umów się na sesję masażu leczniczego w salonie OLINGA już dziś i poczuj rzeczywiste rezultaty w najkrótszym możliwym czasie!`,
+      uk: `Досвідчені майстри лікувального масажу салону Олінга - ваш провідник до здоров'я і гармонії!\n
+  В основі нашого салону - індивідуальний підхід до кожного клієнта. Ми розуміємо, що ваше тіло потребує особливої уваги, тому ми пропонуємо різноманітні програми лікувального масажу, спеціально розроблені для вирішення різних потреб.\n
+  Наші масажисти мають багаторічний досвід роботи з різними проблемами опорно-рухового апарату. Вони завжди готові надати вам кваліфіковану допомогу та підтримку на шляху до вашого здоров'я.\n
+  Працюючі у нас майстри лікувального масажу практикують свої авторські техніки. Це посилене та глибоке опрацювання м'язів та фасцій, масаж тригерних точок та інші ефективні методики. Це інтенсивний вид масажу і перші результати, як правило, чутно вже після першого сеансу!\n
+  Не відкладайте своє благополуччя на потім! Запишіться на сеанс лікувального масажу в салоні Олінга вже сьогодні і відчуйте реальні результати за найкоротший термін!`,
+      ru: `Опытные мастера лечебного массажа салона Олинга - ваш проводник к здоровью и гармонии!\n
+  В основе нашего салона - индивидуальный подход к каждому клиенту. Мы понимаем, что ваше тело требует особого внимания, поэтому мы предлагаем разнообразные программы лечебного массажа, специально разработанные для решения различных потребностей.\n
+  Наши массажисты имеют многолетний опыт работы с различными проблемами опорно-двигательного аппарата. Они всегда готовы оказать вам квалифицированную помощь и поддержку на пути к вашему здоровью.\n
+  Работающие у нас мастера лечебного массажа практикуют свои авторские техники. Это усиленная и глубокая проработка мышц и фасций, массаж триггерных точек и другие эффективные методики. Это интенсивный вид массажа и первые результаты, как правило, слышно уже после первого сеанса!\n
+  Не откладывайте свое благополучие на потом! Запишитесь на сеанс лечебного массажа в салоне Олинга уже сегодня и почувствуйте реальные результаты за кратчайший срок!`,
+    },
+  },
+  
+  {
+    key: 'aboutUs.subtitle',
+    translations: {
+      pl: 'Nasi klienci, którzy się do nas zgłaszają, mają różne potrzeby:',
+      uk: 'Наші клієнти, які звертаються до нас, мають різні потреби:',
+      ru: 'Наши клиенты, которые обращаются к нам, имеют разные потребности:',
+    },
+  },
+  {
+    key: 'aboutUs.text1',
+    translations: {
+      pl: 'Pracownicy z siedzącą pracą skarżą się na bóle między łopatkami i w szyi.',
+      uk: 'Працівників з сидячою роботою турбують болі між лопатками та в шиї',
+      ru: 'Сотрудников с сидячей работой беспокоят боли между лопатками и в шее',
+    },
+  },
+  {
+    key: 'aboutUs.text2',
+    translations: {
+      pl: 'Aktywni ludzie potrzebują rozluźnienia spiętych mięśni po przetrenowaniu.',
+      uk: 'Активним людям потрібно розслабити спазмовані м’язи після перенавантаження',
+      ru: 'Активным людям нужно расслабить спазмированные мышцы после перегрузки',
+    },
+  },
+  {
+    key: 'aboutUs.text3',
+    translations: {
+      pl: 'Kobiety chcą pozbyć się obrzęków, zmniejszyć objętość i odmłodzić twarz.',
+      uk: 'Жінки хочуть позбутися набряку, зменшити об’єми і омолодити обличчя',
+      ru: 'Женщины хотят избавиться от отека, уменьшить объемы и омолодить лицо',
+    },
+  },
+  {
+    key: 'aboutUs.text4',
+    translations: {
+      pl: 'Osoby z zaburzeniami układu mięśniowo-szkieletowego chcą pozbyć się swoich dolegliwości i bólu.',
+      uk: 'Люди з порушенням опорно-рухового апарату хочуть позбутися своєї недуги і болю',
+      ru: 'Люди с нарушением опорно-двигательного аппарата хотят избавиться от своего недуга и боли',
+    },
+  },
+  {
+    key: 'aboutUs.text5',
+    translations: {
+      pl:`Ale wszystkich naszych klientów łączy jedno wymaganie – potrzebują rzeczywistych rezultatów w najkrótszym możliwym czasie!`,
+      uk:`Але всіх наших клієнтів об'єднує одна вимога – необхідно реальний результат і за найкоротший термін!`,
+      ru:`Но всех наших клиентов объединяет одно требование - необходимо реальный результат и за кратчайший срок!`,
+    },
+  },
+  {
+    key: 'aboutUs.text6',
+    translations: {
+      pl:`Przychodząc do naszego salonu, spotkasz doświadczonych masażystów z ogromnym doświadczeniem, wrażliwych i uważnych, gotowych dobrać dla Ciebie odpowiedni program leczniczy lub zdrowotny.`,
+      uk:`Приходячи до нашого салону Вас зустрінуть досвідчені масажисти з величезним досвідом, чуйні та уважні, готові підібрати для Вас потрібну саме Вам лікувальну або оздоровчу програму.`,
+      ru:`Приходя в наш салон, вас встретят опытные массажисты с огромным опытом, чуткие и внимательные, готовые подобрать для вас нужную именно вам лечебную или оздоровительную программу.`,
+    },
+  },
 ];

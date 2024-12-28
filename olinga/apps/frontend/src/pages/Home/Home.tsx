@@ -6,6 +6,7 @@ import Statistic from '../../components/Statistic';
 import Galery from '../../components/Galery';
 import AboutUs from '../../components/AboutUs';
 import Sertificate from '../../components/Sertificate';
+import CoursesBlock from '../../components/CoursesBlock';
 
 const Home: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const Home: React.FC = () => {
       <br></br>
       <br></br>
       <br></br>
+      <CoursesBlock />
       <Sertificate />
       <AboutUs />
       <Galery />

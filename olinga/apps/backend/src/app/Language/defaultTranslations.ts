@@ -316,7 +316,7 @@ export const defaultTranslations = [
   Не откладывайте свое благополучие на потом! Запишитесь на сеанс лечебного массажа в салоне Олинга уже сегодня и почувствуйте реальные результаты за кратчайший срок!`,
     },
   },
-  
+
   {
     key: 'aboutUs.subtitle',
     translations: {
@@ -360,17 +360,17 @@ export const defaultTranslations = [
   {
     key: 'aboutUs.text5',
     translations: {
-      pl:`Ale wszystkich naszych klientów łączy jedno wymaganie – potrzebują rzeczywistych rezultatów w najkrótszym możliwym czasie!`,
-      uk:`Але всіх наших клієнтів об'єднує одна вимога – необхідно реальний результат і за найкоротший термін!`,
-      ru:`Но всех наших клиентов объединяет одно требование - необходимо реальный результат и за кратчайший срок!`,
+      pl: `Ale wszystkich naszych klientów łączy jedno wymaganie – potrzebują rzeczywistych rezultatów w najkrótszym możliwym czasie!`,
+      uk: `Але всіх наших клієнтів об'єднує одна вимога – необхідно реальний результат і за найкоротший термін!`,
+      ru: `Но всех наших клиентов объединяет одно требование - необходимо реальный результат и за кратчайший срок!`,
     },
   },
   {
     key: 'aboutUs.text6',
     translations: {
-      pl:`Przychodząc do naszego salonu, spotkasz doświadczonych masażystów z ogromnym doświadczeniem, wrażliwych i uważnych, gotowych dobrać dla Ciebie odpowiedni program leczniczy lub zdrowotny.`,
-      uk:`Приходячи до нашого салону Вас зустрінуть досвідчені масажисти з величезним досвідом, чуйні та уважні, готові підібрати для Вас потрібну саме Вам лікувальну або оздоровчу програму.`,
-      ru:`Приходя в наш салон, вас встретят опытные массажисты с огромным опытом, чуткие и внимательные, готовые подобрать для вас нужную именно вам лечебную или оздоровительную программу.`,
+      pl: `Przychodząc do naszego salonu, spotkasz doświadczonych masażystów z ogromnym doświadczeniem, wrażliwych i uważnych, gotowych dobrać dla Ciebie odpowiedni program leczniczy lub zdrowotny.`,
+      uk: `Приходячи до нашого салону Вас зустрінуть досвідчені масажисти з величезним досвідом, чуйні та уважні, готові підібрати для Вас потрібну саме Вам лікувальну або оздоровчу програму.`,
+      ru: `Приходя в наш салон, вас встретят опытные массажисты с огромным опытом, чуткие и внимательные, готовые подобрать для вас нужную именно вам лечебную или оздоровительную программу.`,
     },
   },
   // Sertificate
@@ -396,6 +396,53 @@ export const defaultTranslations = [
       pl: 'Zamówić certyfikat',
       uk: 'Замовити сертифікат',
       ru: 'Заказать сертификат ',
+    },
+  },
+  // courses
+  {
+    key: 'courses.head',
+    translations: {
+      pl: 'Szkoła masażu',
+      uk: 'Школа масажу',
+      ru: 'Школа массажа',
+    },
+  },
+  {
+    key: 'courses.subhead',
+    translations: {
+      pl: 'Kursy od najlepszych profesjonalistów',
+      uk: 'Курси від найкращіх професіоналів',
+      ru: 'Курсы от лучших профессионалов',
+    },
+  },
+  {
+    key: 'courses.text',
+    translations: {
+      pl: `Nasza szkoła masażu OLINGA to nie tylko miejsce, gdzie zdobędziesz profesjonalną wiedzę i umiejętności, ale także klucz do udanej kariery i stabilnej sytuacji finansowej. Dążymy do podzielenia się z Tobą naszym ogromnym doświadczeniem i umiejętnościami, które przyniosą korzyść Twoim klientom oraz znaczący dochód Tobie.\n
+      W naszej szkole wykładają wysoko wykwalifikowani specjaliści z profesjonalnym wykształceniem i wieloletnim doświadczeniem w dziedzinie masażu. Z radością podzielą się z Tobą swoją wiedzą, umiejętnościami praktycznymi i tajnikami zawodu.\n
+      Jesteśmy dumni z unikalnych autorskich metod leczenia i technik estetycznych masażu, które zostały wielokrotnie udoskonalone w naszych rękach i zyskały uznanie tysięcy zadowolonych klientów. Otrzymasz dostęp do tych wyjątkowych wiedzy i umiejętności, które staną się Twoim prawdziwym skarbem w przyszłej karierze zawodowej.`,
+      uk: `Наша школа масажу OLINGA - це не лише місце, де ви отримаєте фахові знання та вміння, але і ключ до успішної кар'єри та стабільного фінансового стану. Ми прагнемо поділитися з вами нашим величезним досвідом і вміннями, які принесуть користь вашим клієнтам та значний дохід вам.\n
+      У нашій школі викладають висококваліфіковані фахівці з професійною освітою та багаторічним досвідом у сфері масажу. Вони з радістю поділяться своїми знаннями, практичними навичками та секретами професії з вами.\n
+      Ми пишаємося унікальними авторськими методиками лікувальних та естетичних технік масажу, які пройшли багаторічне вдосконалення в наших руках та отримали визнання тисяч задоволених клієнтів. Ви отримаєте доступ до цих унікальних знань та вмінь, які стануть вашою справжньою скарбницею в майбутній професійній діяльності.`,
+      ru: `Наша школа массажа OLINGA - это не только место, где вы получите профессиональные знания и умения, но и ключ к успешной карьере и стабильному финансовому состоянию. Мы стремимся поделиться с вами нашим огромным опытом и умениями, которые принесут пользу вашим клиентам и значительный доход вам.\n
+      В нашей школе преподают высококвалифицированные специалисты с профессиональным образованием и многолетним опытом в сфере массажа. Они с радостью поделятся своими знаниями, практическими навыками и секретами профессии с вами.\n
+      Мы гордимся уникальными авторскими методиками лечебных и эстетических техник массажа, которые прошли многолетнее совершенствование в наших руках и получили признание тысяч довольных клиентов. Вы получите доступ к этим уникальным знаниям и умениям, которые станут вашей настоящей сокровищницей в будущей профессиональной деятельности.`,
+    },
+  },
+  {
+    key: 'courses.text2',
+    translations: {
+      pl: 'W dzisiejszych czasach, gdy większość ludzi cierpi na chroniczną hipodynamię, zawód masażysty staje się niezwykle użyteczny, dochodowy i zawsze aktualny. Naucz się umiejętności masażu i zapewnij sobie szerokie możliwości oraz wdzięczność swoich klientów.',
+      uk: 'У наш час хронічної гіподинамії більшості людей, професія масажиста стає найкориснішою, прибутковою та завжди актуальною. Навчіться вмінням масажу та забезпечте себе великими можливостями та вдячністю ваших клієнтів.',
+      ru: 'В наше время хронической гиподинамии большинства людей, профессия массажиста становится полезной, прибыльной и всегда актуальной. Научитесь умением массажа и обеспечьте себя большими возможностями и благодарностью ваших клиентов.',
+    },
+  },
+  {
+    key: 'courses.button',
+    translations: {
+      pl: 'Więcej',
+      uk: 'Детальніше',
+      ru: 'Подробнее',
     },
   },
 ];

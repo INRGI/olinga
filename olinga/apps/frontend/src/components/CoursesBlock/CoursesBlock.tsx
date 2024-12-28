@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
 
-const images = ['/public/slide1.jpg', '/public/slide2.jpg'];
+const images = ['/public/school1.webp', '/public/school2.webp'];
 
 const CoursesBlock: React.FC = () => {
   const { t } = useTranslation();

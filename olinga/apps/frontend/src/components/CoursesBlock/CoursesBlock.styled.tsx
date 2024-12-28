@@ -10,6 +10,7 @@ export const Container = styled.div`
   @media (max-width: 768px) {
     flex-wrap: wrap;
     flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -113,6 +114,11 @@ export const Button = styled(NavLink)`
 
   &:hover {
     background-color: #444;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+    max-width: 90%;
   }
 `;
 

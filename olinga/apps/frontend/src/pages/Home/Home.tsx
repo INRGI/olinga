@@ -7,6 +7,7 @@ import Galery from '../../components/Galery';
 import AboutUs from '../../components/AboutUs';
 import Sertificate from '../../components/Sertificate';
 import CoursesBlock from '../../components/CoursesBlock';
+import BenefitsBlock from '../../components/BenefitsBlock';
 
 const Home: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
       <br></br>
       <br></br>
       <br></br>
+      <BenefitsBlock/>
       <CoursesBlock />
       <Sertificate />
       <AboutUs />

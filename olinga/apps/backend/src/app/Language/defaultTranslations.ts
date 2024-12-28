@@ -445,4 +445,86 @@ export const defaultTranslations = [
       ru: 'Подробнее',
     },
   },
+  // Benefits
+  {
+    key: 'benefits.head',
+    translations: {
+      pl: 'Dlaczego warto wybrać nas?',
+      uk: 'Чому саме ми',
+      ru: 'Почему именно мы',
+    },
+  },
+  {
+    key: 'benefits.subhead',
+    translations: {
+      pl: 'Nasze zalety',
+      uk: 'Наші переваги',
+      ru: 'Наши преимущества',
+    },
+  },
+  {
+    key: 'benefits.title1',
+    translations: {
+      pl: 'Indywidualne podejście',
+      uk: 'Індивідуальний підхід',
+      ru: 'Индивидуальный подход',
+    },
+  },
+  {
+    key: 'benefits.text1',
+    translations: {
+      pl: 'Rozumiemy, że każde ciało jest wyjątkowe, dlatego oferujemy spersonalizowane programy masażu dostosowane do Twoich potrzeb i celów.',
+      uk: 'Ми розуміємо, що кожне тіло унікальне, тому надаємо персоналізовані програми масажу, що відповідають вашим потребам та цілям.',
+      ru: 'Мы понимаем, что каждое тело уникально, поэтому предоставляем персонализированные программы массажа, соответствующие вашим потребностям и целям.',
+    },
+  },
+  {
+    key: 'benefits.title2',
+    translations: {
+      pl: 'Doświadczeni specjaliści',
+      uk: 'Досвідчені майстри',
+      ru: 'Опытные мастера',
+    },
+  },
+  {
+    key: 'benefits.text2',
+    translations: {
+      pl: 'Nasi masażyści mają wysoki poziom kwalifikacji i doświadczenia, gwarantując Ci maksymalny komfort i skuteczność zabiegów.',
+      uk: 'Наші масажисти мають високий рівень кваліфікації і досвіду роботи, гарантуючи вам максимальний комфорт та ефективність процедур.',
+      ru: 'Наши массажисты имеют высокий уровень квалификации и опыта работы, гарантируя вам максимальный комфорт и эффективность процедур.',
+    },
+  },
+  {
+    key: 'benefits.title3',
+    translations: {
+      pl: 'Autorskie techniki i metody',
+      uk: 'авторські техніки та методики',
+      ru: 'авторские техники и методики',
+    },
+  },
+  {
+    key: 'benefits.text3',
+    translations: {
+      pl: 'Wykorzystujemy unikalne techniki masażu opracowane przez naszych specjalistów, aby zapewnić Ci najlepsze rezultaty i niezapomniane wrażenia.',
+      uk: 'Ми використовуємо унікальні техніки масажу, розроблені нашими фахівцями, щоб надати вам найкращий результат і незабутні враження.',
+      ru: 'Мы используем уникальные техники массажа, разработанные нашими специалистами, чтобы предоставить вам наилучший результат и незабываемые впечатления.',
+    },
+  },
+  {
+    key: 'benefits.title4',
+    translations: {
+      pl: 'Sprzyjająca atmosfera',
+      uk: 'сприятлива атмосфера',
+      ru: 'благоприятная атмосфера',
+    },
+  },
+  {
+    key: 'benefits.text4',
+    translations: {
+      pl: 'Nasz salon masażu nie tylko zapewnia skuteczność zabiegów, ale także tworzy atmosferę sprzyjającą Twojemu duchowemu i fizycznemu odprężeniu.',
+      uk: 'Наш масажний салон не лише забезпечує ефективність процедур, але і створює атмосферу, сприятливу для вашого духовного та фізичного відновлення.',
+      ru: 'Наш массажный салон не только обеспечивает эффективность процедур, но и создает атмосферу, благоприятную для вашего духовного и физического восстановления.',
+    },
+  },
+
 ];

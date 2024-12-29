@@ -526,5 +526,61 @@ export const defaultTranslations = [
       ru: 'Наш массажный салон не только обеспечивает эффективность процедур, но и создает атмосферу, благоприятную для вашего духовного и физического восстановления.',
     },
   },
-
+  // Banner
+  {
+    key: 'banner.head',
+    translations: {
+      pl: 'MASAŻ LECZNICZY',
+      uk: 'ЛІКУВАЛЬНИЙ МАСАЖ',
+      ru: 'ЛЕЧЕБНЫЙ МАССАЖ',
+    },
+  },
+  {
+    key: 'banner.subhead',
+    translations: {
+      pl: 'Autorskie metody, które naprawdę pomagają!',
+      uk: 'Авторські методики, які дійсно допомагають!',
+      ru: 'Авторские методики, которые действительно помогают!',
+    },
+  },
+  {
+    key: 'banner.text1',
+    translations: {
+      pl: 'SZYBKO USUNIEMY ZAOSTRZENIE, BÓL',
+      uk: 'ШВИДКО ЗНІМЕМО ЗАГОСТРЕННЯ, біль',
+      ru: 'БЫСТРО УБЕРЕМ ОБОСТРЕНИЕ, БОЛЬ',
+    },
+  },
+  {
+    key: 'banner.text2',
+    translations: {
+      pl: 'POMOŻEMY POZBYĆ SIĘ CELLULITU I OBRZĘKÓW',
+      uk: 'ДОПОМОЖЕМО ПОЗБУТИСЯ ЦЕЛЮЛІТУ ТА НАБРЯКІВ',
+      ru: 'ПОМОЖЕМ ИЗБАВИТЬСЯ ОТ ЦЕЛЛЮЛИТА И ОТЕКОВ',
+    },
+  },
+  {
+    key: 'banner.text3',
+    translations: {
+      pl: 'PRZYWRÓCIMY JĘDRNOŚĆ SKÓRY TWARZY I CIAŁA',
+      uk: 'ПОВЕРНЕМО ПРУЖНІСТЬ ШКІРІ ОБЛИЧЧЯ І ТІЛА',
+      ru: 'ВЕРНЕМ УПРУГОСТЬ КОЖЕ ЛИЦА И ТЕЛА',
+    },
+  },
+  {
+    key: 'banner.text4',
+    translations: {
+      pl: 'REZULTAT WIDOCZNY JUŻ PO 1-2 SESJACH!',
+      uk: 'РЕЗУЛЬТАТ ПОМІТНИЙ ВЖЕ ПІСЛЯ 1-2 СЕАНСІв!',
+      ru: 'РЕЗУЛЬТАТ ЗАМЕТЕН УЖЕ ПОСЛЕ 1-2 СЕАНСОВ!',
+    },
+  },
+  {
+    key: 'banner.button',
+    translations: {
+      pl: 'ZAPISAĆ SIĘ',
+      uk: 'Записатися',
+      ru: 'Записаться',
+    },
+  },
 ];

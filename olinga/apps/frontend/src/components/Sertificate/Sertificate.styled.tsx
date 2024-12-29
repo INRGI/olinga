@@ -78,7 +78,7 @@ export const SertificateButton = styled.a`
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
-  text-decoration: none; /* Вимикає стандартне підкреслення у посилання */
+  text-decoration: none;
   color: #e0e0e0;
   background-color: #282828;
   border: 2px solid #4a4a4a;

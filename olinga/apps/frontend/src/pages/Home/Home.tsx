@@ -8,18 +8,13 @@ import AboutUs from '../../components/AboutUs';
 import Sertificate from '../../components/Sertificate';
 import CoursesBlock from '../../components/CoursesBlock';
 import BenefitsBlock from '../../components/BenefitsBlock';
+import Banner from '../../components/Banner';
 
 const Home: React.FC = () => {
   return (
     <>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-      <>Home</>
-      <br></br>
-      <br></br>
-      <br></br>
+    <Banner />
+    
       <BenefitsBlock/>
       <CoursesBlock />
       <Sertificate />

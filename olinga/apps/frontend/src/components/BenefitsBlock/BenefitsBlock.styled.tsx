@@ -62,8 +62,17 @@ h3 {
   }
 
   @media (max-width: 1024px) {
-    h2 {
+    h3 {
       font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    h3 {
+      font-size: 15px;
     }
     p {
       font-size: 14px;

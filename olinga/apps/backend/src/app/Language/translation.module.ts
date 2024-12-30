@@ -10,6 +10,7 @@ import { TranslationSchema } from './schemas/translation.schema';
   ],
   providers: [TranslationService],
   controllers: [TranslationController],
+  exports: [TranslationService],
 })
 export class TranslationModule implements OnModuleInit {
   constructor(private readonly translationService: TranslationService) {}

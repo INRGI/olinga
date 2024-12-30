@@ -9,12 +9,13 @@ import Sertificate from '../../components/Sertificate';
 import CoursesBlock from '../../components/CoursesBlock';
 import BenefitsBlock from '../../components/BenefitsBlock';
 import Banner from '../../components/Banner';
+import ServicesBlock from '../../components/ServicesBlock';
 
 const Home: React.FC = () => {
   return (
     <>
     <Banner />
-    
+    <ServicesBlock />
       <BenefitsBlock/>
       <CoursesBlock />
       <Sertificate />

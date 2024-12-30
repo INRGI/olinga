@@ -583,4 +583,37 @@ export const defaultTranslations = [
       ru: 'Записаться',
     },
   },
+  // ServicesBlock
+  {
+    key: 'ServicesBlock.head',
+    translations: {
+      pl: 'NASZE USŁUGI',
+      uk: 'Наші послуги',
+      ru: 'Наши услуги',
+    },
+  },
+  {
+    key: 'ServicesBlock.subhead',
+    translations: {
+      pl: 'Szeroki wybór masaży',
+      uk: 'широкий вибір масажу',
+      ru: 'широкий выбор массажу',
+    },
+  },
+  {
+    key: 'ServicesBlock.description',
+    translations: {
+      pl: 'Nasz salon oferuje Państwu usługi masażu, które wzmacniają zdrowie, podnoszą witalność, przywracają blask życia i dobre samopoczucie. Masaż to doskonały sposób profilaktyki, przyjemne i naturalne lekarstwo w leczeniu wielu schorzeń.',
+      uk: `Наш салон пропонує Вам послуги масажу, які зміцнюють здоров'я, піднімають життєвий тонус, повертають яскравість життя та гарне самопочуття. Масаж, це - чудовий спосіб профілактики, приємні та природні ліки при лікуванні багатьох захворювань.`,
+      ru: 'Наш салон предлагает Вам услуги массажа, которые укрепляют здоровье, поднимают жизненный тонус, возвращают яркость жизни и хорошее самочувствие. Массаж, это - отличный способ профилактики, приятные и естественные лекарства при лечении многих заболеваний.',
+    },
+  },
+  {
+    key: 'ServicesBlock.promotion',
+    translations: {
+      pl: '15% ZNIŻKI NA MASAŻ LECZNICZY PRZECIWBÓLOWY. SKORZYSTAJ!',
+      uk: 'ЗАРАЗ ДІЄ ЗНИЖКА У 15% НА ЛІКУВАЛЬНИЙ МАСАЖ ПРОТИ БОЛЮ. ВСТИГНИ СКОРИСТАТИСЯ!',
+      ru: 'СЕЙЧАС ДЕЙСТВУЕТ СКИДКА НА ЛЕЧЕБНЫЙ МАССАЖ ПРОТИВ БОЛИ 15%. УСПЕЙ ВОСПОЛЬЗОВАТЬСЯ!',
+    },
+  },
 ];

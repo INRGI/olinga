@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
 import axios from "axios";
 import { apiUrl } from "../i18n";
 
@@ -18,6 +18,17 @@ interface AuthProviderProps {
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [token, setToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("authToken");
+    if (storedToken) {
+      setToken(storedToken);
+      setIsAuthenticated(true);
+      console.log("Token found in localStorage: ", storedToken);
+    } else {
+      console.log("No token found in localStorage");
+    }
+  }, []);
 
   const login = async (username: string, password: string): Promise<boolean> => {
     try {

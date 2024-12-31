@@ -1,9 +1,11 @@
 import React from "react";
-import { Button, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CategoryManager from "./CategoryManager";
 import { useAuth } from "../../context/AuthContext";
-
+import { Button, Container } from "./AdminDashboard.styled";
+import { LuLogOut } from "react-icons/lu";
+import CategoryAdmin from "../../components/CategoryAdmin/CategoryAdmin";
+import { ToastContainer } from "react-toastify";
 
 
 const AdminDashboard: React.FC = () => {
@@ -16,11 +18,12 @@ const AdminDashboard: React.FC = () => {
   };
 
   return (
-    <Box>
-      <h1>Адмін-панель</h1>
-      <CategoryManager />
-      <Button variant="contained" onClick={handleLogout}>Вийти</Button>
-    </Box>
+    <Container>
+      {/* <CategoryManager /> */}
+      <CategoryAdmin />
+      <Button onClick={handleLogout}><LuLogOut /></Button>
+      <ToastContainer />
+    </Container>
   );
 };
 

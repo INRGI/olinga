@@ -24,7 +24,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     if (storedToken) {
       setToken(storedToken);
       setIsAuthenticated(true);
-      console.log("Token found in localStorage: ", storedToken);
     } else {
       console.log("No token found in localStorage");
     }

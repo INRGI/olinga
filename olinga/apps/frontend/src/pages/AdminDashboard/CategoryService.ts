@@ -3,6 +3,22 @@ import { apiUrl } from '../../i18n';
 
 const API_URL = `${apiUrl}/categories`;
 
+export interface Massage {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  duration: number;
+  translations: Record<string, string>;
+}
+export interface Category {
+  _id: string;
+  name: string;
+  massages: Massage[];
+  details: string;
+  translations: Record<string, string>;
+}
+
 export const getCategories = async (): Promise<any[]> => {
   try {
     const response = await axios.get(API_URL);

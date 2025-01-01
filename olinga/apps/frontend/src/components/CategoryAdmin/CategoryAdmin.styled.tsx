@@ -2,23 +2,36 @@ import styled from '@emotion/styled';
 
 export const Container = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const LeftContainer = styled.div`
+  flex: 1;
   display: flex;
-  flex: 2;
   flex-direction: column;
   gap: 20px;
   background-color: #3a3a3a;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  max-width: 600px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 export const RightContainer = styled.div`
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -26,32 +39,42 @@ export const RightContainer = styled.div`
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+`;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 `;
 
 export const Button = styled.button`
-  padding: 13px 20px;
-  background-color: #6a5acd;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 20px;
+  transition: all 0.3s ease;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: auto;
-  display: inline-block;
 
   &:hover {
-    background-color: #5941a9;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
   }
 
   &:active {
-    transform: scale(0.98);
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.6);
+    transform: scale(0.95);
   }
 `;
 
@@ -101,22 +124,6 @@ export const ServicesBlockHeader = styled.div`
   }
 `;
 
-export const CategoryCard = styled.li`
-  display: flex;
-  background-color: #5c5c5c;
-  justify-content: space-between;
-  font-size: 20px;
-  align-items: center;
-  border: 0px solid;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 9px;
-  border-radius: 5px;
-  height: 50px;
-  width: 90%;
-  color: #fff;
-  padding-left: 20px;
-`;
-
 export const MassageList = styled.div`
   display: flex;
   flex-direction: column;
@@ -141,10 +148,50 @@ export const CategoriesContainer = styled.ul`
   gap: 15px;
   width: 100%;
   padding: 0;
-  height: 400px;
-  
+  height: auto;
+  max-height: 400px;
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    max-height: none;
+  }
 `;
+
+export const CategoryCard = styled.li<{ isActive: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5c5c5c;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: ${(props) => (props.isActive ? "2px solid #5acd60" : "2px solid transparent")};
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: auto;
+  min-height: 50px;
+  width: 94%;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  h2 {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding-right: 15px;
+  }
+
+  div {
+    display: flex;
+    gap: 10px;
+  }
+
+  button {
+    min-width: 80px;
+  }
+`;
+
 
 export const DeleteButton = styled.button`
   align-items: center;

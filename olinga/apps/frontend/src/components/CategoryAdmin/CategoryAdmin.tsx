@@ -14,6 +14,7 @@ import {
   Container,
   DeleteButton,
   EditButton,
+  HeaderContainer,
   Input,
   LeftContainer,
   MassageCard,
@@ -24,6 +25,7 @@ import {
 } from './CategoryAdmin.styled';
 import { toastError, toastSuccess } from '../../helpers/toastify';
 import AdminModal from '../AdminModal';
+import { FaPlus } from 'react-icons/fa';
 
 type CreatedCategory = Omit<Category, '_id' | 'massages'>;
 
@@ -36,6 +38,7 @@ const CategoryAdmin: React.FC = () => {
   const [creatingItem, setCreatingItem] = useState<CreatedCategory | null>(
     null
   );
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const fetchCategories = async () => {
     const data = await getCategories();
@@ -85,14 +88,36 @@ const CategoryAdmin: React.FC = () => {
   return (
     <Container>
       <LeftContainer>
-        <ServicesBlockHeader>
-          <h2>Massage Categories</h2>
-          <p>All categories below</p>
-        </ServicesBlockHeader>
+        <HeaderContainer>
+          <ServicesBlockHeader>
+            <h2>Massage Categories</h2>
+            <p>All categories below</p>
+          </ServicesBlockHeader>
+          <Button
+            onClick={() => {
+              setCreatingItem({
+                name: '',
+                details: '',
+                translations: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+              });
+              setCategoryCreateModalOpen(true);
+            }}
+          >
+            <FaPlus />
+          </Button>
+        </HeaderContainer>
         <CategoriesContainer>
           {categories?.length > 0 ? (
             categories.map((category) => (
-              <CategoryCard key={category._id}>
+              <CategoryCard
+                key={category._id}
+                isActive={activeCategory === category._id}
+                onClick={() => setActiveCategory(category._id)}
+              >
                 <h2>{category.name}</h2>
                 <div>
                   <EditButton
@@ -112,28 +137,13 @@ const CategoryAdmin: React.FC = () => {
               </CategoryCard>
             ))
           ) : (
-            <CategoryCard>No categories available.</CategoryCard>
+            <CategoryCard isActive={false}>No categories available.</CategoryCard>
           )}
         </CategoriesContainer>
-        <Button
-          onClick={() => {
-            setCreatingItem({
-              name: '',
-              details: '',
-              translations: {
-                pl: '',
-                uk: '',
-                ru: '',
-              },
-            });
-            setCategoryCreateModalOpen(true);
-          }}
-        >
-          Create Category
-        </Button>
       </LeftContainer>
       <RightContainer>
         {/* Additional content for the right container */}
+        <h2>ttest</h2>
       </RightContainer>
       {editingItem && (
         <AdminModal

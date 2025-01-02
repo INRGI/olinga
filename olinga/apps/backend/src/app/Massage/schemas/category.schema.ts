@@ -17,6 +17,9 @@ export class Category extends Document {
 
   @Prop({ type: Map, of: String })
   translations: Record<string, string>;
+
+  @Prop({ required: true })
+  imageUrl: string;
 }
 
 export const CategorySchema = SchemaFactory.createForClass(Category);

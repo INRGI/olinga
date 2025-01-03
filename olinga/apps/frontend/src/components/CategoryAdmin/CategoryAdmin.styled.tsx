@@ -343,3 +343,11 @@ export const SaveButton = styled.button`
     box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.6);
   }
 `;
+
+export const ImagePreview = styled.img`
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+`;

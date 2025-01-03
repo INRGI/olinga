@@ -39,6 +39,7 @@ const CategoryAdmin: React.FC = () => {
     null
   );
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [image, setImage] = useState<File | null>(null);
 
   const fetchCategories = async () => {
     const data = await getCategories();
@@ -61,7 +62,7 @@ const CategoryAdmin: React.FC = () => {
 
   const handleUpdateCategory = async (id: string, categoryData: Category) => {
     try {
-      await updateCategory(id, categoryData);
+      await updateCategory(id, categoryData, image);
       toastSuccess('Category updated successfully');
       await fetchCategories();
     } catch (error) {
@@ -73,8 +74,13 @@ const CategoryAdmin: React.FC = () => {
   };
 
   const handleCreateCategory = async (categoryData: CreatedCategory) => {
+    if (!image) {
+      toastError('Please upload an image.');
+      return;
+    }
+    
     try {
-      await createCategory(categoryData);
+      await createCategory(categoryData, image);
       toastSuccess('Category created successfully');
       await fetchCategories();
     } catch (error) {
@@ -137,7 +143,9 @@ const CategoryAdmin: React.FC = () => {
               </CategoryCard>
             ))
           ) : (
-            <CategoryCard isActive={false}>No categories available.</CategoryCard>
+            <CategoryCard isActive={false}>
+              No categories available.
+            </CategoryCard>
           )}
         </CategoriesContainer>
       </LeftContainer>
@@ -214,6 +222,16 @@ const CategoryAdmin: React.FC = () => {
               }
               placeholder="RU"
               required
+            />
+
+            <Input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                if (e.target.files) {
+                  setImage(e.target.files[0]);
+                }
+              }}
             />
             <SaveButton
               onClick={() => handleUpdateCategory(editingItem._id, editingItem)}
@@ -293,6 +311,17 @@ const CategoryAdmin: React.FC = () => {
               placeholder="RU"
               required
             />
+
+            <Input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                if (e.target.files) {
+                  setImage(e.target.files[0]);
+                }
+              }}
+            />
+
             <SaveButton onClick={() => handleCreateCategory(creatingItem)}>
               Save
             </SaveButton>

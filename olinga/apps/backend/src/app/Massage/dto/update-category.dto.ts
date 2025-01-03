@@ -11,4 +11,8 @@ export class UpdateCategoryDto {
   @IsNotEmpty()
   @IsObject()
   translations: Record<string, string>;
+
+  @IsString()
+  @IsOptional()
+  imageUrl?: string;
 }

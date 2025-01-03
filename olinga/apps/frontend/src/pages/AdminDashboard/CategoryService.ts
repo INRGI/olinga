@@ -29,13 +29,24 @@ export const getCategories = async (): Promise<any[]> => {
   }
 };
 
-export const createCategory = async (categoryData: {
-  name: string;
-  details: string;
-  translations: Record<string, string>;
-}): Promise<any> => {
+export const createCategory = async (
+  categoryData: {
+    name: string;
+    details: string;
+    translations: Record<string, string>;
+  },
+  image: File
+): Promise<any> => {
+  const formData = new FormData();
+  formData.append('categoryData', JSON.stringify(categoryData));
+  formData.append('image', image);
+
   try {
-    const response = await axios.post(API_URL, categoryData);
+    const response = await axios.post(API_URL, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
     return response.data;
   } catch (error) {
     console.error('Error creating category:', error);
@@ -45,10 +56,25 @@ export const createCategory = async (categoryData: {
 
 export const updateCategory = async (
   id: string,
-  categoryData: { name: string; details: string; translations: Record<string, string> }
+  categoryData: {
+    name: string;
+    details: string;
+    translations: Record<string, string>;
+  },
+  image: File | null
 ): Promise<any> => {
+  const formData = new FormData();
+  formData.append('categoryData', JSON.stringify(categoryData));
+  if (image) {
+    formData.append('image', image);
+  }
+
   try {
-    const response = await axios.put(`${API_URL}/${id}`, categoryData);
+    const response = await axios.put(`${API_URL}/${id}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
     return response.data;
   } catch (error) {
     console.error('Error updating category:', error);

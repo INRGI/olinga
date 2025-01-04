@@ -62,7 +62,13 @@ const CategoryAdmin: React.FC = () => {
 
   const handleUpdateCategory = async (id: string, categoryData: Category) => {
     try {
-      await updateCategory(id, categoryData, image);
+      if (image){
+        await updateCategory(id, categoryData, image);
+      }
+      if (!image){
+        await updateCategory(id, categoryData);
+      }
+      
       toastSuccess('Category updated successfully');
       await fetchCategories();
     } catch (error) {

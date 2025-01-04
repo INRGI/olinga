@@ -38,11 +38,13 @@ export const createCategory = async (
   image: File
 ): Promise<any> => {
   const formData = new FormData();
-  formData.append('categoryData', JSON.stringify(categoryData));
+  formData.append('body', JSON.stringify(categoryData));
   formData.append('image', image);
 
+  const body = {categoryData, image};
+
   try {
-    const response = await axios.post(API_URL, formData, {
+    const response = await axios.post(API_URL, body, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -57,14 +59,14 @@ export const createCategory = async (
 export const updateCategory = async (
   id: string,
   categoryData: {
-    name: string;
-    details: string;
-    translations: Record<string, string>;
+    name?: string;
+    details?: string;
+    translations?: Record<string, string>;
   },
-  image: File | null
+  image?: File | null
 ): Promise<any> => {
   const formData = new FormData();
-  formData.append('categoryData', JSON.stringify(categoryData));
+  formData.append('body', JSON.stringify(categoryData));
   if (image) {
     formData.append('image', image);
   }

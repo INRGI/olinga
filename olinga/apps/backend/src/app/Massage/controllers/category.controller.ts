@@ -43,34 +43,6 @@ export class CategoryController {
     }
   }
 
-  @Put(':id')
-  async update(@Param('id') id: string, @Req() req: FastifyRequest) {
-    try {
-      const file: MultipartFile = await req.file();
-
-      const fields = file.fields as Record<string, any>;
-
-      const categoryData = {
-        name: fields['categoryData[name]']?.value,
-        details: fields['categoryData[details]']?.value,
-        translations: {
-          pl: fields['categoryData[translations][pl]']?.value,
-          uk: fields['categoryData[translations][uk]']?.value,
-          ru: fields['categoryData[translations][ru]']?.value,
-        },
-      };
-
-      console.log('Update category data:', categoryData);
-
-      return this.categoryService.updateCategory(id, categoryData, file);
-    } catch (error) {
-      console.error('Error updating category:', error);
-      throw new BadRequestException(
-        'Something went wrong while updating the category'
-      );
-    }
-  }
-
   @Get()
   async findAll() {
     return this.categoryService.getCategories();
@@ -80,7 +52,30 @@ export class CategoryController {
   async findOne(@Param('id') id: string) {
     return this.categoryService.getCategoryById(id);
   }
+  @Put(':id')
+  async update(@Param('id') id: string, @Req() req: any) {
+    try {
+      const file = await req.file();
+      const fields = file?.fields || {};
 
+      const bodyField = fields['body']?.value;
+      if (!bodyField) {
+        throw new BadRequestException('Missing body field.');
+      }
+  
+      const categoryData = JSON.parse(bodyField);
+  
+      if (!categoryData.name || !categoryData.details) {
+        throw new BadRequestException('Invalid category data: name and details are required.');
+      }
+  
+      const fileToSave = file?.fields?.image ? file : undefined;
+      return await this.categoryService.updateCategory(id, categoryData, fileToSave);      
+    } catch (error) {
+      throw new BadRequestException('Failed to update category.');
+    }
+  }
+  
   @Delete(':id')
   async remove(@Param('id') id: string) {
     return this.categoryService.deleteCategory(id);

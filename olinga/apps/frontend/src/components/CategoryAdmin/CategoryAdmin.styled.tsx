@@ -169,6 +169,7 @@ export const CategoryCard = styled.li<{ isActive: boolean }>`
   height: auto;
   min-height: 50px;
   width: 92%;
+  max-width: 440px;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -180,6 +181,7 @@ export const CategoryCard = styled.li<{ isActive: boolean }>`
     text-overflow: ellipsis;
     margin: 0;
     padding-right: 15px;
+    max-width: 90%;
   }
 
   div {
@@ -292,8 +294,9 @@ export const CategoryDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 15px;
-  background-color: black;
+  min-width: 500px;
+  gap: 20px;
+  background-color: #181818;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
@@ -309,7 +312,7 @@ export const Input = styled.input`
   background-color: #2b2b2b;
   color: #f0f0f0;
   transition: border-color 0.3s;
-  max-width: 300px;
+  max-width: 465px;
 
   &:focus {
     border-color: #6a5acd;
@@ -328,7 +331,7 @@ export const SaveButton = styled.button`
   transition: background-color 0.3s, transform 0.1s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: inline-block;
-  width: 88%;
+  width: 90%;
 
   &:hover {
     background-color: #5941a9;

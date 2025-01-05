@@ -26,6 +26,7 @@ import {
 import { toastError, toastSuccess } from '../../helpers/toastify';
 import AdminModal from '../AdminModal';
 import { FaPlus } from 'react-icons/fa';
+import FloatingLabelInput from '../FloatingLabelInput/FloatingLabelInput';
 
 type CreatedCategory = Omit<Category, '_id' | 'massages'>;
 
@@ -169,10 +170,10 @@ const CategoryAdmin: React.FC = () => {
         >
           <CategoryDetailsContainer>
             <ServicesBlockHeader>
-              <h2>Category Details</h2>
+              <h2>Edit Category</h2>
             </ServicesBlockHeader>
 
-            <Input
+            <FloatingLabelInput
               value={editingItem.title.pl || ''}
               onChange={(e) =>
                 setEditingItem({
@@ -183,11 +184,10 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Title(PL)"
-              required
+              placeholder="TITLE (PL)"
             />
 
-            <Input
+            <FloatingLabelInput
               value={editingItem.title.uk || ''}
               onChange={(e) =>
                 setEditingItem({
@@ -198,10 +198,9 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Title(UA)"
-              required
+              placeholder="TITLE (UA)"
             />
-            <Input
+            <FloatingLabelInput
               value={editingItem.title.ru || ''}
               onChange={(e) =>
                 setEditingItem({
@@ -212,10 +211,9 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Title(RU)"
-              required
+              placeholder="TITLE (RU)"
             />
-            <Input
+            <FloatingLabelInput
               value={editingItem.details.pl || ''}
               onChange={(e) =>
                 setEditingItem({
@@ -226,10 +224,9 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Details(PL)"
-              required
+              placeholder="DETAILS (PL)"
             />
-            <Input
+            <FloatingLabelInput
               value={editingItem.details.uk || ''}
               onChange={(e) =>
                 setEditingItem({
@@ -240,10 +237,9 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Details(UA)"
-              required
+              placeholder="DETAILS (UA)"
             />
-            <Input
+            <FloatingLabelInput
               value={editingItem.details.ru || ''}
               onChange={(e) =>
                 setEditingItem({
@@ -254,8 +250,7 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Details(RU)"
-              required
+              placeholder="DETAILS (RU)"
             />
 
             <Input
@@ -284,8 +279,7 @@ const CategoryAdmin: React.FC = () => {
             <ServicesBlockHeader>
               <h2>Create Category</h2>
             </ServicesBlockHeader>
-
-            <Input
+            <FloatingLabelInput
               value={creatingItem.title.pl || ''}
               onChange={(e) =>
                 setCreatingItem({
@@ -296,11 +290,10 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Title(PL)"
-              required
+              placeholder="TITLE (PL)"
             />
 
-            <Input
+            <FloatingLabelInput
               value={creatingItem.title.uk || ''}
               onChange={(e) =>
                 setCreatingItem({
@@ -311,10 +304,9 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Title(UA)"
-              required
+              placeholder="TITLE (UA)"
             />
-            <Input
+            <FloatingLabelInput
               value={creatingItem.title.ru || ''}
               onChange={(e) =>
                 setCreatingItem({
@@ -325,11 +317,10 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Title(RU)"
-              required
+              placeholder="TITLE (RU)"
             />
 
-            <Input
+            <FloatingLabelInput
               value={creatingItem.details.pl || ''}
               onChange={(e) =>
                 setCreatingItem({
@@ -340,10 +331,10 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Details(PL)"
-              required
+              placeholder="DETAILS (PL)"
+              
             />
-            <Input
+            <FloatingLabelInput
               value={creatingItem.details.uk || ''}
               onChange={(e) =>
                 setCreatingItem({
@@ -354,10 +345,9 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Details(UA)"
-              required
+              placeholder="DETAILS (UA)"
             />
-            <Input
+            <FloatingLabelInput
               value={creatingItem.details.ru || ''}
               onChange={(e) =>
                 setCreatingItem({
@@ -368,8 +358,7 @@ const CategoryAdmin: React.FC = () => {
                   },
                 })
               }
-              placeholder="Details(RU)"
-              required
+              placeholder="DETAILS (RU)"
             />
 
             <Input

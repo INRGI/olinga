@@ -62,13 +62,13 @@ const CategoryAdmin: React.FC = () => {
 
   const handleUpdateCategory = async (id: string, categoryData: Category) => {
     try {
-      if (image){
+      if (image) {
         await updateCategory(id, categoryData, image);
       }
-      if (!image){
+      if (!image) {
         await updateCategory(id, categoryData);
       }
-      
+
       toastSuccess('Category updated successfully');
       await fetchCategories();
     } catch (error) {
@@ -84,7 +84,7 @@ const CategoryAdmin: React.FC = () => {
       toastError('Please upload an image.');
       return;
     }
-    
+
     try {
       await createCategory(categoryData, image);
       toastSuccess('Category created successfully');
@@ -108,9 +108,12 @@ const CategoryAdmin: React.FC = () => {
           <Button
             onClick={() => {
               setCreatingItem({
-                name: '',
-                details: '',
-                translations: {
+                title: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details: {
                   pl: '',
                   uk: '',
                   ru: '',
@@ -130,7 +133,7 @@ const CategoryAdmin: React.FC = () => {
                 isActive={activeCategory === category._id}
                 onClick={() => setActiveCategory(category._id)}
               >
-                <h2>{category.name}</h2>
+                <h2>{category.title.ru}</h2>
                 <div>
                   <EditButton
                     onClick={() => {
@@ -170,63 +173,88 @@ const CategoryAdmin: React.FC = () => {
             </ServicesBlockHeader>
 
             <Input
-              value={editingItem.name || ''}
-              onChange={(e) =>
-                setEditingItem({ ...editingItem, name: e.target.value })
-              }
-              placeholder="Name"
-              required
-            />
-            <Input
-              value={editingItem.details || ''}
-              onChange={(e) =>
-                setEditingItem({ ...editingItem, details: e.target.value })
-              }
-              placeholder="Details"
-              required
-            />
-
-            <Input
-              value={editingItem.translations.pl || ''}
+              value={editingItem.title.pl || ''}
               onChange={(e) =>
                 setEditingItem({
                   ...editingItem,
-                  translations: {
-                    ...editingItem.translations,
+                  title: {
+                    ...editingItem.title,
                     pl: e.target.value,
                   },
                 })
               }
-              placeholder="PL"
+              placeholder="Title(PL)"
               required
             />
 
             <Input
-              value={editingItem.translations.uk || ''}
+              value={editingItem.title.uk || ''}
               onChange={(e) =>
                 setEditingItem({
                   ...editingItem,
-                  translations: {
-                    ...editingItem.translations,
+                  title: {
+                    ...editingItem.title,
                     uk: e.target.value,
                   },
                 })
               }
-              placeholder="UA"
+              placeholder="Title(UA)"
               required
             />
             <Input
-              value={editingItem.translations.ru || ''}
+              value={editingItem.title.ru || ''}
               onChange={(e) =>
                 setEditingItem({
                   ...editingItem,
-                  translations: {
-                    ...editingItem.translations,
+                  title: {
+                    ...editingItem.title,
                     ru: e.target.value,
                   },
                 })
               }
-              placeholder="RU"
+              placeholder="Title(RU)"
+              required
+            />
+            <Input
+              value={editingItem.details.pl || ''}
+              onChange={(e) =>
+                setEditingItem({
+                  ...editingItem,
+                  details: {
+                    ...editingItem.details,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="Details(PL)"
+              required
+            />
+            <Input
+              value={editingItem.details.uk || ''}
+              onChange={(e) =>
+                setEditingItem({
+                  ...editingItem,
+                  details: {
+                    ...editingItem.details,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="Details(UA)"
+              required
+            />
+            <Input
+              value={editingItem.details.ru || ''}
+              onChange={(e) =>
+                setEditingItem({
+                  ...editingItem,
+                  details: {
+                    ...editingItem.details,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="Details(RU)"
               required
             />
 
@@ -258,63 +286,89 @@ const CategoryAdmin: React.FC = () => {
             </ServicesBlockHeader>
 
             <Input
-              value={creatingItem.name || ''}
-              onChange={(e) =>
-                setCreatingItem({ ...creatingItem, name: e.target.value })
-              }
-              placeholder="Name"
-              required
-            />
-            <Input
-              value={creatingItem.details || ''}
-              onChange={(e) =>
-                setCreatingItem({ ...creatingItem, details: e.target.value })
-              }
-              placeholder="Details"
-              required
-            />
-
-            <Input
-              value={creatingItem.translations.pl || ''}
+              value={creatingItem.title.pl || ''}
               onChange={(e) =>
                 setCreatingItem({
                   ...creatingItem,
-                  translations: {
-                    ...creatingItem.translations,
+                  title: {
+                    ...creatingItem.title,
                     pl: e.target.value,
                   },
                 })
               }
-              placeholder="PL"
+              placeholder="Title(PL)"
               required
             />
 
             <Input
-              value={creatingItem.translations.uk || ''}
+              value={creatingItem.title.uk || ''}
               onChange={(e) =>
                 setCreatingItem({
                   ...creatingItem,
-                  translations: {
-                    ...creatingItem.translations,
+                  title: {
+                    ...creatingItem.title,
                     uk: e.target.value,
                   },
                 })
               }
-              placeholder="UA"
+              placeholder="Title(UA)"
               required
             />
             <Input
-              value={creatingItem.translations.ru || ''}
+              value={creatingItem.title.ru || ''}
               onChange={(e) =>
                 setCreatingItem({
                   ...creatingItem,
-                  translations: {
-                    ...creatingItem.translations,
+                  title: {
+                    ...creatingItem.title,
                     ru: e.target.value,
                   },
                 })
               }
-              placeholder="RU"
+              placeholder="Title(RU)"
+              required
+            />
+
+            <Input
+              value={creatingItem.details.pl || ''}
+              onChange={(e) =>
+                setCreatingItem({
+                  ...creatingItem,
+                  details: {
+                    ...creatingItem.details,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="Details(PL)"
+              required
+            />
+            <Input
+              value={creatingItem.details.uk || ''}
+              onChange={(e) =>
+                setCreatingItem({
+                  ...creatingItem,
+                  details: {
+                    ...creatingItem.details,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="Details(UA)"
+              required
+            />
+            <Input
+              value={creatingItem.details.ru || ''}
+              onChange={(e) =>
+                setCreatingItem({
+                  ...creatingItem,
+                  details: {
+                    ...creatingItem.details,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="Details(RU)"
               required
             />
 

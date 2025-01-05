@@ -6,15 +6,12 @@ import {
   Param,
   Put,
   Delete,
-  UploadedFile,
   Req,
   BadRequestException,
 } from '@nestjs/common';
 import { CategoryService } from '../services/category.service';
-import { UpdateCategoryDto } from '../dto/update-category.dto';
-import { CreateCategoryDto } from '../dto/create-category.dto';
 import { FastifyRequest } from 'fastify';
-import { MultipartFile, MultipartValue } from '@fastify/multipart';
+import { MultipartFile } from '@fastify/multipart';
 
 @Controller('categories')
 export class CategoryController {
@@ -28,12 +25,15 @@ export class CategoryController {
       const fields = file.fields as Record<string, any>;
 
       const categoryData = {
-        name: fields['categoryData[name]']?.value,
-        details: fields['categoryData[details]']?.value,
-        translations: {
-          pl: fields['categoryData[translations][pl]']?.value,
-          uk: fields['categoryData[translations][uk]']?.value,
-          ru: fields['categoryData[translations][ru]']?.value,
+        title: {
+          pl: fields['categoryData[title][pl]']?.value,
+          uk: fields['categoryData[title][uk]']?.value,
+          ru: fields['categoryData[title][ru]']?.value,
+        },
+        details: {
+          pl: fields['categoryData[details][pl]']?.value,
+          uk: fields['categoryData[details][uk]']?.value,
+          ru: fields['categoryData[details][ru]']?.value,
         },
       };
 
@@ -64,10 +64,6 @@ export class CategoryController {
       }
   
       const categoryData = JSON.parse(bodyField);
-  
-      if (!categoryData.name || !categoryData.details) {
-        throw new BadRequestException('Invalid category data: name and details are required.');
-      }
   
       const fileToSave = file?.fields?.image ? file : undefined;
       return await this.categoryService.updateCategory(id, categoryData, fileToSave);      

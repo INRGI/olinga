@@ -9,14 +9,11 @@ interface Translations {
 
 @Schema()
 export class Category extends Document {
-  @Prop({ required: true })
-  name: string;
-
-  @Prop({ required: true })
-  details: string;
+  @Prop({ type: Map, of: String })
+  title: Record<string, string>;
 
   @Prop({ type: Map, of: String })
-  translations: Record<string, string>;
+  details: Record<string, string>;
 
   @Prop({ required: true })
   imageUrl: string;

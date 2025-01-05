@@ -13,10 +13,9 @@ export interface Massage {
 }
 export interface Category {
   _id: string;
-  name: string;
   massages: Massage[];
-  details: string;
-  translations: Record<string, string>;
+  title: Record<string, string>;
+  details: Record<string, string>;
 }
 
 export const getCategories = async (): Promise<any[]> => {
@@ -31,9 +30,8 @@ export const getCategories = async (): Promise<any[]> => {
 
 export const createCategory = async (
   categoryData: {
-    name: string;
-    details: string;
-    translations: Record<string, string>;
+    title: Record<string, string>;
+    details: Record<string, string>;
   },
   image: File
 ): Promise<any> => {
@@ -59,9 +57,8 @@ export const createCategory = async (
 export const updateCategory = async (
   id: string,
   categoryData: {
-    name?: string;
-    details?: string;
-    translations?: Record<string, string>;
+    title?: Record<string, string>;
+    details?: Record<string, string>;
   },
   image?: File | null
 ): Promise<any> => {

@@ -2,16 +2,12 @@ import { IsNotEmpty, IsObject, IsOptional, IsString } from 'class-validator';
 export class UpdateCategoryDto {
   @IsNotEmpty()
   @IsString()
-  name: string;
-
-  @IsNotEmpty()
-  @IsString()
-  details: string;
+  title: Record<string, string>;
 
   @IsNotEmpty()
   @IsObject()
-  translations: Record<string, string>;
-
+  details: Record<string, string>;
+  
   @IsString()
   @IsOptional()
   imageUrl?: string;

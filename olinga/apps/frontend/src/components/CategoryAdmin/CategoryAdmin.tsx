@@ -14,11 +14,14 @@ import {
   Container,
   DeleteButton,
   EditButton,
+  FileContainer,
+  FileInput,
   HeaderContainer,
   Input,
   LeftContainer,
   MassageCard,
   MassageList,
+  PreviewButton,
   RightContainer,
   SaveButton,
   ServicesBlockHeader,
@@ -27,7 +30,7 @@ import { toastError, toastSuccess } from '../../helpers/toastify';
 import AdminModal from '../AdminModal';
 import { FaPlus } from 'react-icons/fa';
 import FloatingLabelInput from '../FloatingLabelInput/FloatingLabelInput';
-import { apiUrl } from '../../i18n';
+import { MdOutlinePreview } from 'react-icons/md';
 
 type CreatedCategory = Omit<Category, '_id' | 'massages'>;
 
@@ -42,7 +45,7 @@ const CategoryAdmin: React.FC = () => {
   );
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [image, setImage] = useState<File | null>(null);
-
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   const fetchCategories = async () => {
     const data = await getCategories();
@@ -68,7 +71,6 @@ const CategoryAdmin: React.FC = () => {
     setCategoryCreateModalOpen(false);
     setImage(null);
   };
-  
 
   const handleUpdateCategory = async (id: string, categoryData: Category) => {
     try {
@@ -148,6 +150,10 @@ const CategoryAdmin: React.FC = () => {
                   <EditButton
                     onClick={() => {
                       setEditingItem(category);
+                      if (category.imageUrl) {
+                        setPreviewImage(category.imageUrl);
+                      }
+
                       setCategoryModalOpen(true);
                     }}
                   >
@@ -261,16 +267,24 @@ const CategoryAdmin: React.FC = () => {
               }
               placeholder="DETAILS (RU)"
             />
-
-            <Input
-              type="file"
-              accept="image/*"
-              onChange={(e) => {
-                if (e.target.files) {
-                  setImage(e.target.files[0]);
-                }
-              }}
-            />
+            <FileContainer>
+              <FileInput
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  if (e.target.files) {
+                    setImage(e.target.files[0]);
+                  }
+                }}
+              />
+              <PreviewButton
+                href={`/${previewImage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MdOutlinePreview />
+              </PreviewButton>
+            </FileContainer>
             <SaveButton
               onClick={() => handleUpdateCategory(editingItem._id, editingItem)}
             >
@@ -341,7 +355,6 @@ const CategoryAdmin: React.FC = () => {
                 })
               }
               placeholder="DETAILS (PL)"
-              
             />
             <FloatingLabelInput
               value={creatingItem.details.uk || ''}

@@ -83,7 +83,7 @@ export class CategoryService {
   }
 
   private async saveImage(file: any): Promise<string> {
-    const uploadDir = path.join(__dirname, '..', '..', 'uploads');
+    const uploadDir = path.join(__dirname, '..', '..', '..', 'apps', 'frontend', 'public', 'uploads');
     await fs.promises.mkdir(uploadDir, { recursive: true });
     const filename = `${Date.now()}-${file.filename}`;
     const filePath = path.join(uploadDir, filename);
@@ -97,6 +97,10 @@ export class CategoryService {
       __dirname,
       '..',
       '..',
+      '..',
+      'apps',
+      'frontend',
+      'public',
       'uploads',
       imageUrl.replace('uploads/', '')
     );

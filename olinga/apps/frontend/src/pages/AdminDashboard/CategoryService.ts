@@ -16,6 +16,7 @@ export interface Category {
   massages: Massage[];
   title: Record<string, string>;
   details: Record<string, string>;
+  imageUrl?: string;
 }
 
 export const getCategories = async (): Promise<any[]> => {

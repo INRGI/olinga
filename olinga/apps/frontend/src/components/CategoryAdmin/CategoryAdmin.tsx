@@ -27,6 +27,7 @@ import { toastError, toastSuccess } from '../../helpers/toastify';
 import AdminModal from '../AdminModal';
 import { FaPlus } from 'react-icons/fa';
 import FloatingLabelInput from '../FloatingLabelInput/FloatingLabelInput';
+import { apiUrl } from '../../i18n';
 
 type CreatedCategory = Omit<Category, '_id' | 'massages'>;
 
@@ -41,6 +42,7 @@ const CategoryAdmin: React.FC = () => {
   );
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [image, setImage] = useState<File | null>(null);
+
 
   const fetchCategories = async () => {
     const data = await getCategories();
@@ -60,6 +62,13 @@ const CategoryAdmin: React.FC = () => {
       toastError('Error deleting category');
     }
   };
+
+  const handleCloseModal = () => {
+    setCategoryModalOpen(false);
+    setCategoryCreateModalOpen(false);
+    setImage(null);
+  };
+  
 
   const handleUpdateCategory = async (id: string, categoryData: Category) => {
     try {
@@ -273,7 +282,7 @@ const CategoryAdmin: React.FC = () => {
       {creatingItem && (
         <AdminModal
           isOpen={categoryCreateModalOpen}
-          onClose={() => setCategoryCreateModalOpen(false)}
+          onClose={() => handleCloseModal}
         >
           <CategoryDetailsContainer>
             <ServicesBlockHeader>

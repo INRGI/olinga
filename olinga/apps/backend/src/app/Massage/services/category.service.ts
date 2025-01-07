@@ -105,7 +105,9 @@ export class CategoryService {
       imageUrl.replace('uploads/', '')
     );
     if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
+      fs.unlink(filePath, err => {
+        fs.unlinkSync(filePath);
+      });
     }
   }
 }

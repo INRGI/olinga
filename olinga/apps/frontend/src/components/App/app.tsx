@@ -23,7 +23,7 @@ export function App() {
 
         <Route path="/contact" element={<Contact />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/massages" element={<Services />} />
 
         <Route
             path="/admin"

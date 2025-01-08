@@ -619,6 +619,22 @@ export const defaultTranslations = [
     },
   },
   {
+    key: 'ServicesBlock.subhead2',
+    translations: {
+      pl: 'Oferujemy',
+      uk: 'Ми пропонуємо Вам',
+      ru: 'Мы предлагаем Вам',
+    },
+  },
+  {
+    key: 'ServicesBlock.noCategories',
+    translations: {
+      pl: 'Obecnie nie ma żadnych kategorii',
+      uk: 'На даний момент категорій немає',
+      ru: 'На данный момент категорий нет',
+    },
+  },
+  {
     key: 'ServicesBlock.description',
     translations: {
       pl: 'Nasz salon oferuje Państwu usługi masażu, które wzmacniają zdrowie, podnoszą witalność, przywracają blask życia i dobre samopoczucie. Masaż to doskonały sposób profilaktyki, przyjemne i naturalne lekarstwo w leczeniu wielu schorzeń.',

@@ -1,4 +1,22 @@
 export const defaultTranslations = [
+  // NotFound
+  {
+    key: 'notFound.title',
+    translations: {
+      pl: 'Ups! Strona, której szukasz nie istnieje.',
+      uk: 'Ой! Сторінка, яку ви шукаєте, не існує.',
+      ru: 'Упс! Страница, которую вы ищете, не существует.',
+    },
+  },
+  {
+    key: 'notFound.button',
+    translations: {
+      pl: 'Do strony głównej',
+      uk: 'На головну сторінку',
+      ru: 'На главную страницу',
+    },
+  },
+  // Header
   {
     key: 'header.administrator_role',
     translations: {

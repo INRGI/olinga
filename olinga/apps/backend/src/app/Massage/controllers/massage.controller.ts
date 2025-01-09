@@ -1,15 +1,37 @@
-import { Controller, Get, Post, Body, Param, Put, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Put,
+  Delete,
+  Req,
+  BadRequestException,
+} from '@nestjs/common';
 import { MassageService } from '../services/massage.service';
-import { CreateMassageDto } from '../dto/create-massage.dto';
-import { UpdateMassageDto } from '../dto/update-massage.dto';
 
 @Controller('massages')
 export class MassageController {
   constructor(private readonly massageService: MassageService) {}
 
   @Post()
-  async create(@Body() createMassageDto: CreateMassageDto) {
-    return this.massageService.createMassage(createMassageDto);
+  async create(@Req() req: any) {
+    try {
+      const file = await req.file();
+
+      const fields = file?.fields || {};
+
+      const bodyField = fields['body']?.value;
+      if (!bodyField) {
+        throw new BadRequestException('Missing body field.');
+      }
+  
+      const massageData = JSON.parse(bodyField);
+
+      return this.massageService.createMassage(massageData, file);
+    } catch (error) {
+      throw new BadRequestException('Something went wrong');
+    }
   }
 
   @Get()
@@ -23,13 +45,25 @@ export class MassageController {
   }
 
   @Put(':id')
-  async update(
-    @Param('id') id: string,
-    @Body() updateMassageDto: UpdateMassageDto,
-  ) {
-    return this.massageService.updateMassage(id, updateMassageDto);
-  }
+  async update(@Param('id') id: string, @Req() req: any) {
+    try {
+      const file = await req.file();
+      const fields = file?.fields || {};
 
+      const bodyField = fields['body']?.value;
+      if (!bodyField) {
+        throw new BadRequestException('Missing body field.');
+      }
+  
+      const massageData = JSON.parse(bodyField);
+  
+      const fileToSave = file?.fields?.image ? file : undefined;
+      return await this.massageService.updateMassage(id, massageData, fileToSave);      
+    } catch (error) {
+      throw new BadRequestException('Failed to update massage.');
+    }
+  }
+  
   @Delete(':id')
   async remove(@Param('id') id: string) {
     return this.massageService.deleteMassage(id);

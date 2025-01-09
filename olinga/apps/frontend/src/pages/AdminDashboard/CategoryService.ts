@@ -5,11 +5,16 @@ const API_URL = `${apiUrl}/categories`;
 
 export interface Massage {
   _id: string;
-  name: string;
-  description: string;
+  categoryId: string;
+  imageUrl?: string;
+  title: Record<string, string>;
+  description: Record<string, string>;
   price: number;
-  duration: number;
-  translations: Record<string, string>;
+  duration: Record<string, string>;
+  details1: Record<string, string>;
+  details2: Record<string, string>;
+  details3: Record<string, string>;
+  details4: Record<string, string>;
 }
 export interface Category {
   _id: string;

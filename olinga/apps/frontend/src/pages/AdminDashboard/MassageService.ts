@@ -1,11 +1,12 @@
 import axios from 'axios';
 import { apiUrl } from '../../i18n';
+import { Massage } from './CategoryService';
 
-const API_URL = `${apiUrl}/categories`;
+interface MassageData extends Omit<Massage, '_id'>{}
 
-export const getMassagesByCategory = async (categoryId: string): Promise<any[]> => {
+export const getMassagesByCategory = async (categoryId: string): Promise<Massage[]> => {
   try {
-    const response = await axios.get(`${API_URL}/${categoryId}/massages`);
+    const response = await axios.get(`${apiUrl}/${categoryId}/massages`);
     return response.data;
   } catch (error) {
     console.error('Error fetching massages:', error);
@@ -13,12 +14,25 @@ export const getMassagesByCategory = async (categoryId: string): Promise<any[]> 
   }
 };
 
+
+
+
 export const createMassage = async (
-  categoryId: string,
-  massageData: { name: string; description: string; price: number; duration: number; translations: Record<string, string> }
+  massageData: MassageData,
+  image: File
 ): Promise<any> => {
+  const formData = new FormData();
+  formData.append('body', JSON.stringify(massageData));
+  formData.append('image', image);
+
+  const body = {massageData, image};
   try {
-    const response = await axios.post(`${API_URL}/${categoryId}/massages`, massageData);
+    const response = await axios.post(`${apiUrl}/massages`, body, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
     return response.data;
   } catch (error) {
     console.error('Error creating massage:', error);
@@ -27,12 +41,21 @@ export const createMassage = async (
 };
 
 export const updateMassage = async (
-  categoryId: string,
   massageId: string,
-  massageData: { name: string; description: string; price: number; duration: number; translations: Record<string, string> }
+  massageData: MassageData,
+  image: File | null
 ): Promise<any> => {
+  const formData = new FormData();
+  formData.append('body', JSON.stringify(massageData));
+  if (image) {
+    formData.append('image', image);
+  }
   try {
-    const response = await axios.put(`${API_URL}/${categoryId}/massages/${massageId}`, massageData);
+    const response = await axios.put(`${apiUrl}/massages/${massageId}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });PageTransitionEvent
     return response.data;
   } catch (error) {
     console.error('Error updating massage:', error);
@@ -40,9 +63,9 @@ export const updateMassage = async (
   }
 };
 
-export const deleteMassage = async (categoryId: string, massageId: string): Promise<any> => {
+export const deleteMassage = async (massageId: string): Promise<any> => {
   try {
-    const response = await axios.delete(`${API_URL}/${categoryId}/massages/${massageId}`);
+    const response = await axios.delete(`${apiUrl}/massages/${massageId}`);
     return response.data;
   } catch (error) {
     console.error('Error deleting massage:', error);

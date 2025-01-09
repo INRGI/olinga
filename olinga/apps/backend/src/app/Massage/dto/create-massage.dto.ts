@@ -3,21 +3,37 @@ import { IsNotEmpty, IsString, IsNumber, IsObject } from 'class-validator';
 export class CreateMassageDto {
   @IsNotEmpty()
   @IsString()
-  name: string;
+  categoryId: string;
 
   @IsNotEmpty()
-  @IsString()
-  description: string;
+  @IsObject()
+  title: Record<string, string>;
+
+  @IsNotEmpty()
+  @IsObject()
+  description: Record<string, string>;
+
+  @IsNotEmpty()
+  @IsObject()
+  details1: Record<string, string>;
+
+  @IsNotEmpty()
+  @IsObject()
+  details2: Record<string, string>;
+
+  @IsNotEmpty()
+  @IsObject()
+  details3: Record<string, string>;
+
+  @IsNotEmpty()
+  @IsObject()
+  details4: Record<string, string>;
 
   @IsNotEmpty()
   @IsNumber()
   price: number;
 
   @IsNotEmpty()
-  @IsNumber()
-  duration: number;
-
-  @IsNotEmpty()
   @IsObject()
-  translations: Record<string, string>;
+  duration: Record<string, string>;
 }

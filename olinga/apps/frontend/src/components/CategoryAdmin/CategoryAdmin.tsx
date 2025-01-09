@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   Category,
+  Massage,
   createCategory,
   deleteCategory,
   getCategories,
@@ -31,8 +32,10 @@ import AdminModal from '../AdminModal';
 import { FaPlus } from 'react-icons/fa';
 import FloatingLabelInput from '../FloatingLabelInput/FloatingLabelInput';
 import { MdOutlinePreview } from 'react-icons/md';
+import { createMassage } from '../../pages/AdminDashboard/MassageService';
 
 type CreatedCategory = Omit<Category, '_id' | 'massages'>;
+type CreatedMassage = Omit<Massage, '_id'>;
 
 const CategoryAdmin: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -46,6 +49,15 @@ const CategoryAdmin: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const [image, setImage] = useState<File | null>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+
+  const [massages, setMassages] = useState<Massage[]>([]);
+  const [massageModalOpen, setMassageModalOpen] = useState<boolean>(false);
+  const [massageCreateModalOpen, setMassageCreateModalOpen] =
+    useState<boolean>(false);
+  const [editingMassageItem, setMassageEditingItem] = useState<Massage | null>(null);
+  const [creatingMassageItem, setCreatingMassageItem] = useState<CreatedMassage | null>(
+    null
+  );
 
   const fetchCategories = async () => {
     const data = await getCategories();
@@ -69,6 +81,9 @@ const CategoryAdmin: React.FC = () => {
   const handleCloseModal = () => {
     setCategoryModalOpen(false);
     setCategoryCreateModalOpen(false);
+
+    setMassageCreateModalOpen(false);
+    setMassageModalOpen(false);
     setImage(null);
   };
 
@@ -106,6 +121,24 @@ const CategoryAdmin: React.FC = () => {
     } finally {
       setCategoryCreateModalOpen(false);
       setCreatingItem(null);
+    }
+  };
+
+  const handleCreateMassage = async (massageData: CreatedMassage) => {
+    if (!image) {
+      toastError('Please upload an image.');
+      return;
+    }
+
+    try {
+      await createMassage(massageData, image);
+      toastSuccess('Massage created successfully');
+      // await fetchCategories();
+    } catch (error) {
+      toastError('Error creating massage');
+    } finally {
+      setMassageCreateModalOpen(false);
+      setCreatingMassageItem(null);
     }
   };
 
@@ -176,7 +209,53 @@ const CategoryAdmin: React.FC = () => {
       </LeftContainer>
       <RightContainer>
         {/* Additional content for the right container */}
-        <h2>ttest</h2>
+        <Button
+            onClick={() => {
+              setCreatingMassageItem({
+                categoryId: '677d80c36f637aaff5c60f1c',
+                title: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                description: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details1: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details2: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details3: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details4: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                price: 0,
+                duration: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                imageUrl: '',
+              });
+              setMassageCreateModalOpen(true);
+            }}
+          >
+            <FaPlus />
+          </Button>
       </RightContainer>
       {editingItem && (
         <AdminModal
@@ -394,6 +473,338 @@ const CategoryAdmin: React.FC = () => {
             />
 
             <SaveButton onClick={() => handleCreateCategory(creatingItem)}>
+              Save
+            </SaveButton>
+          </CategoryDetailsContainer>
+        </AdminModal>
+      )}
+
+{creatingMassageItem && (
+        <AdminModal
+          isOpen={massageCreateModalOpen}
+          onClose={() => handleCloseModal}
+        >
+          <CategoryDetailsContainer>
+            <ServicesBlockHeader>
+              <h2>Create Massage</h2>
+            </ServicesBlockHeader>
+            <FloatingLabelInput
+              value={creatingMassageItem.title.pl || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  title: {
+                    ...creatingMassageItem.title,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="TITLE (PL)"
+            />
+
+            <FloatingLabelInput
+              value={creatingMassageItem.title.uk || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  title: {
+                    ...creatingMassageItem.title,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="TITLE (UA)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.title.ru || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  title: {
+                    ...creatingMassageItem.title,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="TITLE (RU)"
+            />
+
+<FloatingLabelInput
+              value={creatingMassageItem.description.ru || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  description: {
+                    ...creatingMassageItem.description,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="Description (RU)"
+            />
+
+<FloatingLabelInput
+              value={creatingMassageItem.description.pl || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  description: {
+                    ...creatingMassageItem.description,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="Description (PL)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.description.uk || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  description: {
+                    ...creatingMassageItem.description,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="Description (UA)"
+            />
+
+           
+
+<FloatingLabelInput
+              value={creatingMassageItem.duration.uk || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  duration: {
+                    ...creatingMassageItem.duration,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="duration (UA)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.duration.ru || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  duration: {
+                    ...creatingMassageItem.duration,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="duration (RU)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.duration.pl || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  duration: {
+                    ...creatingMassageItem.duration,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="duration (PL)"
+            />
+
+
+<FloatingLabelInput
+              value={creatingMassageItem.details1.pl || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details1: {
+                    ...creatingMassageItem.details1,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="details1 (PL)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.details1.ru || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details1: {
+                    ...creatingMassageItem.details1,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="details1 (RU)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.details1.uk || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details1: {
+                    ...creatingMassageItem.details1,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="details1 (UA)"
+            />
+            
+
+
+            <FloatingLabelInput
+              value={creatingMassageItem.details2.pl || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details2: {
+                    ...creatingMassageItem.details2,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="details2 (PL)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.details2.ru || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details2: {
+                    ...creatingMassageItem.details2,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="details2 (RU)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.details2.uk || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details2: {
+                    ...creatingMassageItem.details2,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="details2 (UA)"
+            />
+            
+
+
+
+            <FloatingLabelInput
+              value={creatingMassageItem.details3.pl || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details3: {
+                    ...creatingMassageItem.details3,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="details3 (PL)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.details3.ru || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details3: {
+                    ...creatingMassageItem.details3,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="details3 (RU)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.details3.uk || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details3: {
+                    ...creatingMassageItem.details3,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="details3 (UA)"
+            />
+
+
+
+<FloatingLabelInput
+              value={creatingMassageItem.details4.pl || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details4: {
+                    ...creatingMassageItem.details4,
+                    pl: e.target.value,
+                  },
+                })
+              }
+              placeholder="details4 (PL)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.details4.ru || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details4: {
+                    ...creatingMassageItem.details4,
+                    ru: e.target.value,
+                  },
+                })
+              }
+              placeholder="details4 (RU)"
+            />
+            <FloatingLabelInput
+              value={creatingMassageItem.details4.uk || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  details4: {
+                    ...creatingMassageItem.details4,
+                    uk: e.target.value,
+                  },
+                })
+              }
+              placeholder="details4 (UA)"
+            />
+
+
+<FloatingLabelInput
+              value={`${creatingMassageItem.price}` || ''}
+              onChange={(e) =>
+                setCreatingMassageItem({
+                  ...creatingMassageItem,
+                  price: creatingMassageItem.price,
+
+                })
+              }
+              placeholder="PRICE"
+            />
+
+
+            <Input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                if (e.target.files) {
+                  setImage(e.target.files[0]);
+                }
+              }}
+            />
+
+            <SaveButton onClick={() => handleCreateMassage(creatingMassageItem)}>
               Save
             </SaveButton>
           </CategoryDetailsContainer>

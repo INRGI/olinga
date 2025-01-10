@@ -45,7 +45,7 @@ export const createCategory = async (
   formData.append('body', JSON.stringify(categoryData));
   formData.append('image', image);
 
-  const body = {categoryData, image};
+  const body = { categoryData, image };
 
   try {
     const response = await axios.post(API_URL, body, {
@@ -68,18 +68,18 @@ export const updateCategory = async (
   },
   image?: File | null
 ): Promise<any> => {
-  const formData = new FormData();
-  formData.append('body', JSON.stringify(categoryData));
-  if (image) {
-    formData.append('image', image);
-  }
-
   try {
-    const response = await axios.put(`${API_URL}/${id}`, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });
+    if (image) {
+      const formData = new FormData();
+      formData.append('image', image);
+      await axios.put(`${API_URL}/image/${id}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+    }
+    const body = { ...categoryData, imageUrl: undefined };
+    const response = await axios.put(`${API_URL}/${id}`, body);
     return response.data;
   } catch (error) {
     console.error('Error updating category:', error);

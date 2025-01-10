@@ -52,27 +52,26 @@ export class CategoryController {
   async findOne(@Param('id') id: string) {
     return this.categoryService.getCategoryById(id);
   }
-  @Put(':id')
-  async update(@Param('id') id: string, @Req() req: FastifyRequest) {
-    try {
-      const file: MultipartFile = await req.file();
-      console.log(file)
-      const fields = file.fields as Record<string, any>;
 
-      const bodyField = fields['body']?.value;
-      if (!bodyField) {
-        throw new BadRequestException('Missing body field.');
-      }
-  
-      const categoryData = JSON.parse(bodyField);
-  
-      const fileToSave = file?.fields?.image ? file : undefined;
-      return await this.categoryService.updateCategory(id, categoryData, fileToSave);      
+  @Put('image/:id')
+  async updateWithImage(@Param('id') id: string, @Req() req: FastifyRequest) {
+    try {
+      const file = await req.file();
+
+      return await this.categoryService.updateCategoryImage(
+        id,
+        file
+      );
     } catch (error) {
       throw new BadRequestException('Failed to update category.');
     }
   }
-  
+
+  @Put(':id')
+  async updateWithoutImage(@Param('id') id: string, @Body() categoryData: any) {
+    return this.categoryService.updateWithoutImage(id, categoryData);
+  }
+
   @Delete(':id')
   async remove(@Param('id') id: string) {
     return this.categoryService.deleteCategory(id);

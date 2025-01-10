@@ -27,16 +27,6 @@ export class CategoryService {
       newCategory.imageUrl = imageUrl;
     }
 
-    await this.translationService.createCategoryTranslation(
-      `title_${newCategory._id.toString()}`,
-      createCategoryDto.title
-    );
-
-    await this.translationService.createCategoryTranslation(
-      `details_${newCategory._id.toString()}`,
-      createCategoryDto.details
-    );
-
     return newCategory.save();
   }
 
@@ -48,31 +38,23 @@ export class CategoryService {
     return this.categoryModel.findById(id).exec();
   }
 
-  async updateCategory(
-    id: string,
-    updateCategoryDto: UpdateCategoryDto,
-    file?: any
-  ): Promise<Category> {
-    if (file) {
-      const existingCategory = await this.categoryModel.findById(id).exec();
-      if (existingCategory && existingCategory.imageUrl) {
-        await this.deleteImage(existingCategory.imageUrl);
-      }
-
-      const imageUrl = await this.saveImage(file);
-      updateCategoryDto.imageUrl = imageUrl;
+  async updateCategoryImage(id: string, file?: any): Promise<Category> {
+    const existingCategory = await this.categoryModel.findById(id).exec();
+    
+    if (existingCategory.imageUrl) {
+      await this.deleteImage(existingCategory.imageUrl);
     }
 
-      await this.translationService.updateTranslation(
-        id,
-        updateCategoryDto.details
-      );
+    const imageUrl = await this.saveImage(file);
 
-      await this.translationService.updateTranslation(
-        id,
-        updateCategoryDto.title
-      );
+    const updateCategoryDto = { imageUrl };
 
+    return this.categoryModel
+      .findByIdAndUpdate(id, updateCategoryDto, { new: true })
+      .exec();
+  }
+
+  async updateWithoutImage(id: string, updateCategoryDto: UpdateCategoryDto) {
     return this.categoryModel
       .findByIdAndUpdate(id, updateCategoryDto, { new: true })
       .exec();
@@ -83,7 +65,16 @@ export class CategoryService {
   }
 
   private async saveImage(file: any): Promise<string> {
-    const uploadDir = path.join(__dirname, '..', '..', '..', 'apps', 'frontend', 'public', 'uploads');
+    const uploadDir = path.join(
+      __dirname,
+      '..',
+      '..',
+      '..',
+      'apps',
+      'frontend',
+      'public',
+      'uploads'
+    );
     await fs.promises.mkdir(uploadDir, { recursive: true });
     const filename = `${Date.now()}-${file.filename}`;
     const filePath = path.join(uploadDir, filename);
@@ -105,9 +96,9 @@ export class CategoryService {
       imageUrl.replace('uploads/', '')
     );
     if (fs.existsSync(filePath)) {
-      fs.unlink(filePath, err => {
-        fs.unlinkSync(filePath);
-      });
+      fs.unlinkSync(filePath);
+    } else {
+      console.log('File does not exist:', filePath);
     }
   }
 }

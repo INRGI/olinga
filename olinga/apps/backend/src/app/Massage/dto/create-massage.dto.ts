@@ -34,6 +34,6 @@ export class CreateMassageDto {
   price: number;
 
   @IsNotEmpty()
-  @IsObject()
-  duration: Record<string, string>;
+  @IsString()
+  duration: string;
 }

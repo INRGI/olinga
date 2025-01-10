@@ -10,7 +10,7 @@ export interface Massage {
   title: Record<string, string>;
   description: Record<string, string>;
   price: number;
-  duration: Record<string, string>;
+  duration: string;
   details1: Record<string, string>;
   details2: Record<string, string>;
   details3: Record<string, string>;

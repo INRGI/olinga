@@ -53,10 +53,11 @@ export class CategoryController {
     return this.categoryService.getCategoryById(id);
   }
   @Put(':id')
-  async update(@Param('id') id: string, @Req() req: any) {
+  async update(@Param('id') id: string, @Req() req: FastifyRequest) {
     try {
-      const file = await req.file();
-      const fields = file?.fields || {};
+      const file: MultipartFile = await req.file();
+      console.log(file)
+      const fields = file.fields as Record<string, any>;
 
       const bodyField = fields['body']?.value;
       if (!bodyField) {

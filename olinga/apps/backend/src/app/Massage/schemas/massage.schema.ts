@@ -34,10 +34,10 @@ export class Massage extends Document {
   details4: Record<string, string>;
 
   @Prop({ required: true })
-  price: number;
+  price: string;
 
-  @Prop({ type: Map, of: String })
-  duration: Record<string, string>;
+  @Prop({ required: true })
+  duration: string;
 }
 
 export const MassageSchema = SchemaFactory.createForClass(Massage);

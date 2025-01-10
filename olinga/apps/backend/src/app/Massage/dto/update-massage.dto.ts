@@ -33,8 +33,8 @@ export class UpdateMassageDto {
   price: number;
 
   @IsNotEmpty()
-  @IsObject()
-  duration: Record<string, string>;
+  @IsString()
+  duration: string;
 
   @IsString()
   @IsOptional()

@@ -14,9 +14,6 @@ export const getMassagesByCategory = async (categoryId: string): Promise<Massage
   }
 };
 
-
-
-
 export const createMassage = async (
   massageData: MassageData,
   image: File

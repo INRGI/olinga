@@ -2,9 +2,11 @@ import axios from 'axios';
 import { apiUrl } from '../../i18n';
 import { Massage } from './CategoryService';
 
-interface MassageData extends Omit<Massage, '_id'>{}
+interface MassageData extends Omit<Massage, '_id'> {}
 
-export const getMassagesByCategory = async (categoryId: string): Promise<Massage[]> => {
+export const getMassagesByCategory = async (
+  categoryId: string
+): Promise<Massage[]> => {
   try {
     const response = await axios.get(`${apiUrl}/${categoryId}/massages`);
     return response.data;
@@ -22,7 +24,7 @@ export const createMassage = async (
   formData.append('body', JSON.stringify(massageData));
   formData.append('image', image);
 
-  const body = {massageData, image};
+  const body = { massageData, image };
   try {
     const response = await axios.post(`${apiUrl}/massages`, body, {
       headers: {
@@ -42,17 +44,18 @@ export const updateMassage = async (
   massageData: MassageData,
   image: File | null
 ): Promise<any> => {
-  const formData = new FormData();
-  formData.append('body', JSON.stringify(massageData));
-  if (image) {
-    formData.append('image', image);
-  }
   try {
-    const response = await axios.put(`${apiUrl}/massages/${massageId}`, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    });PageTransitionEvent
+    if (image) {
+      const formData = new FormData();
+      formData.append('image', image);
+      await axios.put(`${apiUrl}/image/${massageId}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+    }
+    const body = { ...massageData, imageUrl: undefined };
+    const response = await axios.put(`${apiUrl}/${massageId}`, body);
     return response.data;
   } catch (error) {
     console.error('Error updating massage:', error);

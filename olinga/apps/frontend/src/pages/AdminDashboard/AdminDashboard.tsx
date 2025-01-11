@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import CategoryManager from "./CategoryManager";
 import { useAuth } from "../../context/AuthContext";
 import { Button, Container } from "./AdminDashboard.styled";
 import { LuLogOut } from "react-icons/lu";

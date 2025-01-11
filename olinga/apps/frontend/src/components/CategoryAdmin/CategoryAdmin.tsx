@@ -88,7 +88,8 @@ const CategoryAdmin: React.FC = () => {
     setMassageCreateModalOpen(false);
     setMassageModalOpen(false);
     setImage(null);
-    
+    setCreatingItem(null);
+    setCreatingMassageItem(null);
     await fetchCategories();
   };
 
@@ -338,17 +339,19 @@ const CategoryAdmin: React.FC = () => {
       )}
       {creatingItem && (
         <CreateCategoryForm
-        isOpen={categoryCreateModalOpen}
-        onClose={() => handleCloseModal()}
-        initialData={creatingItem}
-      />
+          isOpen={categoryCreateModalOpen}
+          onClose={() => handleCloseModal()}
+          initialData={creatingItem}
+        />
       )}
-
-      <CreateMassageForm
-        isOpen={massageCreateModalOpen}
-        onClose={() => handleCloseModal()}
-        initialData={creatingMassageItem}
-      />
+      {activeCategory && creatingMassageItem && (
+        <CreateMassageForm
+          isOpen={massageCreateModalOpen}
+          onClose={() => handleCloseModal()}
+          initialData={creatingMassageItem}
+          categoryId={activeCategory}
+        />
+      )}
     </Container>
   );
 };

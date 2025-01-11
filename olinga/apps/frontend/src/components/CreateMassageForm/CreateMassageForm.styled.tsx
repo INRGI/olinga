@@ -11,7 +11,7 @@ export const SaveButton = styled.button`
   transition: background-color 0.3s, transform 0.1s;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: inline-block;
-  width: 90%;
+  width: 93%;
 
   &:hover {
     background-color: #5941a9;
@@ -30,8 +30,9 @@ export const SaveButton = styled.button`
 export const CreateMassageContainer = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 1200px;
+  max-width: 1200px;
   width: 100%;
-  min-width: 500px;
   gap: 20px;
   background-color: #181818;
   padding: 25px;
@@ -40,6 +41,33 @@ export const CreateMassageContainer = styled.div`
   justify-content: center;
 `;
 
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+`;
+
+export const LeftContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const CenterContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const RightContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
 
 export const FileContainer = styled.div`
   display: flex;
@@ -60,7 +88,7 @@ export const FileInput = styled.input`
   color: #f0f0f0;
   transition: border-color 0.3s;
   max-width: 465px;
-  width: 74%;
+  width: 85%;
 
   &:focus {
     border-color: #6a5acd;

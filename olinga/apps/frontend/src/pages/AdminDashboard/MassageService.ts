@@ -8,7 +8,7 @@ export const getMassagesByCategory = async (
   categoryId: string
 ): Promise<Massage[]> => {
   try {
-    const response = await axios.get(`${apiUrl}/${categoryId}/massages`);
+    const response = await axios.get(`${apiUrl}/massages/category/${categoryId}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching massages:', error);

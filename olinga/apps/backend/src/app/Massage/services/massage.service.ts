@@ -37,6 +37,10 @@ export class MassageService {
     return this.massageModel.findById(id).exec();
   }
 
+  async getMassagesByCategory(categoryId: string): Promise<Massage[]> {
+    return this.massageModel.find({ categoryId: categoryId }).exec();
+  }
+
   async updateMassageImage(
     id: string,
     file?: any

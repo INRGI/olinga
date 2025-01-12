@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import {
   Category,
   Massage,
-  createCategory,
   deleteCategory,
   getCategories,
   updateCategory,
@@ -11,30 +10,22 @@ import {
   Button,
   CategoriesContainer,
   CategoryCard,
-  CategoryDetailsContainer,
   Container,
   DeleteButton,
   EditButton,
-  FileContainer,
-  FileInput,
   HeaderContainer,
-  Input,
   LeftContainer,
   MassageCard,
-  MassageList,
-  PreviewButton,
+  MassagesContainer,
   RightContainer,
-  SaveButton,
   ServicesBlockHeader,
 } from './CategoryAdmin.styled';
 import { toastError, toastSuccess } from '../../helpers/toastify';
-import AdminModal from '../AdminModal';
 import { FaPlus } from 'react-icons/fa';
-import FloatingLabelInput from '../FloatingLabelInput/FloatingLabelInput';
-import { MdOutlinePreview } from 'react-icons/md';
-import { createMassage } from '../../pages/AdminDashboard/MassageService';
 import CreateMassageForm from '../CreateMassageForm/CreateMassageForm';
 import CreateCategoryForm from '../CreateCategoryModal/CreateCategoryModal';
+import EditCategoryModal from '../EditCategoryForm/EditCategoryForm';
+import { deleteMassage, getMassagesByCategory } from '../../pages/AdminDashboard/MassageService';
 
 export type CreatedCategory = Omit<Category, '_id' | 'massages'>;
 export type CreatedMassage = Omit<Massage, '_id'>;
@@ -65,11 +56,22 @@ const CategoryAdmin: React.FC = () => {
   const fetchCategories = async () => {
     const data = await getCategories();
     setCategories(data);
+    setActiveCategory(data[0]?._id);
+  };
+
+  const fetchMassagesByCategory = async () => {
+    if (!activeCategory) return;
+    const data = await getMassagesByCategory(activeCategory);
+    setMassages(data);
   };
 
   useEffect(() => {
     fetchCategories();
   }, []);
+
+  useEffect(() => {
+    fetchMassagesByCategory();
+  }, [activeCategory]);
 
   const handleDeleteCategory = async (id: string) => {
     try {
@@ -78,6 +80,16 @@ const CategoryAdmin: React.FC = () => {
       await fetchCategories();
     } catch (error) {
       toastError('Error deleting category');
+    }
+  };
+
+  const handleDeleteMassage = async (id: string) => {
+    try {
+      await deleteMassage(id);
+      toastSuccess('Massage deleted successfully');
+      await fetchMassagesByCategory();
+    } catch (error) {
+      toastError('Error deleting massage');
     }
   };
 
@@ -91,9 +103,14 @@ const CategoryAdmin: React.FC = () => {
     setCreatingItem(null);
     setCreatingMassageItem(null);
     await fetchCategories();
+    await fetchMassagesByCategory();
   };
 
-  const handleUpdateCategory = async (id: string, categoryData: Category) => {
+  const handleUpdateCategory = async (
+    id: string,
+    categoryData: Category,
+    image?: File | null
+  ) => {
     try {
       if (image) {
         await updateCategory(id, categoryData, image);
@@ -178,164 +195,94 @@ const CategoryAdmin: React.FC = () => {
         </CategoriesContainer>
       </LeftContainer>
       <RightContainer>
-        {/* Additional content for the right container */}
-        <Button
-          onClick={() => {
-            setCreatingMassageItem({
-              categoryId: '677d80c36f637aaff5c60f1c',
-              title: {
-                pl: '',
-                uk: '',
-                ru: '',
-              },
-              description: {
-                pl: '',
-                uk: '',
-                ru: '',
-              },
-              details1: {
-                pl: '',
-                uk: '',
-                ru: '',
-              },
-              details2: {
-                pl: '',
-                uk: '',
-                ru: '',
-              },
-              details3: {
-                pl: '',
-                uk: '',
-                ru: '',
-              },
-              details4: {
-                pl: '',
-                uk: '',
-                ru: '',
-              },
-              price: 0,
-              duration: '',
-            });
-            setMassageCreateModalOpen(true);
-          }}
-        >
-          <FaPlus />
-        </Button>
+        <HeaderContainer>
+          <ServicesBlockHeader>
+            <h2>
+              Massages for (
+              {activeCategory &&
+                categories.find((category) => category._id === activeCategory)
+                  ?.title.ru}
+              )
+            </h2>
+            <p>All massages below</p>
+          </ServicesBlockHeader>
+          <Button
+            onClick={() => {
+              setCreatingMassageItem({
+                categoryId: activeCategory || '',
+                title: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                description: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details1: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details2: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details3: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                details4: {
+                  pl: '',
+                  uk: '',
+                  ru: '',
+                },
+                price: 0,
+                duration: '',
+              });
+              setMassageCreateModalOpen(true);
+            }}
+          >
+            <FaPlus />
+          </Button>
+        </HeaderContainer>
+        <MassagesContainer>
+          {massages?.length > 0 ? (
+            massages.map((massage) => (
+              <MassageCard key={massage._id}>
+                <h2>{massage.title.ru}</h2>
+                <div>
+                  <EditButton
+                    onClick={() => {
+                      setCreatingMassageItem(massage);
+                      setMassageCreateModalOpen(true);
+                    }}
+                  >
+                    Edit
+                  </EditButton>
+                  <DeleteButton
+                    onClick={() => handleDeleteMassage(massage._id)}
+                  >
+                    Delete
+                  </DeleteButton>
+                </div>
+              </MassageCard>
+            ))
+          ) : (
+            <MassageCard style={{ cursor: 'default' }}>No massages available. Create one.</MassageCard>
+          )}
+        </MassagesContainer>
       </RightContainer>
       {editingItem && (
-        <AdminModal
+        <EditCategoryModal
           isOpen={categoryModalOpen}
           onClose={() => handleCloseModal()}
-        >
-          <CategoryDetailsContainer>
-            <ServicesBlockHeader>
-              <h2>Edit Category</h2>
-            </ServicesBlockHeader>
-
-            <FloatingLabelInput
-              value={editingItem.title.pl || ''}
-              onChange={(e) =>
-                setEditingItem({
-                  ...editingItem,
-                  title: {
-                    ...editingItem.title,
-                    pl: e.target.value,
-                  },
-                })
-              }
-              placeholder="TITLE (PL)"
-            />
-
-            <FloatingLabelInput
-              value={editingItem.title.uk || ''}
-              onChange={(e) =>
-                setEditingItem({
-                  ...editingItem,
-                  title: {
-                    ...editingItem.title,
-                    uk: e.target.value,
-                  },
-                })
-              }
-              placeholder="TITLE (UA)"
-            />
-            <FloatingLabelInput
-              value={editingItem.title.ru || ''}
-              onChange={(e) =>
-                setEditingItem({
-                  ...editingItem,
-                  title: {
-                    ...editingItem.title,
-                    ru: e.target.value,
-                  },
-                })
-              }
-              placeholder="TITLE (RU)"
-            />
-            <FloatingLabelInput
-              value={editingItem.details.pl || ''}
-              onChange={(e) =>
-                setEditingItem({
-                  ...editingItem,
-                  details: {
-                    ...editingItem.details,
-                    pl: e.target.value,
-                  },
-                })
-              }
-              placeholder="DETAILS (PL)"
-            />
-            <FloatingLabelInput
-              value={editingItem.details.uk || ''}
-              onChange={(e) =>
-                setEditingItem({
-                  ...editingItem,
-                  details: {
-                    ...editingItem.details,
-                    uk: e.target.value,
-                  },
-                })
-              }
-              placeholder="DETAILS (UA)"
-            />
-            <FloatingLabelInput
-              value={editingItem.details.ru || ''}
-              onChange={(e) =>
-                setEditingItem({
-                  ...editingItem,
-                  details: {
-                    ...editingItem.details,
-                    ru: e.target.value,
-                  },
-                })
-              }
-              placeholder="DETAILS (RU)"
-            />
-            <FileContainer>
-              <FileInput
-                type="file"
-                accept="image/*"
-                onChange={(e) => {
-                  if (e.target.files) {
-                    setImage(e.target.files[0]);
-                  }
-                }}
-              />
-              <PreviewButton
-                href={`/${previewImage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <MdOutlinePreview />
-              </PreviewButton>
-            </FileContainer>
-            <SaveButton
-              onClick={() => handleUpdateCategory(editingItem._id, editingItem)}
-            >
-              Save
-            </SaveButton>
-          </CategoryDetailsContainer>
-        </AdminModal>
+          category={editingItem}
+          onSave={handleUpdateCategory}
+        />
       )}
       {creatingItem && (
         <CreateCategoryForm

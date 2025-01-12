@@ -71,6 +71,11 @@ export class MassageController {
     return this.massageService.getMassages();
   }
 
+  @Get('category/:id')
+  async findByCategory(@Param('id') id: string) {
+    return this.massageService.getMassagesByCategory(id);
+  }
+
   @Get(':id')
   async findOne(@Param('id') id: string) {
     return this.massageService.getMassageById(id);

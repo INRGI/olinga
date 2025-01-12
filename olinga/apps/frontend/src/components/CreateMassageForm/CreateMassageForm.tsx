@@ -15,7 +15,7 @@ import {
   RightContainer,
   SaveButton,
 } from './CreateMassageForm.styled';
-import TextareaInput from './TextareaInput';
+import TextareaInput from '../TexteAreaInput/TextareaInput';
 
 interface CreateMassageFormProps {
   isOpen: boolean;
@@ -72,7 +72,7 @@ const CreateMassageForm: React.FC<CreateMassageFormProps> = ({
     if (
       !isFieldsValid || 
       !image) {
-      toastError('Please fill out all required fields and upload an image.');
+      toastError('Please fill out all fields and upload an image.');
       return;
     }
 
@@ -138,7 +138,7 @@ const CreateMassageForm: React.FC<CreateMassageFormProps> = ({
                     },
                   })
                 }
-                placeholder={`Details-1 (${ lang === 'uk' ? 'UA' : lang.toUpperCase()})`}
+                placeholder={`Benefits-1 (${ lang === 'uk' ? 'UA' : lang.toUpperCase()})`}
               />
             ))}
             {['pl', 'uk', 'ru'].map((lang) => (
@@ -154,7 +154,7 @@ const CreateMassageForm: React.FC<CreateMassageFormProps> = ({
                     },
                   })
                 }
-                placeholder={`Details-2 (${ lang === 'uk' ? 'UA' : lang.toUpperCase()})`}
+                placeholder={`Benefits-2 (${ lang === 'uk' ? 'UA' : lang.toUpperCase()})`}
               />
             ))}
             {['pl', 'uk', 'ru'].map((lang) => (
@@ -170,7 +170,7 @@ const CreateMassageForm: React.FC<CreateMassageFormProps> = ({
                     },
                   })
                 }
-                placeholder={`Details-3 (${ lang === 'uk' ? 'UA' : lang.toUpperCase()})`}
+                placeholder={`Benefits-3 (${ lang === 'uk' ? 'UA' : lang.toUpperCase()})`}
               />
             ))}
           </CenterContainer>
@@ -189,7 +189,7 @@ const CreateMassageForm: React.FC<CreateMassageFormProps> = ({
                     },
                   })
                 }
-                placeholder={`Details-4 (${ lang === 'uk' ? 'UA' : lang.toUpperCase()})`}
+                placeholder={`Benefits-4 (${ lang === 'uk' ? 'UA' : lang.toUpperCase()})`}
               />
             ))}
             <FloatingLabelInput
@@ -200,7 +200,7 @@ const CreateMassageForm: React.FC<CreateMassageFormProps> = ({
                   price: Number(e.target.value),
                 })
               }
-              placeholder="Price"
+              placeholder="Price (PLN)"
             />
 
             <FloatingLabelInput
@@ -208,7 +208,7 @@ const CreateMassageForm: React.FC<CreateMassageFormProps> = ({
               onChange={(e) =>
                 setMassageData({ ...massageData, duration: e.target.value })
               }
-              placeholder="Duration"
+              placeholder="Duration (min)"
             />
             <FileContainer>
               <FileInput

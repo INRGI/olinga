@@ -131,16 +131,6 @@ export const MassageList = styled.div`
   margin-top: 20px;
 `;
 
-export const MassageCard = styled.div`
-  background-color: #5c5c5c;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 export const CategoriesContainer = styled.ul`
   list-style: none;
   display: flex;
@@ -150,6 +140,7 @@ export const CategoriesContainer = styled.ul`
   padding: 0;
   height: auto;
   max-height: 400px;
+  min-height: 400px;
   overflow-y: auto;
 
   @media (max-width: 768px) {
@@ -394,5 +385,57 @@ export const FileInput = styled.input`
   &:focus {
     border-color: #6a5acd;
     outline: none;
+  }
+`;
+
+
+export const MassagesContainer = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding: 0;
+  height: auto;
+  max-height: 400px;
+  min-height: 400px;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    max-height: none;
+  }
+`;
+
+export const MassageCard = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5c5c5c;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: auto;
+  min-height: 50px;
+  width: 96%;
+  color: #fff;
+  transition: all 0.3s ease;
+
+  h2 {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    padding-right: 15px;
+    max-width: 90%;
+  }
+
+  div {
+    display: flex;
+    gap: 10px;
+  }
+
+  button {
+    min-width: 80px;
   }
 `;

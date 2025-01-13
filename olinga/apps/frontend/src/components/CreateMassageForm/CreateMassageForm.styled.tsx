@@ -96,6 +96,24 @@ export const FileInput = styled.input`
   }
 `;
 
+export const FileEditingInput = styled.input`
+  padding: 15px;
+  margin: 0;
+  border: 1px solid #4f4f4f;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  transition: border-color 0.3s;
+  max-width: 465px;
+  width: 70%;
+
+  &:focus {
+    border-color: #6a5acd;
+    outline: none;
+  }
+`;
+
 
 export const BlockHeader = styled.div`
   text-align: left;
@@ -140,5 +158,28 @@ export const BlockHeader = styled.div`
     p {
       font-size: 14px;
     }
+  }
+`;
+
+export const PreviewButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 28px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;

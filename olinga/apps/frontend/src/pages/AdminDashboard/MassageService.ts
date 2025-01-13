@@ -42,20 +42,20 @@ export const createMassage = async (
 export const updateMassage = async (
   massageId: string,
   massageData: MassageData,
-  image: File | null
+  image?: File | null
 ): Promise<any> => {
   try {
     if (image) {
       const formData = new FormData();
       formData.append('image', image);
-      await axios.put(`${apiUrl}/image/${massageId}`, formData, {
+      await axios.put(`${apiUrl}/massages/image/${massageId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
     }
     const body = { ...massageData, imageUrl: undefined };
-    const response = await axios.put(`${apiUrl}/${massageId}`, body);
+    const response = await axios.put(`${apiUrl}/massages/${massageId}`, body);
     return response.data;
   } catch (error) {
     console.error('Error updating massage:', error);

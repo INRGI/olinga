@@ -25,7 +25,8 @@ import { FaPlus } from 'react-icons/fa';
 import CreateMassageForm from '../CreateMassageForm/CreateMassageForm';
 import CreateCategoryForm from '../CreateCategoryModal/CreateCategoryModal';
 import EditCategoryModal from '../EditCategoryForm/EditCategoryForm';
-import { deleteMassage, getMassagesByCategory } from '../../pages/AdminDashboard/MassageService';
+import { deleteMassage, getMassagesByCategory, updateMassage } from '../../pages/AdminDashboard/MassageService';
+import EditMassageModal from '../EditMassageForm/EditMassageForm';
 
 export type CreatedCategory = Omit<Category, '_id' | 'massages'>;
 export type CreatedMassage = Omit<Massage, '_id'>;
@@ -102,8 +103,6 @@ const CategoryAdmin: React.FC = () => {
     setImage(null);
     setCreatingItem(null);
     setCreatingMassageItem(null);
-    await fetchCategories();
-    await fetchMassagesByCategory();
   };
 
   const handleUpdateCategory = async (
@@ -126,6 +125,28 @@ const CategoryAdmin: React.FC = () => {
     } finally {
       setCategoryModalOpen(false);
       setEditingItem(null);
+    }
+  };
+
+  const handleUpdateMassage = async (
+    massageData: Massage,
+    image?: File | null
+  ) => {
+    try {
+      if (image) {
+        await updateMassage(massageData._id, massageData, image);
+      }
+      if (!image) {
+        await updateMassage(massageData._id, massageData);
+      }
+
+      toastSuccess('Massage updated successfully');
+      await fetchMassagesByCategory();
+    } catch (error) {
+      toastError('Error updating massage');
+    } finally {
+      setMassageModalOpen(false);
+      setMassageEditingItem(null);
     }
   };
 
@@ -257,8 +278,8 @@ const CategoryAdmin: React.FC = () => {
                 <div>
                   <EditButton
                     onClick={() => {
-                      setCreatingMassageItem(massage);
-                      setMassageCreateModalOpen(true);
+                      setMassageEditingItem(massage);
+                      setMassageModalOpen(true);
                     }}
                   >
                     Edit
@@ -282,6 +303,14 @@ const CategoryAdmin: React.FC = () => {
           onClose={() => handleCloseModal()}
           category={editingItem}
           onSave={handleUpdateCategory}
+        />
+      )}
+      {editingMassageItem && (
+        <EditMassageModal
+          isOpen={massageModalOpen}
+          onClose={() => handleCloseModal()}
+          massage={editingMassageItem}
+          onSave={handleUpdateMassage}
         />
       )}
       {creatingItem && (

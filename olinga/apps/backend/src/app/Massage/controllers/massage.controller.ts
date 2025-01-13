@@ -85,7 +85,6 @@ export class MassageController {
   async updateWithImage(@Param('id') id: string, @Req() req: FastifyRequest) {
     try {
       const file = await req.file();
-
       return await this.massageService.updateMassageImage(id, file);
     } catch (error) {
       throw new BadRequestException('Failed to update massage.');
@@ -94,6 +93,7 @@ export class MassageController {
 
   @Put(':id')
   async updateWithoutImage(@Param('id') id: string, @Body() massageData: any) {
+    console.log(massageData);
     return this.massageService.updateWithoutImage(id, massageData);
   }
 

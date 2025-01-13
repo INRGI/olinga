@@ -149,7 +149,7 @@ export const RightText = styled.p`
 
 export const RightColoredText = styled.p`
   font-size: 16px;
-  color: #c6caa6;
+  color: #87bdd8;
   line-height: 1.5;
   padding: 0;
   margin: 0;

@@ -42,7 +42,7 @@ export const FooterItem = styled.div`
     text-decoration: none;
 
     &:hover {
-      color: #c6caa6;
+      color: #87bdd8;
     }
   }
 
@@ -103,12 +103,12 @@ export const LinksContainer = styled.div`
     border-left: 3px solid #282828;
 
     &:hover {
-      color: #c6caa6;
+      color: #87bdd8;
       transform: translateX(5px);
     }
 
     &.active {
-      color: #c6caa6;
+      color: #87bdd8;
     }
   }
 
@@ -163,7 +163,7 @@ export const PrivacyContainer = styled.div`
     border-left: 3px solid #282828;
 
     &:hover {
-      color: #c6caa6;
+      color: #87bdd8;
       transform: translateX(5px);
     }
   }

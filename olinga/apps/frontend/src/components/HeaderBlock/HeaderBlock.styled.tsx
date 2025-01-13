@@ -64,7 +64,7 @@ export const ContactUsBlock = styled.div`
     transition: color 0.3s ease;
 
     &:hover {
-      color: #c6caa6;
+      color: #87bdd8;
     }
   }
 
@@ -84,7 +84,7 @@ export const ContactItem = styled.div`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #c6caa6;
+    color: #87bdd8;
   }
 `;
 
@@ -97,7 +97,7 @@ export const ContactNumber = styled.div`
     text-decoration: none;
 
     &:hover {
-      color: #c6caa6;
+      color: #87bdd8;
     }
   }
 `;
@@ -141,7 +141,7 @@ export const DropdownItem = styled.div`
   }
 
   &:hover {
-    color: #c6caa6;
+    color: #87bdd8;
   }
 `;
 
@@ -157,7 +157,7 @@ export const MenuBlock = styled.div`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #c6caa6;
+    color: #87bdd8;
   }
 
   @media only screen and (max-width: 425px) {
@@ -178,7 +178,7 @@ export const LanguegeBlock = styled.div`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #c6caa6;
+    color: #87bdd8;
   }
 `;
 
@@ -191,7 +191,7 @@ export const Languege = styled.div`
     text-decoration: none;
 
     &:hover {
-      color: #c6caa6;
+      color: #87bdd8;
     }
   }
 `;
@@ -222,7 +222,7 @@ export const DropdownLanguages = styled.div`
 
 export const LanguageOption = styled.div<{ isSelected: boolean }>`
   display: flex;
-  color: ${({ isSelected }) => (isSelected ? '#c6caa6' : '#ffffff')};
+  color: ${({ isSelected }) => (isSelected ? '#87bdd8' : '#ffffff')};
   align-items: center;
   padding: 8px 12px;
   font-size: 16px;
@@ -232,6 +232,6 @@ export const LanguageOption = styled.div<{ isSelected: boolean }>`
     isSelected ? '#444' : 'transparent'};
   &:hover {
     background-color: #444;
-    color: #c6caa6;
+    color: #87bdd8;
   }
 `;

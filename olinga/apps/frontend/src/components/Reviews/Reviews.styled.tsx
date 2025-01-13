@@ -131,7 +131,7 @@ export const ReviewItem = styled.div`
     text-align: right;
     font-size: 18px;
     font-weight: bold;
-    color: #c6caa6;
+    color: #87bdd8;
   }
 
   @media (max-width: 768px) {

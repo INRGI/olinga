@@ -44,7 +44,7 @@ align-items: center;
 h3 {
     font-size: 22px;
     line-height: 1.2;
-    color: #c6caa6;
+    color: #87bdd8;
     margin: 0;
     padding: 0;
     font-weight: 300;

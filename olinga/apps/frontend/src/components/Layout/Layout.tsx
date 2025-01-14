@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import HeaderBlock from '../HeaderBlock';
 import Footer from '../Footer';
+import { ToastContainer } from 'react-toastify';
 
 const Layout: React.FC = () => {
   return (
@@ -11,6 +12,7 @@ const Layout: React.FC = () => {
         <Outlet />
       </Suspense>
       <Footer />
+      <ToastContainer />
     </>
   );
 };

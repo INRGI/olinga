@@ -15,7 +15,7 @@ export class Category extends Document {
   @Prop({ type: Map, of: String })
   details: Record<string, string>;
 
-  @Prop({ required: true })
+  @Prop({type: String})
   imageUrl: string;
 }
 

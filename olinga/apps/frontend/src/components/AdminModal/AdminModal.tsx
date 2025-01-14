@@ -65,7 +65,6 @@ const AdminModal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
           padding: 0,
           border: 'none',
           background: 'none',
-          maxWidth: '900px',
           inset: 'unset',
           overflow: 'hidden',
           animation: `${isOpen ? fadeIn : fadeOut} 0.3s ease-in-out`,

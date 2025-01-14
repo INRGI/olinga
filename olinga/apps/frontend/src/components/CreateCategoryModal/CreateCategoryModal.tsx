@@ -35,6 +35,18 @@ const CreateCategoryForm: React.FC<CreateCategoryFormProps> = ({
   const [image, setImage] = useState<File | null>(null);
 
   const handleCreateCategory = async (categoryData: CreatedCategory) => {
+    const isFieldsValid =
+      categoryData.title.pl &&
+      categoryData.title.uk &&
+      categoryData.title.ru &&
+      categoryData.details.pl &&
+      categoryData.details.uk &&
+      categoryData.details.ru;
+
+    if (!isFieldsValid) {
+      toastError('Please fill out all fields.');
+      return;
+    }
     if (!image) {
       toastError('Please upload an image.');
       return;

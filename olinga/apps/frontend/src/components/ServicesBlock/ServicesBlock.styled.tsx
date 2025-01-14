@@ -103,9 +103,9 @@ export const PromotionText = styled.p`
   color: black;
   margin: 0;
   padding: 10px;
-  background-color: #c6caa6;
+  background-color: #87bdd8;
   text-transform: uppercase;
-  border-bottom: 4px solid #949874;
+  border-bottom: 4px solid #76a7c0;
 
   @media (max-width: 425px) {
     font-size: 12px;
@@ -158,7 +158,7 @@ export const CategoryCard = styled.div`
 export const Button = styled(NavLink)`
   padding: 9px;
   text-decoration: none;
-  background-color: #c6caa6;
+  background-color: #87bdd8;
   color: black;
   border: none;
   border-radius: 6px;

@@ -1,15 +1,16 @@
-import styled from "@emotion/styled";
 import React, { useState } from "react";
+import styled from "@emotion/styled";
 
-const InputWrapper = styled.div`
+const TextareaWrapper = styled.div`
   position: relative;
   width: 85%;
 `;
+
 const StyledLabel = styled.label<{ isFocused: boolean }>`
   position: absolute;
-  top: ${({ isFocused }) => (isFocused ? "-8px" : "50%")};
+  top: ${({ isFocused }) => (isFocused ? "-8px" : "15px")};
   left: 15px;
-  transform: translateY(${({ isFocused }) => (isFocused ? "0" : "-50%")});
+  transform: translateY(${({ isFocused }) => (isFocused ? "0" : "0")});
   font-size: ${({ isFocused }) => (isFocused ? "12px" : "16px")};
   color: ${({ isFocused }) => (isFocused ? "#6a5acd" : "#b0b0b0")};
   pointer-events: none;
@@ -21,33 +22,31 @@ const StyledLabel = styled.label<{ isFocused: boolean }>`
   border-radius: 4px;
 `;
 
-
-const StyledInput = styled.input`
+const StyledTextarea = styled.textarea`
   width: 100%;
+  min-height: 85px;
   padding: 15px;
-  padding-top: 20px;
   border: 1px solid #4f4f4f;
   border-radius: 8px;
   font-size: 16px;
   background-color: #2b2b2b;
   color: #f0f0f0;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  resize: vertical;
+  transition: border-color 0.3s;
 
   &:focus {
     border-color: #6a5acd;
-    box-shadow: 0 0 8px rgba(106, 90, 205, 0.5);
     outline: none;
   }
 `;
 
-const FloatingLabelInput = ({
+const TextareaInput = ({
   value,
   onChange,
   placeholder,
 }: {
-  value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholder: string;
 }) => {
   const [isFocused, setIsFocused] = useState(false);
@@ -56,17 +55,16 @@ const FloatingLabelInput = ({
   const handleBlur = () => setIsFocused(value !== "");
 
   return (
-    <InputWrapper>
+    <TextareaWrapper>
       <StyledLabel isFocused={isFocused || value !== ""}>{placeholder}</StyledLabel>
-      <StyledInput
+      <StyledTextarea
         value={value}
         onChange={onChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        required
       />
-    </InputWrapper>
+    </TextareaWrapper>
   );
 };
 
-export default FloatingLabelInput;
+export default TextareaInput;

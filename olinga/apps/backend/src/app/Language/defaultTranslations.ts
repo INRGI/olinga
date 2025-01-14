@@ -635,6 +635,14 @@ export const defaultTranslations = [
     },
   },
   {
+    key: 'MassagesBlock.noMassages',
+    translations: {
+      pl: 'Obecnie nie ma żadnych masazów',
+      uk: 'На даний момент масажів немає',
+      ru: 'На данный момент массажей нет',
+    },
+  },
+  {
     key: 'ServicesBlock.description',
     translations: {
       pl: 'Nasz salon oferuje Państwu usługi masażu, które wzmacniają zdrowie, podnoszą witalność, przywracają blask życia i dobre samopoczucie. Masaż to doskonały sposób profilaktyki, przyjemne i naturalne lekarstwo w leczeniu wielu schorzeń.',

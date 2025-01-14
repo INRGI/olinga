@@ -32,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
             {t('sidebar.main')}
           </NavLink>
           <NavLink
-            to="/massages"
+            to="/categories"
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           >
             {t('sidebar.massages')}

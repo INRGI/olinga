@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Category } from '../../pages/AdminDashboard/CategoryService';
 import AdminModal from '../AdminModal';
 import {
@@ -16,7 +16,11 @@ interface EditCategoryModalProps {
   isOpen: boolean;
   category: Category | null;
   onClose: () => void;
-  onSave: (updatedCategory: Category, image?: File | null) => void;
+  onSave: (
+    categoryId: string,
+    updatedCategory: Category,
+    image?: File | null
+  ) => void;
 }
 
 const EditCategoryModal: React.FC<EditCategoryModalProps> = ({
@@ -32,6 +36,11 @@ const EditCategoryModal: React.FC<EditCategoryModalProps> = ({
   const [previewImage, setPreviewImage] = useState<string | null>(
     category?.imageUrl || null
   );
+
+  useEffect(() => {
+    setEditingCategory(category);
+    setPreviewImage(category?.imageUrl || null);
+  }, [category]);
 
   if (!editingCategory) return null;
 
@@ -123,7 +132,7 @@ const EditCategoryModal: React.FC<EditCategoryModalProps> = ({
         <SaveButton
           onClick={() => {
             if (editingCategory) {
-              onSave(editingCategory, image);
+              onSave(editingCategory._id, editingCategory, image);
             }
           }}
         >

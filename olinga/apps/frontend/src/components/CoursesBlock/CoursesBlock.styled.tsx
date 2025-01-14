@@ -55,7 +55,7 @@ export const LeftBlock = styled.div`
     opacity: 0.7;
 
     &.swiper-pagination-bullet-active {
-      background: #c6caa6;
+      background: #87bdd8;
     }
   }
 

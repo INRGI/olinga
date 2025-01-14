@@ -30,14 +30,14 @@ export const SidebarContent = styled.div`
     transition: all 0.5s ease;
 
     &:hover {
-      background-color: #c6caa6;
-      color: #fff;
+      background-color: #87bdd8;
+      color: #000;
       transform: translateX(5px);
     }
 
     &.active {
-      background-color: #c6caa6;
-      color: #fff;
+      background-color: #87bdd8;
+      color: #000;
       transform: translateX(5px);
     }
   }

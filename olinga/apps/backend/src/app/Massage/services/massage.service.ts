@@ -37,21 +37,28 @@ export class MassageService {
     return this.massageModel.findById(id).exec();
   }
 
-  async updateMassage(
+  async getMassagesByCategory(categoryId: string): Promise<Massage[]> {
+    return this.massageModel.find({ categoryId: categoryId }).exec();
+  }
+
+  async updateMassageImage(
     id: string,
-    updateMassageDto: UpdateMassageDto,
     file?: any
   ): Promise<Massage> {
-    if (file) {
       const existingMassage = await this.massageModel.findById(id).exec();
-      if (existingMassage && existingMassage.imageUrl) {
+      if (existingMassage.imageUrl) {
         await this.deleteImage(existingMassage.imageUrl);
       }
 
       const imageUrl = await this.saveImage(file);
-      updateMassageDto.imageUrl = imageUrl;
-    }
+      const updateMassageDto = { imageUrl };
 
+    return this.massageModel
+      .findByIdAndUpdate(id, updateMassageDto, { new: true })
+      .exec();
+  }
+
+  async updateWithoutImage(id: string, updateMassageDto: UpdateMassageDto) {
     return this.massageModel
       .findByIdAndUpdate(id, updateMassageDto, { new: true })
       .exec();
@@ -93,9 +100,9 @@ export class MassageService {
       imageUrl.replace('uploads/', '')
     );
     if (fs.existsSync(filePath)) {
-      fs.unlink(filePath, (err) => {
-        fs.unlinkSync(filePath);
-      });
+      fs.unlinkSync(filePath);
+    } else {
+      console.log('File does not exist:', filePath);
     }
   }
 }

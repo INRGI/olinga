@@ -63,7 +63,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   padding: 15px;
   margin: 15px 0;
-  background-color: #c6caa6;
+  background-color: #87bdd8;
   color: #2b2b2b;
   border: none;
   border-radius: 8px;
@@ -74,7 +74,7 @@ export const Button = styled.button`
   transition: color 0.3s;
 
   &:hover {
-    background-color: #8e9177;
+    background-color: #76a7c0;
     color: white;
   }
 `;
@@ -117,8 +117,8 @@ export const Checkbox = styled.input`
   transition: background-color 0.3s, border-color 0.3s;
 
   &:checked {
-    background-color: #c6caa6;
-    border-color: #c6caa6;
+    background-color: #87bdd8;
+    border-color: #87bdd8;
   }
 
   &:focus {

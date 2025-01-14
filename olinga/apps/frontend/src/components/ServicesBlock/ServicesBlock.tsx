@@ -49,7 +49,7 @@ const ServicesBlock: React.FC = () => {
             )}
             <h3>{category.title[i18n.language]}</h3>
             <p>{category.details[i18n.language]}</p>
-            <Button to={`/services/${category._id}`}>{t('courses.button')} <TfiMore /></Button>
+            <Button to={`/massages/${category._id}`}>{t('courses.button')} <TfiMore /></Button>
           </CategoryCard>
         ))}
       </RightContainer>

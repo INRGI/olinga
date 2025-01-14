@@ -25,7 +25,11 @@ import { FaPlus } from 'react-icons/fa';
 import CreateMassageForm from '../CreateMassageForm/CreateMassageForm';
 import CreateCategoryForm from '../CreateCategoryModal/CreateCategoryModal';
 import EditCategoryModal from '../EditCategoryForm/EditCategoryForm';
-import { deleteMassage, getMassagesByCategory, updateMassage } from '../../pages/AdminDashboard/MassageService';
+import {
+  deleteMassage,
+  getMassagesByCategory,
+  updateMassage,
+} from '../../pages/AdminDashboard/MassageService';
 import EditMassageModal from '../EditMassageForm/EditMassageForm';
 
 export type CreatedCategory = Omit<Category, '_id' | 'massages'>;
@@ -293,7 +297,9 @@ const CategoryAdmin: React.FC = () => {
               </MassageCard>
             ))
           ) : (
-            <MassageCard style={{ cursor: 'default' }}>No massages available. Create one.</MassageCard>
+            <MassageCard style={{ cursor: 'default' }}>
+              No massages available. Create one.
+            </MassageCard>
           )}
         </MassagesContainer>
       </RightContainer>
@@ -316,14 +322,20 @@ const CategoryAdmin: React.FC = () => {
       {creatingItem && (
         <CreateCategoryForm
           isOpen={categoryCreateModalOpen}
-          onClose={() => handleCloseModal()}
+          onClose={() => {
+            handleCloseModal();
+            fetchCategories();
+          }}
           initialData={creatingItem}
         />
       )}
       {activeCategory && creatingMassageItem && (
         <CreateMassageForm
           isOpen={massageCreateModalOpen}
-          onClose={() => handleCloseModal()}
+          onClose={() => {
+            handleCloseModal();
+            fetchMassagesByCategory();
+          }}
           initialData={creatingMassageItem}
           categoryId={activeCategory}
         />

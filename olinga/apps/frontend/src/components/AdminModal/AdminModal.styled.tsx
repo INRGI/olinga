@@ -10,7 +10,6 @@ export const ModalContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 `;
 
 export const ModalContent = styled.div`
@@ -79,6 +78,7 @@ export const ModalBody = styled.div`
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.1s;
+    z-index: 999;
 
     &:hover {
       background-color: #5941a9;

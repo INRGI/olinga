@@ -20,9 +20,10 @@ import {
   CardContainer,
   TopContainer,
   MassagesBlockHeader,
-  ButtonBack
+  ButtonBack,
 } from './Massages.styled';
 import { BsDot } from 'react-icons/bs';
+import MassageDetailsModal from '../../components/MassageDetailsModal';
 
 const Massages: React.FC = () => {
   const categoryId = useParams().categoryId || '';
@@ -31,6 +32,8 @@ const Massages: React.FC = () => {
   const [noMassages, setNoMassages] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedMassage, setSelectedMassage] = useState<Massage | null>(null);
 
   const fetchCategoryById = async () => {
     try {
@@ -59,6 +62,11 @@ const Massages: React.FC = () => {
     }`.trim();
   };
 
+  const handleOpenModal = (massage: Massage) => {
+    setSelectedMassage(massage);
+    setModalIsOpen(true);
+  };
+
   if (noMassages)
     return <Placeholder>{t('MassagesBlock.noMassages')}</Placeholder>;
 
@@ -69,7 +77,9 @@ const Massages: React.FC = () => {
           <h2>{category?.title[i18n.language]}</h2>
           <p>{t('ServicesBlock.subhead2')}</p>
         </MassagesBlockHeader>
-        <ButtonBack to={location.state?.from || '/' }>{t('MassagesBlock.back')}</ButtonBack>
+        <ButtonBack to={location.state?.from || '/'}>
+          {t('MassagesBlock.back')}
+        </ButtonBack>
       </TopContainer>
 
       <Container>
@@ -101,13 +111,20 @@ const Massages: React.FC = () => {
                       {formatDuration(Number(massage.duration))}
                     </h4>
                   </DateContainer>
-                  <Button>{t('courses.button')}</Button>
+                  <Button onClick={() => handleOpenModal(massage)}>
+                    {t('courses.button')}
+                  </Button>
                 </ButtonContainer>
               </Content>
             </Overlay>
           </Card>
         ))}
       </Container>
+      <MassageDetailsModal
+        isOpen={modalIsOpen}
+        onClose={() => setModalIsOpen(false)}
+        initialData={selectedMassage}
+      />
     </CardContainer>
   );
 };

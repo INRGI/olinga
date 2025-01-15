@@ -1,14 +1,61 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-between;
+`;
+export const TopContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  padding-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 425px) {
+   padding-bottom: 10px;
+  }
+`;
+
+export const MassagesBlockHeader = styled.div`
+  width: 100%;
+  max-width: 400px;
+
+  h2 {
+    font-size: 25px;
+    line-height: 1.2;
+    color: white;
+    margin: 0;
+    font-weight: 500;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+  }
+
+  p {
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (max-width: 425px) {
+    h2{
+      font-size: 20px;
+    }
+    p{
+      font-size: 14px;
+    };
+  }
+`;
+
+export const CardContainer = styled.div`
   padding: 20px;
   background-color: #121212;
   min-height: 100vh;
-
   margin-top: 68px;
   @media (max-width: 1024px) {
     margin-top: 48px;
@@ -16,6 +63,7 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     margin-top: 52px;
+    padding: 20px;
   }
 
   @media (max-width: 425px) {
@@ -49,12 +97,20 @@ export const Card = styled.div<{ background: string }>`
   &:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
   }
+
+  @media (max-width: 768px) {
+    width: 350px;
+  }
+
+  @media (max-width: 425px) {
+    width: 100%;
+  }
 `;
 
 export const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 0px;
   display: flex;
@@ -63,50 +119,98 @@ export const Overlay = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 1.5em;
   font-weight: bold;
   width: 100%;
   margin: 0;
   background: rgba(0, 0, 0, 0.7);
   padding: 20px;
-  text-overflow: ellipsis;
+
+  h3 {
+    padding: 0;
+    margin: 0;
+    max-width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre-wrap;
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 10px;
+    h3 {
+      font-size: 18px;
+      max-width: 340px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    h3 {
+      max-width: 300px;
+    }
+  }
 `;
 
 export const Content = styled.div`
+  padding: 10px;
   ul {
     list-style: none;
     padding: 0;
     margin: 0 0 16px;
 
     li {
+      display: flex;
+      padding: 0;
+      align-items: center;
       margin-bottom: 8px;
-      font-size: 0.9em;
-      
-    }
-  }
+      font-size: 14px;
+      align-content: center;
 
-  div {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9em;
-    color: #d1d1d1;
-    margin-bottom: 16px;
+      @media (max-width: 425px) {
+        font-size: 12px;
+      }
+    }
   }
 `;
 
 export const Button = styled.button`
-  background-color: #d1b567;
-  color: #1c1c1c;
+  border: none;
+  padding: 9px;
+  text-decoration: none;
+  background-color: #87bdd8;
+  color: black;
   border: none;
   border-radius: 6px;
-  padding: 10px;
-  font-size: 1em;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center;
+  max-width: 180px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
 
   &:hover {
-    background-color: #e0c072;
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 425px) {
+    width: 90%;
+  }
+
+  @media (max-width: 320px) {
+    width: 70%;
+    font-size: 13px;
   }
 `;
 
@@ -115,4 +219,66 @@ export const Placeholder = styled.div`
   font-size: 1.2em;
   text-align: center;
   margin-top: 20px;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding-left: 10px;
+
+  @media (max-width: 320px) {
+    gap: 10px;
+  }
+`;
+
+export const DateContainer = styled.div`
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 375px) {
+      font-size: 12px;
+    }
+  }
+`;
+
+export const ButtonBack = styled(NavLink)`
+  padding: 15px;
+  text-decoration: none;
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+  max-width: 200px;
+
+  &:hover {
+    background-color: #444;
+  }
+
+
+  @media (max-width: 425px) {
+    display: none;
+  }
 `;

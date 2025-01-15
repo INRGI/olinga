@@ -93,7 +93,6 @@ export class MassageController {
 
   @Put(':id')
   async updateWithoutImage(@Param('id') id: string, @Body() massageData: any) {
-    console.log(massageData);
     return this.massageService.updateWithoutImage(id, massageData);
   }
 

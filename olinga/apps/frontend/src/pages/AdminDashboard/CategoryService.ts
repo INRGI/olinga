@@ -34,6 +34,16 @@ export const getCategories = async (): Promise<any[]> => {
   }
 };
 
+export const getCategoryById = async (id: string): Promise<Category | null> => {
+  try {
+    const response = await axios.get(`${API_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching category:', error);
+    return null;
+  }
+};
+
 export const createCategory = async (
   categoryData: {
     title: Record<string, string>;

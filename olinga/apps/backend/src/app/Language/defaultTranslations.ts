@@ -1,4 +1,20 @@
 export const defaultTranslations = [
+  {
+    key: 'time.hours',
+    translations: {
+      pl: 'godzina',
+      uk: 'година',
+      ru: 'час',
+    }
+  },
+  {
+    key: 'time.minutes',
+    translations: {
+      pl: 'minut',
+      uk: 'хвилин',
+      ru: 'минут',
+    }
+  },
   // NotFound
   {
     key: 'notFound.title',
@@ -640,6 +656,14 @@ export const defaultTranslations = [
       pl: 'Obecnie nie ma żadnych masazów',
       uk: 'На даний момент масажів немає',
       ru: 'На данный момент массажей нет',
+    },
+  },
+  {
+    key: 'MassagesBlock.back',
+    translations: {
+      pl: 'Powróć',
+      uk: 'Повернуться',
+      ru: 'Вернуться',
     },
   },
   {

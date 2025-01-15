@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Massage } from '../../pages/AdminDashboard/CategoryService';
+import {
+  Category,
+  Massage,
+  getCategoryById,
+} from '../../pages/AdminDashboard/CategoryService';
 import { getMassagesByCategory } from '../../pages/AdminDashboard/MassageService';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import {
   Button,
   Card,
@@ -11,13 +15,31 @@ import {
   Overlay,
   Title,
   Placeholder,
+  ButtonContainer,
+  DateContainer,
+  CardContainer,
+  TopContainer,
+  MassagesBlockHeader,
+  ButtonBack
 } from './Massages.styled';
+import { BsDot } from 'react-icons/bs';
 
 const Massages: React.FC = () => {
   const categoryId = useParams().categoryId || '';
+  const [category, setCategories] = useState<Category | null>(null);
   const [massages, setMassages] = useState<Massage[]>([]);
   const [noMassages, setNoMassages] = useState(false);
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+
+  const fetchCategoryById = async () => {
+    try {
+      const data = await getCategoryById(categoryId);
+      setCategories(data);
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+    }
+  };
 
   useEffect(() => {
     const fetchMassages = async () => {
@@ -25,37 +47,68 @@ const Massages: React.FC = () => {
       if (data.length === 0) setNoMassages(true);
       setMassages(data);
     };
-
+    fetchCategoryById();
     fetchMassages();
   }, [categoryId]);
+
+  const formatDuration = (minutes: number) => {
+    const hours = Math.floor(minutes / 60);
+    const remainingMinutes = minutes % 60;
+    return `${hours > 0 ? `${hours} ${t('time.hours')}` : ''} ${
+      remainingMinutes > 0 ? `${remainingMinutes} ${t('time.minutes')}` : ''
+    }`.trim();
+  };
 
   if (noMassages)
     return <Placeholder>{t('MassagesBlock.noMassages')}</Placeholder>;
 
   return (
-    <Container>
-      {massages.map((massage) => (
-        <Card key={massage._id} background={massage?.imageUrl || ''}>
-          <Overlay>
-            <Title>{massage.title[i18n.language]}</Title>
-            <Content>
-              <ul>
-                {[massage.details1, massage.details2, massage.details3, massage.details4]
-                  .filter(Boolean)
-                  .map((detail, index) => (
-                    <li key={index}>{detail[i18n.language]}</li>
-                  ))}
-              </ul>
-              <div>
-                <span>{`${massage.price} ${t('currency')}`}</span>
-                <span>{`${massage.duration} ${t('minutes')}`}</span>
-              </div>
-              <Button>{t('courses.button')}</Button>
-            </Content>
-          </Overlay>
-        </Card>
-      ))}
-    </Container>
+    <CardContainer>
+      <TopContainer>
+        <MassagesBlockHeader>
+          <h2>{category?.title[i18n.language]}</h2>
+          <p>{t('ServicesBlock.subhead2')}</p>
+        </MassagesBlockHeader>
+        <ButtonBack to={location.state?.from || '/' }>{t('MassagesBlock.back')}</ButtonBack>
+      </TopContainer>
+
+      <Container>
+        {massages.map((massage) => (
+          <Card key={massage._id} background={massage?.imageUrl || ''}>
+            <Overlay>
+              <Title>
+                <h3>{massage.title[i18n.language]}</h3>
+              </Title>
+              <Content>
+                <ul>
+                  {[
+                    massage.details1,
+                    massage.details2,
+                    massage.details3,
+                    massage.details4,
+                  ]
+                    .filter(Boolean)
+                    .map((detail, index) => (
+                      <li key={index}>
+                        <BsDot size={30} /> {detail[i18n.language]}
+                      </li>
+                    ))}
+                </ul>
+                <ButtonContainer>
+                  <DateContainer>
+                    <h4>
+                      {`${massage.price} zl`} /{' '}
+                      {formatDuration(Number(massage.duration))}
+                    </h4>
+                  </DateContainer>
+                  <Button>{t('courses.button')}</Button>
+                </ButtonContainer>
+              </Content>
+            </Overlay>
+          </Card>
+        ))}
+      </Container>
+    </CardContainer>
   );
 };
 

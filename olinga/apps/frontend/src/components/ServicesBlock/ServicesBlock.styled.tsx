@@ -127,10 +127,14 @@ export const CategoryCard = styled.div`
 
   img {
     width: 100%;
-    height: 300px;
+    height: 325px;
     object-fit: cover;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+
+    @media (max-width: 425px) {
+    width: 400px;
+  }
   }
 
   h3 {
@@ -182,5 +186,13 @@ export const Button = styled(NavLink)`
   @media (max-width: 425px) {
     width: 100%;
     max-width: 90%;
+  }
+
+  @media (max-width: 375px) {
+    max-width: 88%;
+  }
+
+  @media (max-width: 320px) {
+    max-width: 86%;
   }
 `;

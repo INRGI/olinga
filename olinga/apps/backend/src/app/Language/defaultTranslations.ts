@@ -432,6 +432,31 @@ export const defaultTranslations = [
       ru: 'Заказать сертификат ',
     },
   },
+  // Sertificate COURSES
+  {
+    key: 'sertificate_courses.head',
+    translations: {
+      pl: 'Zostań profesjonalistą na czas',
+      uk: 'Встигни стати професіоналом',
+      ru:'Успей стать профессионалом ',
+    },
+  },
+  {
+    key: 'sertificate_courses.text',
+    translations: {
+      pl: 'Zapisz się na kursy masażu! Ograniczona liczba miejsc – nie przegap swojej szansy, aby zostać profesjonalnym masażystą!',
+      uk: 'Встигніть записатися на курси масажу! Обмежена кількість місць – не пропустіть свій шанс стати професійним масажистом!',
+      ru: 'Успейте записаться на курсы массажа! Ограниченное количество мест — не упустите свой шанс стать профессиональным массажистом!',
+    },
+  },
+  {
+    key: 'sertificate_courses.button',
+    translations: {
+      pl: 'Zapisz się',
+      uk: 'Записатися',
+      ru: 'Записаться',
+    },
+  },
   // courses
   {
     key: 'courses.head',
@@ -479,6 +504,104 @@ export const defaultTranslations = [
       ru: 'Подробнее',
     },
   },
+  // Courses QA
+  {
+    key: 'courses_qa.head',
+    translations: {
+      pl: 'Najczęściej zadawane pytania',
+      uk: 'ПОШИРЕНІ ЗАПИТАННЯ',
+      ru: 'Часто задаваемые вопросы',
+    },
+  },
+  {
+    key: 'courses_qa.subhead',
+    translations: {
+      pl: 'i odpowiedzi na nie',
+      uk: 'та відповіді на них',
+      ru: 'и ответы на них',
+    },
+  },
+  {
+    key: 'courses_qa.question1',
+    translations: {
+      pl: 'Jak zapisać się na kursy masażu?',
+      uk: 'Як записатися на курси масажу?',
+      ru: 'Как записаться на курсы массажа',
+    },
+  },
+  {
+    key: 'courses_qa.question2',
+    translations: {
+      pl: 'Jakie programy szkoleniowe oferuje wasza szkoła masażu?',
+      uk: 'Які програми навчання пропонує ваша школа масажу?',
+      ru: 'Какие программы обучения предлагает ваша школа массажа?',
+    },
+  },
+  {
+    key: 'courses_qa.question3',
+    translations: {
+      pl: 'Jakie kwalifikacje mają wasi wykładowcy?',
+      uk: 'Які кваліфікації мають ваші викладачі?',
+      ru: 'Какие квалификации имеют ваши преподаватели?',
+    },
+  },
+  {
+    key: 'courses_qa.question4',
+    translations: {
+      pl: 'Czy macie możliwość praktyki na prawdziwych klientach?',
+      uk: 'Чи є у вас можливість практики на реальних клієнтах?',
+      ru: 'Есть ли у вас возможность практики на реальных клиентах?',
+    },
+  },
+  {
+    key: 'courses_qa.question5',
+    translations: {
+      pl: 'Ile osób jest w grupie?',
+      uk: 'Яка кількість студентів у групі?',
+      ru: 'Какое количество студентов в группе?',
+    },
+  },
+  {
+    key: 'courses_qa.answer1',
+    translations: {
+      pl: 'Możesz zapisać się na kursy przez naszą stronę internetową, telefonicznie lub odwiedzając nasz salon. Oferujemy również konsultacje, aby pomóc Ci wybrać odpowiedni program. Po złożeniu zgłoszenia nasi menedżerowie skontaktują się z Tobą. Lub zadzwoń na numery: +48 515 732 832',
+      uk: `Ви можете записатися на курси через наш сайт, за телефоном або відвідавши наш салон. Ми також проводимо консультації, щоб допомогти вам обрати підходящу програму. Залишивши заявку, наші менеджери зв'яжуться з Вами. Або зателефонуйте телефоном: +48 515 732 832`,
+      ru: 'Вы можете записаться на курсы через наш сайт, по телефону или посетив наш салон. Мы также проводим консультации, чтобы помочь вам выбрать подходящую программу. Оставив заявку, наши менеджеры свяжутся с вами. Или позвоните по телефонам: +48 515 732 832',
+    },
+  },
+  {
+    key: 'courses_qa.answer2',
+    translations: {
+        pl: 'Nasza szkoła oferuje podstawowy kurs masażu, zaawansowane kursy, a także specjalistyczne programy, takie jak masaż leczniczy, masaż sportowy.',
+        uk: 'Наша школа пропонує базовий курс масажу, просунуті курси, а також спеціалізовані програми, такі як лікувальний масаж, спортивний масаж.',
+        ru: 'Наша школа предлагает базовый курс массажа, продвинутые курсы, а также специализированные программы, такие как лечебный массаж, спортивный массаж.',
+    },
+},
+{
+    key: 'courses_qa.answer3',
+    translations: {
+        pl: 'Wszyscy nasi wykładowcy mają wieloletnie doświadczenie w dziedzinie masażu, posiadają certyfikaty i dyplomy, a także regularnie odbywają kursy doskonalenia zawodowego.',
+        uk: 'Всі наші викладачі мають багаторічний досвід роботи у сфері масажу, володіють сертифікатами та дипломами, а також регулярно проходять курси підвищення кваліфікації.',
+        ru: 'Все наши преподаватели имеют многолетний опыт работы в сфере массажа, обладают сертификатами и дипломами, а также регулярно проходят курсы повышения квалификации.',
+    },
+},
+{
+    key: 'courses_qa.answer4',
+    translations: {
+        pl: 'Tak, podczas nauki odbędziesz zajęcia praktyczne, pracując z prawdziwymi klientami pod kierunkiem doświadczonych instruktorów.',
+        uk: 'Так, під час навчання ви будете проходити практичні заняття, працюючи з реальними клієнтами під керівництвом досвідчених інструкторів.',
+        ru: 'Да, во время обучения вы будете проходить практические занятия, работая с реальными клиентами под руководством опытных инструкторов.',
+    },
+},
+{
+    key: 'courses_qa.answer5',
+    translations: {
+        pl: 'Starannie dobieramy małe grupy (do 5-10 osób), aby zapewnić indywidualne podejście do każdego studenta.',
+        uk: 'Ми намагаємося формувати невеликі групи (до 5-10 осіб), щоб забезпечити індивідуальний підхід до кожного студента.',
+        ru: 'Мы стараемся формировать небольшие группы (до 5-10 человек), чтобы обеспечить индивидуальный подход к каждому студенту.',
+    },
+},
+
   // Benefits
   {
     key: 'benefits.head',
@@ -611,6 +734,55 @@ export const defaultTranslations = [
   },
   {
     key: 'banner.button',
+    translations: {
+      pl: 'ZAPISAĆ SIĘ',
+      uk: 'Записатися',
+      ru: 'Записаться',
+    },
+  },
+  // Banner Courses
+  {
+    key: 'banner_courses.head',
+    translations: {
+      pl: 'KURSY MASAŻU',
+      uk: 'КУРСИ МАСАЖУ',
+      ru: 'КУРСЫ МАССАЖА',
+    },
+  },
+  {
+    key: 'banner_courses.subhead',
+    translations: {
+      pl: 'NAUCZCIE SIĘ AUTORSKICH TECHNIK MASAŻU',
+      uk: 'НАВЧІТЬСЯ АВТОРСЬКИМ МЕТОДИКАМ МАСАЖУ',
+      ru: 'НАУЧИТЕСЬ АВТОРСКИМ МЕТОДИКАМ МАССАЖА',
+    },
+  },
+  {
+    key: 'banner_courses.text1',
+    translations: {
+      pl: 'PROGRAMY ZOSTAŁY OPRACOWANE PRZEZ PRAWDZIWYCH SPECJALISTÓW W DZIEDZINIE MASAŻU',
+      uk: 'ПРОГРАМИ РОЗРОБЛЕНІ СПРАВЖНІМИ ФАХІВЦЯМИ В ГАЛУЗІ МАСАЖУ',
+      ru: 'ПРОГРАММЫ РАЗРАБОТАНЫ НАСТОЯЩИМИ СПЕЦИАЛИСТАМИ В ОБЛАСТИ МАССАЖА',
+    },
+  },
+  {
+    key: 'banner_courses.text2',
+    translations: {
+      pl: 'DUŻA PRAKTYKA POD KIERUNKIEM DOŚWIADCZONYCH INSTRUKTORÓW',
+      uk: 'ВЕЛИКА ПРАКТИКА ПІД КЕРІВНИЦТВОМ ДОСВІДЧЕНИХ ІНСТРУКТОРІВ',
+      ru: 'БОЛЬШАЯ ПРАКТИКА ПОД РУКОВОДСТВОМ ОПЫТНЫХ ИНСТРУКТОРОВ',
+    },
+  },
+  {
+    key: 'banner_courses.text3',
+    translations: {
+      pl: 'DOBIERAMY INDYWIDUALNE PODEJŚCIE DO KAŻDEGO UCZNIA',
+      uk: 'ПІДБИРАЄМО ІНДИВІДУАЛЬНИЙ ПІДХІД ДО КОЖНОГО УЧНЯ',
+      ru: 'ПОДБИРАЕМ ИНДИВИДУАЛЬНЫЙ ПОДХОД К КАЖДОМУ УЧЕНИКУ',
+    },
+  },
+  {
+    key: 'banner_courses.button',
     translations: {
       pl: 'ZAPISAĆ SIĘ',
       uk: 'Записатися',

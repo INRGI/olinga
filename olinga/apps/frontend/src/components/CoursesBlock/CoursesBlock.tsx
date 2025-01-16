@@ -2,18 +2,18 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { AbooutUsHeader } from '../AboutUs/AboutUs.styled';
 import { Button, Container, LeftBlock, RightBlock, RightText, RightTextBold, SwiperSlideStyled } from './CoursesBlock.styled';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 import 'swiper/css/autoplay';
 import 'swiper/css';
 import 'swiper/css/pagination';
-
-// import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
+import { useLocation } from 'react-router-dom';
 
 const images = ['/public/school1.webp', '/public/school2.webp'];
 
 const CoursesBlock: React.FC = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   return (
     <Container>
       <LeftBlock>
@@ -41,8 +41,7 @@ const CoursesBlock: React.FC = () => {
         </AbooutUsHeader>
         <RightText>{t('courses.text')}</RightText>
         <RightTextBold>{t('courses.text2')}</RightTextBold>
-
-        <Button to="/courses">{t('courses.button')}</Button>
+          {location.pathname !== '/courses' && <Button to="/courses">{t('courses.button')}</Button>}
       </RightBlock>
     </Container>
   );

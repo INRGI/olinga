@@ -5,6 +5,7 @@ import { Button, Container } from "./AdminDashboard.styled";
 import { LuLogOut } from "react-icons/lu";
 import CategoryAdmin from "../../components/CategoryAdmin/CategoryAdmin";
 import { ToastContainer } from "react-toastify";
+import CourseAdmin from "../../components/CoursesAdmin/CoursesAdmin";
 
 
 const AdminDashboard: React.FC = () => {
@@ -18,8 +19,8 @@ const AdminDashboard: React.FC = () => {
 
   return (
     <Container>
-      {/* <CategoryManager /> */}
       <CategoryAdmin />
+      <CourseAdmin />
       <Button onClick={handleLogout}><LuLogOut /></Button>
       <ToastContainer />
     </Container>

@@ -31,8 +31,10 @@ import {
   updateMassage,
 } from '../../pages/AdminDashboard/MassageService';
 import EditMassageModal from '../EditMassageForm/EditMassageForm';
+import { Course } from '../../pages/AdminDashboard/CourseService';
 
 export type CreatedCategory = Omit<Category, '_id' | 'massages'>;
+export type CreatedCourse = Omit<Course, '_id'>;
 export type CreatedMassage = Omit<Massage, '_id'>;
 
 const CategoryAdmin: React.FC = () => {

@@ -10,7 +10,6 @@ import {
   FileContainer,
   RightContainer,
   SaveButton,
-  FileInput,
   PreviewButton,
   FileEditingInput,
 } from '../CreateMassageForm/CreateMassageForm.styled';

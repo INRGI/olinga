@@ -78,23 +78,6 @@ export const FileContainer = styled.div`
   padding: 0;
   margin: 0;
 `;
-export const FileInput = styled.input`
-  padding: 15px;
-  margin: 0;
-  border: 1px solid #4f4f4f;
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: #2b2b2b;
-  color: #f0f0f0;
-  transition: border-color 0.3s;
-  max-width: 465px;
-  width: 85%;
-
-  &:focus {
-    border-color: #6a5acd;
-    outline: none;
-  }
-`;
 
 export const FileEditingInput = styled.input`
   padding: 15px;
@@ -160,6 +143,26 @@ export const BlockHeader = styled.div`
     }
   }
 `;
+
+
+export const FileInput = styled.input`
+  padding: 15px;
+  margin: 0;
+  border: 1px solid #4f4f4f;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  transition: border-color 0.3s;
+  max-width: 465px;
+  width: 85%;
+
+  &:focus {
+    border-color: #6a5acd;
+    outline: none;
+  }
+`;
+
 
 export const PreviewButton = styled.a`
   display: flex;

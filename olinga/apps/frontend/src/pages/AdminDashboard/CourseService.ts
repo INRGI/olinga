@@ -7,7 +7,7 @@ export interface Course {
   details: Record<string, string>;
   frequency: Record<string, string>;
   price: number;
-  dateStart: Date;
+  dateStart: Date | null;
   imageUrl?: string;
 }
 

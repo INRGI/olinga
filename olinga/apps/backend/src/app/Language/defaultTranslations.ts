@@ -5,7 +5,7 @@ export const defaultTranslations = [
       pl: 'godzina',
       uk: 'година',
       ru: 'час',
-    }
+    },
   },
   {
     key: 'time.minutes',
@@ -13,7 +13,7 @@ export const defaultTranslations = [
       pl: 'minut',
       uk: 'хвилин',
       ru: 'минут',
-    }
+    },
   },
   // NotFound
   {
@@ -438,7 +438,7 @@ export const defaultTranslations = [
     translations: {
       pl: 'Zostań profesjonalistą na czas',
       uk: 'Встигни стати професіоналом',
-      ru:'Успей стать профессионалом ',
+      ru: 'Успей стать профессионалом ',
     },
   },
   {
@@ -572,35 +572,124 @@ export const defaultTranslations = [
   {
     key: 'courses_qa.answer2',
     translations: {
-        pl: 'Nasza szkoła oferuje podstawowy kurs masażu, zaawansowane kursy, a także specjalistyczne programy, takie jak masaż leczniczy, masaż sportowy.',
-        uk: 'Наша школа пропонує базовий курс масажу, просунуті курси, а також спеціалізовані програми, такі як лікувальний масаж, спортивний масаж.',
-        ru: 'Наша школа предлагает базовый курс массажа, продвинутые курсы, а также специализированные программы, такие как лечебный массаж, спортивный массаж.',
+      pl: 'Nasza szkoła oferuje podstawowy kurs masażu, zaawansowane kursy, a także specjalistyczne programy, takie jak masaż leczniczy, masaż sportowy.',
+      uk: 'Наша школа пропонує базовий курс масажу, просунуті курси, а також спеціалізовані програми, такі як лікувальний масаж, спортивний масаж.',
+      ru: 'Наша школа предлагает базовый курс массажа, продвинутые курсы, а также специализированные программы, такие как лечебный массаж, спортивный массаж.',
     },
-},
-{
+  },
+  {
     key: 'courses_qa.answer3',
     translations: {
-        pl: 'Wszyscy nasi wykładowcy mają wieloletnie doświadczenie w dziedzinie masażu, posiadają certyfikaty i dyplomy, a także regularnie odbywają kursy doskonalenia zawodowego.',
-        uk: 'Всі наші викладачі мають багаторічний досвід роботи у сфері масажу, володіють сертифікатами та дипломами, а також регулярно проходять курси підвищення кваліфікації.',
-        ru: 'Все наши преподаватели имеют многолетний опыт работы в сфере массажа, обладают сертификатами и дипломами, а также регулярно проходят курсы повышения квалификации.',
+      pl: 'Wszyscy nasi wykładowcy mają wieloletnie doświadczenie w dziedzinie masażu, posiadają certyfikaty i dyplomy, a także regularnie odbywają kursy doskonalenia zawodowego.',
+      uk: 'Всі наші викладачі мають багаторічний досвід роботи у сфері масажу, володіють сертифікатами та дипломами, а також регулярно проходять курси підвищення кваліфікації.',
+      ru: 'Все наши преподаватели имеют многолетний опыт работы в сфере массажа, обладают сертификатами и дипломами, а также регулярно проходят курсы повышения квалификации.',
     },
-},
-{
+  },
+  {
     key: 'courses_qa.answer4',
     translations: {
-        pl: 'Tak, podczas nauki odbędziesz zajęcia praktyczne, pracując z prawdziwymi klientami pod kierunkiem doświadczonych instruktorów.',
-        uk: 'Так, під час навчання ви будете проходити практичні заняття, працюючи з реальними клієнтами під керівництвом досвідчених інструкторів.',
-        ru: 'Да, во время обучения вы будете проходить практические занятия, работая с реальными клиентами под руководством опытных инструкторов.',
+      pl: 'Tak, podczas nauki odbędziesz zajęcia praktyczne, pracując z prawdziwymi klientami pod kierunkiem doświadczonych instruktorów.',
+      uk: 'Так, під час навчання ви будете проходити практичні заняття, працюючи з реальними клієнтами під керівництвом досвідчених інструкторів.',
+      ru: 'Да, во время обучения вы будете проходить практические занятия, работая с реальными клиентами под руководством опытных инструкторов.',
     },
-},
-{
+  },
+  {
     key: 'courses_qa.answer5',
     translations: {
-        pl: 'Starannie dobieramy małe grupy (do 5-10 osób), aby zapewnić indywidualne podejście do każdego studenta.',
-        uk: 'Ми намагаємося формувати невеликі групи (до 5-10 осіб), щоб забезпечити індивідуальний підхід до кожного студента.',
-        ru: 'Мы стараемся формировать небольшие группы (до 5-10 человек), чтобы обеспечить индивидуальный подход к каждому студенту.',
+      pl: 'Starannie dobieramy małe grupy (do 5-10 osób), aby zapewnić indywidualne podejście do każdego studenta.',
+      uk: 'Ми намагаємося формувати невеликі групи (до 5-10 осіб), щоб забезпечити індивідуальний підхід до кожного студента.',
+      ru: 'Мы стараемся формировать небольшие группы (до 5-10 человек), чтобы обеспечить индивидуальный подход к каждому студенту.',
     },
-},
+  },
+  // Courses page
+  {
+    key: 'courses_list.title',
+    translations: {
+      pl: 'KURSY MASAŻU',
+      uk: 'КУРСИ МАСАЖУ',
+      ru: 'КУРСЫ МАССАЖА',
+    },
+  },
+  {
+    key: 'courses_list.subtitle',
+    translations: {
+      pl: 'Pospiesz się i zapisz się na kurs',
+      uk: 'Встигни записатися на курс',
+      ru:'Успей записаться на курс',
+    },
+  },
+  {
+    key: 'courses_list.left',
+    translations: {
+      pl: 'Zostało:',
+      uk: 'Залишилось:',
+      ru:'Осталось:',
+    },
+  },
+  {
+    key: 'courses_list.starting',
+    translations: {
+      pl: 'Kurs poczyna się:',
+      uk: 'Курс починається:',
+      ru:'Курс начинается:',
+    },
+  },
+  {
+    key: 'courses_list.price',
+    translations: {
+      pl: 'Cena za kurs:',
+      uk: 'Ціна за курс:',
+      ru:'Цена за курс:',
+    },
+  },
+  {
+    key: 'courses_list.duration',
+    translations: {
+      pl: 'Częstotliwość zajęć:',
+      uk: 'Періодичність занять:',
+      ru:'Периодичность занятий:',
+    },
+  },
+  {
+    key: 'courses_time.days',
+    translations: {
+      pl: 'Dni',
+      uk: 'Днів',
+      ru: 'Дней',
+    },
+  },
+  {
+    key: 'courses_time.hours',
+    translations: {
+      pl: 'Godzin',
+      uk: 'Годин',
+      ru: 'Часов',
+    },
+  },
+  {
+    key: 'courses_time.minutes',
+    translations: {
+      pl: 'Minut',
+      uk: 'Хвилин',
+      ru: 'Минут',
+    },
+  },
+  {
+    key: 'courses_time.seconds',
+    translations: {
+      pl: 'Sekund',
+      uk: 'Секунд',
+      ru: 'Секунд',
+    },
+  },
+  {
+    key: 'courses_time.started',
+    translations: {
+      pl: 'Kurs rozpocząty',
+      uk: 'Курс розпочато',
+      ru: 'Курс начался',
+    },
+  },
 
   // Benefits
   {

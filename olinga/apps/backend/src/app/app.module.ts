@@ -10,6 +10,7 @@ import { AuthModule } from './Auth/auth.module';
 import { ConsultationModule } from './Сonsultation/consultation.module';
 import { MassageModule } from './Massage/massage.module';
 import { CoursesModule } from './Courses/courses.module';
+import { AbonementsModule } from './Abonements/Abonements.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { CoursesModule } from './Courses/courses.module';
     ConsultationModule,
     MassageModule,
     CoursesModule,
+    AbonementsModule
   ],
   controllers: [AppController],
   providers: [AppService],

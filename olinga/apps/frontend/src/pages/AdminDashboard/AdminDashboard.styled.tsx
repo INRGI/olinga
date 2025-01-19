@@ -10,7 +10,6 @@ export const Container = styled.div`
   padding-top: 80px;
 `;
 
-
 export const Button = styled.button`
   padding: 13px 13px;
   display: inline-block;
@@ -24,7 +23,7 @@ export const Button = styled.button`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: auto;
   max-width: 50px;
-  
+
   &:hover {
     background-color: #5941a9;
   }
@@ -37,4 +36,11 @@ export const Button = styled.button`
     outline: none;
     box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.6);
   }
+`;
+
+export const DoubleContainer = styled.div`
+  display: flex;
+  gap: 0px;
+  align-content: center;
+  
 `;

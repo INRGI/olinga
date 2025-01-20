@@ -6,7 +6,7 @@ import AdminDashboard from '../../pages/AdminDashboard';
 import { AuthProvider } from '../../context/AuthContext';
 
 const Home = lazy(() => import('../../pages/Home'));
-const About = lazy(() => import('../../pages/About'));
+const Abonements = lazy(() => import('../../pages/Abonements'));
 const Contact = lazy(() => import('../../pages/Contact'));
 const Courses = lazy(() => import('../../pages/Courses'));
 const Services = lazy(() => import('../../pages/Services'));
@@ -20,7 +20,7 @@ export function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/abonements" element={<Abonements />} />
 
         <Route path="/contact" element={<Contact />} />
         <Route path="/courses" element={<Courses />} />

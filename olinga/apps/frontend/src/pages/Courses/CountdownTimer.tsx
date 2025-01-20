@@ -31,6 +31,10 @@ const TimeBlock = styled.div`
     text-transform: uppercase;
     padding: 0;
     margin: 0;
+
+    @media (max-width: 320px) {
+    font-size: 10px;
+  }
   }
 
   .value {
@@ -39,6 +43,14 @@ const TimeBlock = styled.div`
     color: #fff;
     padding: 0;
     margin: 0;
+
+    @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 12px;
+  }
   }
 `;
 
@@ -48,6 +60,10 @@ const Text = styled.p`
   color: #fff;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const CountdownTimer: React.FC<CountdownTimerProps> = ({ dateStart }) => {

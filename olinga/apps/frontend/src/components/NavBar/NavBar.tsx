@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
             {t('sidebar.school')}
           </NavLink>
           <NavLink
-            to="/services"
+            to="/abonements"
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           >
             {t('sidebar.abonement')}

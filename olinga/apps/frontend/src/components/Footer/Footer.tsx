@@ -41,13 +41,13 @@ const Footer: React.FC = () => {
           {t('footer.nav_massages')}
         </NavLink>
         <NavLink
-          to="/school"
+          to="/courses"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           {t('footer.nav_school')}
         </NavLink>
         <NavLink
-          to="/services"
+          to="/abonement"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           {t('footer.nav_abonement')}

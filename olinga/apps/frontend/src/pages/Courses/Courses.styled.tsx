@@ -24,7 +24,7 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: space-between;
+  justify-content: flex-start;
 `;
 
 export const Card = styled.div<{ background: string }>`
@@ -45,12 +45,24 @@ export const Card = styled.div<{ background: string }>`
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
   }
 
+  @media (max-width: 1024px) {
+    width: 480px;
+  }
+
   @media (max-width: 768px) {
     width: 350px;
   }
 
   @media (max-width: 425px) {
-    width: 100%;
+    width: 400px;
+  }
+
+  @media (max-width: 375px) {
+    width: 350px;
+  }
+
+  @media (max-width: 320px) {
+    width: 300px;
   }
 `;
 
@@ -176,6 +188,10 @@ export const Button = styled.button`
     transform: scale(1.02);
   }
 
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
   @media (max-width: 425px) {
     width: 90%;
   }
@@ -187,14 +203,14 @@ export const Button = styled.button`
 `;
 
 export const DetailsContainer = styled.div`
-padding: 0 5px;
+  padding: 0 5px;
   margin: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 5px;
   margin-bottom: 10px;
-
+  align-items: center;
 `;
 
 export const TimeText = styled.div`
@@ -210,7 +226,7 @@ export const TimeText = styled.div`
     margin: 0;
   }
 
-  p{
+  p {
     padding: 0;
     margin: 0;
     font-weight: bold;
@@ -219,14 +235,23 @@ export const TimeText = styled.div`
 `;
 
 export const PriceContainer = styled.div`
+  padding: 0;
+  margin: 0;
+  text-align: end;
+
+  h2 {
     padding: 0;
     margin: 0;
-    text-align: end;
+    color: #87bdd8;
+    font-size: 30px;
+    padding-right: 10px;
 
-    h2{
-      padding: 0;
-      margin: 0;
-      color: #87bdd8;
-      font-size: 30px;
+    @media (max-width: 768px) {
+      font-size: 25px;
     }
+
+    @media (max-width: 425px) {
+      font-size: 20px;
+    }
+  }
 `;

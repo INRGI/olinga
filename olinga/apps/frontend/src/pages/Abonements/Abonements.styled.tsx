@@ -20,9 +20,7 @@ export const TopContainer = styled.div`
   }
 `;
 
-export const MassagesBlockHeader = styled.div`
-  width: 100%;
-  max-width: 400px;
+export const AbonementsBlockHeader = styled.div`
 
   h2 {
     font-size: 25px;
@@ -152,6 +150,12 @@ export const Title = styled.div`
     font-size: 20px;
   }
 
+  @media (max-width: 1024px) {
+    h3 {      
+      max-width: 440px;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 20px 10px;
     h3 {
@@ -221,14 +225,7 @@ export const Button = styled.button`
     transform: scale(1.02);
   }
 
-  @media (max-width: 768px) {
-    font-size: 16px;
-    max-width: 125px;
-    width: 80%;
-  }
-
   @media (max-width: 425px) {
-    max-width: 140px;
     width: 90%;
   }
 
@@ -255,10 +252,6 @@ export const ButtonContainer = styled.div`
   border-radius: 8px;
   padding-left: 10px;
 
-  @media (max-width: 768px) {
-    gap: 5px;
-  }
-
   @media (max-width: 475px) {
     padding-left: 0px;
   }
@@ -280,10 +273,6 @@ export const DateContainer = styled.div`
   h4 {
     padding: 0;
     margin: 0;
-
-    @media (max-width: 768px) {
-      font-size: 12px;
-    }
 
     @media (max-width: 425px) {
       font-size: 14px;
@@ -320,4 +309,11 @@ export const ButtonBack = styled(NavLink)`
   @media (max-width: 425px) {
     display: none;
   }
+`;
+
+export const ButtonOnlyContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
 `;

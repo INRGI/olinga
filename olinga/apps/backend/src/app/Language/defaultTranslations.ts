@@ -943,4 +943,21 @@ export const defaultTranslations = [
       ru: 'СЕЙЧАС ДЕЙСТВУЕТ СКИДКА НА ЛЕЧЕБНЫЙ МАССАЖ ПРОТИВ БОЛИ 15%. УСПЕЙ ВОСПОЛЬЗОВАТЬСЯ!',
     },
   },
+  // Abonements
+  {
+    key: 'AbonementsBlock.noAbonements',
+    translations: {
+      pl: 'Obecnie nie ma żadnych abonementów',
+      uk: 'На даний момент абонементів немає',
+      ru: 'На данный момент абонементов нет',
+    },
+  },
+  {
+    key: 'AbonementsBlock.title',
+    translations: {
+      pl: 'Abonementy na masazje',
+      uk: 'Абонементи на масажі',
+      ru: 'Абонементы на массажи',
+    },
+  },
 ];

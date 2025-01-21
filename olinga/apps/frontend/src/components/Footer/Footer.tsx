@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           {t('footer.nav_main')}
         </NavLink>
         <NavLink
-          to="/massages"
+          to="/categories"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           {t('footer.nav_massages')}
@@ -47,16 +47,10 @@ const Footer: React.FC = () => {
           {t('footer.nav_school')}
         </NavLink>
         <NavLink
-          to="/abonement"
+          to="/abonements"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           {t('footer.nav_abonement')}
-        </NavLink>
-        <NavLink
-          to="/contacts"
-          className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-        >
-          {t('footer.nav_contacts')}
         </NavLink>
       </LinksContainer>
       <InfoContainer>
@@ -92,12 +86,12 @@ const Footer: React.FC = () => {
       </InfoContainer>
       <PrivacyContainer>
         <NavLink
-          to="/"
+          to="/privacy"
         >
           {t('footer.nav_policy')}
         </NavLink>
         <NavLink
-          to="/"
+          to="/terms"
         >
           {t('footer.nav_terms')}
         </NavLink>

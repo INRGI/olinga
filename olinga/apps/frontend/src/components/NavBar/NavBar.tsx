@@ -26,34 +26,32 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
             <img src="/public/logo2.webp" alt="Logo" />
           </LogoWrapper>
           <NavLink
+            onClick={onClose}
             to="/"
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           >
             {t('sidebar.main')}
           </NavLink>
           <NavLink
+            onClick={onClose}
             to="/categories"
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           >
             {t('sidebar.massages')}
           </NavLink>
           <NavLink
+            onClick={onClose}
             to="/courses"
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           >
             {t('sidebar.school')}
           </NavLink>
           <NavLink
+            onClick={onClose}
             to="/abonements"
             className={({ isActive }) => (isActive ? 'active' : 'inactive')}
           >
             {t('sidebar.abonement')}
-          </NavLink>
-          <NavLink
-            to="/contacts"
-            className={({ isActive }) => (isActive ? 'active' : 'inactive')}
-          >
-            {t('sidebar.contacts')}
           </NavLink>
         </SidebarContent>
       </SidebarContainer>

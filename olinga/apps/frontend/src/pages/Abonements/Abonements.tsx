@@ -19,6 +19,7 @@ import {
 } from './Abonements.styled';
 import { BsDot } from 'react-icons/bs';
 import { Abonement, getAbonements } from '../AdminDashboard/AbonementService';
+import AbonementsDetailsModal from '../../components/AbonementDetailsModal.tsx/AbonementDetailsModal';
 
 const Abonements: React.FC = () => {
   const [abonements, setAbonements] = useState<Abonement[]>([]);
@@ -113,11 +114,11 @@ const Abonements: React.FC = () => {
           </Card>
         ))}
       </Container>
-      {/* <MassageDetailsModal
+      <AbonementsDetailsModal
         isOpen={modalIsOpen}
         onClose={() => setModalIsOpen(false)}
-        initialData={selectedMassage}
-      /> */}
+        initialData={selectedAbonement}
+      />
     </CardContainer>
   );
 };

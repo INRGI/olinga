@@ -42,6 +42,10 @@ export const ModalHeader = styled.h2`
   color: #ffffff;
   padding: 0;
   margin: 0;
+
+  @media (max-width: 425px) {
+    font-size: 18px;
+  }
 `;
 
 export const ModalDescription = styled.p`
@@ -87,6 +91,7 @@ export const LeftContainer = styled.div`
   justify-content: space-between;
   align-items: space-between;
   height: 90%;
+  overflow: scroll;
 
   @media (max-width: 425px) {
     gap: 10px;

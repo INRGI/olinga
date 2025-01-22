@@ -7,6 +7,7 @@ import CategoryAdmin from '../../components/CategoryAdmin/CategoryAdmin';
 import { ToastContainer } from 'react-toastify';
 import CourseAdmin from '../../components/CoursesAdmin/CoursesAdmin';
 import AbonementsAdmin from '../../components/AbonementsAdmin';
+import AdminLeads from '../../components/AdminLeads';
 
 const AdminDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -24,6 +25,7 @@ const AdminDashboard: React.FC = () => {
         <CourseAdmin />
         <AbonementsAdmin />
       </DoubleContainer>
+      <AdminLeads />
 
       <Button onClick={handleLogout}>
         <LuLogOut />

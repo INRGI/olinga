@@ -33,8 +33,21 @@ const ConsultationForm: React.FC = () => {
     setIsChecked(e.target.checked);
   };
 
+  const isPhoneValid = (phone: string): boolean => {
+    const phoneRegex = /^(\+?\d{1,3})?[-.\s]?\(?\d{2,4}\)?[-.\s]?\d{3,4}[-.\s]?\d{3,4}$/;
+    return phoneRegex.test(phone);
+  };
+  
+  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!isPhoneValid(formData.phone)) {
+      toastError(t('consultation.invalid_phone')); 
+      return;
+    }
+
     try {
       await axios.post(`${apiUrl}/consultations`, formData);
       toastSuccess(t('consultation.success'));

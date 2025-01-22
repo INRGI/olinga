@@ -62,8 +62,8 @@ const AdminLeads: React.FC = () => {
       <CoursesContainer>
         {leads?.length > 0 ? (
           leads.map((lead) => (
-            <CourseCard key={lead._id} onClick={() => handleOpenModal(lead)}>
-              <h2>{lead.fullName}</h2>
+            <CourseCard key={lead._id}>
+              <h2 onClick={() => handleOpenModal(lead)}>{lead.fullName}</h2>
               <div>
                 <DeleteButton onClick={() => handleDeleteLead(lead._id)}>
                   Delete

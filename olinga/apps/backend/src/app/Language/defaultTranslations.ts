@@ -183,6 +183,14 @@ export const defaultTranslations = [
     },
   },
   {
+    key: 'consultation.invalid_phone',
+    translations: {
+      pl: 'Sprawdz poprawnosc wprowadzonego numeru telefonu',
+      uk: 'Перевір правильність введеного телефону',
+      ru: 'Проверьте правильность введеного телефона',
+    },
+  },
+  {
     key: 'consultation.success',
     translations: {
       pl: 'Dziekujemy, zamówienie zostało złożone',

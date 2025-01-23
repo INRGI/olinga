@@ -3,18 +3,29 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Consultation, ConsultationDocument } from './consultation.schema';
 import { ConsultationDto } from './consultation.dto';
+import { MailService } from '../Mail/mail.service';
 
 @Injectable()
 export class ConsultationService {
   constructor(
     @InjectModel(Consultation.name)
-    private consultationModel: Model<ConsultationDocument>
+    private consultationModel: Model<ConsultationDocument>,
+    private readonly mailService: MailService
   ) {}
 
   async createConsultation(
     consultationDto: ConsultationDto
   ): Promise<Consultation> {
     const consultation = new this.consultationModel(consultationDto);
+
+    const message = `
+      New consultation request:
+      - Full Name: ${consultationDto.fullName}
+      - Email: ${consultationDto.email}
+      - Phone: ${consultationDto.phone}
+    `;
+    this.mailService.sendAdminNotification('New Consultation Request', message);
+
     return consultation.save();
   }
 

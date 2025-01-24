@@ -23,6 +23,7 @@ import CreateAbonementModal, {
   CreatedAbonement,
 } from '../CreateAbonementModal/CreateAbonementModal';
 import EditAbonementModal from '../EditAbonementModal';
+import SearchInput from '../FloatingLabelInput/SearchInput';
 
 const AbonementsAdmin: React.FC = () => {
   const [abonements, seAbonements] = useState<Abonement[]>([]);
@@ -35,6 +36,11 @@ const AbonementsAdmin: React.FC = () => {
   const [editingItem, setEditingItem] = useState<Abonement | null>(null);
   const [image, setImage] = useState<File | null>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [searchText, setSearchText] = useState<string>('');
+
+  const filteredAbonements = abonements.filter((abonement) =>
+  abonement.title.ru.toLowerCase().includes(searchText.toLowerCase())
+  );
 
   useEffect(() => {
     fetchAbonements();
@@ -133,9 +139,14 @@ const AbonementsAdmin: React.FC = () => {
           <FaPlus />
         </Button>
       </HeaderContainer>
+      <SearchInput
+            value={searchText || ''}
+            onChange={(e) => setSearchText(e.target.value)}
+            placeholder="Search for Title(RU)"
+          />
       <AbonementsContainer>
-        {abonements?.length > 0 ? (
-          abonements.map((abonement) => (
+        {filteredAbonements?.length > 0 ? (
+          filteredAbonements.map((abonement) => (
             <AbonementCard key={abonement._id}>
               <h2>{abonement.title.ru}</h2>
               <div>

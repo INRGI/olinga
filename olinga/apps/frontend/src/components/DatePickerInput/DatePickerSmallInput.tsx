@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 const InputWrapper = styled.div`
   position: relative;
-  width: 85%;
+  width: 45%;
 `;
 
 const StyledLabel = styled.label<{ isFocused: boolean }>`
@@ -17,6 +17,7 @@ const StyledLabel = styled.label<{ isFocused: boolean }>`
   background-color: #2b2b2b;
   padding: 0 5px;
   transition: all 0.3s ease;
+  width: ${({ isFocused }) => (isFocused ? 'auto' : '50%')};
   border: ${({ isFocused }) => (isFocused ? '1px solid #6a5acd' : 'none')};
   border-radius: 4px;
 `;
@@ -45,7 +46,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const DatePickerInput = ({
+const DatePickerSmallInput = ({
   value,
   onChange,
   placeholder,
@@ -76,4 +77,4 @@ const DatePickerInput = ({
   );
 };
 
-export default DatePickerInput;
+export default DatePickerSmallInput;

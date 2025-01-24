@@ -32,6 +32,9 @@ import {
 } from '../../pages/AdminDashboard/MassageService';
 import EditMassageModal from '../EditMassageForm/EditMassageForm';
 import { Course } from '../../pages/AdminDashboard/CourseService';
+import FloatingLabelInput from '../FloatingLabelInput';
+import SearchInput from '../FloatingLabelInput/SearchInput';
+import SearchInputBig from '../FloatingLabelInput/SearchInputBig';
 
 export type CreatedCategory = Omit<Category, '_id' | 'massages'>;
 export type CreatedCourse = Omit<Course, '_id'>;
@@ -59,6 +62,8 @@ const CategoryAdmin: React.FC = () => {
   );
   const [creatingMassageItem, setCreatingMassageItem] =
     useState<CreatedMassage | null>(null);
+  const [searchText, setSearchText] = useState<string>('');
+  const [searchMassageText, setSearchMassageText] = useState<string>('');
 
   const fetchCategories = async () => {
     const data = await getCategories();
@@ -156,6 +161,14 @@ const CategoryAdmin: React.FC = () => {
     }
   };
 
+  const filteredCategories = categories.filter((category) =>
+    category.title.ru.toLowerCase().includes(searchText.toLowerCase())
+  );
+
+  const filteredMassages = massages.filter((massage) =>
+  massage.title.ru.toLowerCase().includes(searchMassageText.toLowerCase())
+  );
+
   return (
     <Container>
       <LeftContainer>
@@ -184,9 +197,15 @@ const CategoryAdmin: React.FC = () => {
             <FaPlus />
           </Button>
         </HeaderContainer>
+        <SearchInput
+            value={searchText || ''}
+            onChange={(e) => setSearchText(e.target.value)}
+            placeholder="Search for Title(RU)"
+          />
         <CategoriesContainer>
-          {categories?.length > 0 ? (
-            categories.map((category) => (
+          
+          {filteredCategories?.length > 0 ? (
+            filteredCategories.map((category) => (
               <CategoryCard
                 key={category._id}
                 isActive={activeCategory === category._id}
@@ -276,9 +295,14 @@ const CategoryAdmin: React.FC = () => {
             <FaPlus />
           </Button>
         </HeaderContainer>
+        <SearchInputBig
+            value={searchMassageText || ''}
+            onChange={(e) => setSearchMassageText(e.target.value)}
+            placeholder="Search for Title(RU)"
+          />
         <MassagesContainer>
-          {massages?.length > 0 ? (
-            massages.map((massage) => (
+          {filteredMassages?.length > 0 ? (
+            filteredMassages.map((massage) => (
               <MassageCard key={massage._id}>
                 <h2>{massage.title.ru}</h2>
                 <div>

@@ -20,6 +20,7 @@ import {
 } from './CoursesAdmin.styled';
 import { ServicesBlockHeader } from '../CategoryAdmin/CategoryAdmin.styled';
 import { FaPlus } from 'react-icons/fa';
+import SearchInput from '../FloatingLabelInput/SearchInput';
 
 const CourseAdmin: React.FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
@@ -30,6 +31,11 @@ const CourseAdmin: React.FC = () => {
   const [editingItem, setEditingItem] = useState<Course | null>(null);
   const [image, setImage] = useState<File | null>(null);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [searchText, setSearchText] = useState<string>('');
+
+  const filteredCourses = courses.filter((course) =>
+  course.title.ru.toLowerCase().includes(searchText.toLowerCase())
+  );
 
   useEffect(() => {
     fetchCourses();
@@ -113,9 +119,14 @@ const CourseAdmin: React.FC = () => {
           <FaPlus />
         </Button>
       </HeaderContainer>
+      <SearchInput
+            value={searchText || ''}
+            onChange={(e) => setSearchText(e.target.value)}
+            placeholder="Search for Title(RU)"
+          />
       <CoursesContainer>
-        {courses?.length > 0 ? (
-          courses.map((course) => (
+        {filteredCourses?.length > 0 ? (
+          filteredCourses.map((course) => (
             <CourseCard key={course._id}>
               <h2>{course.title.ru}</h2>
               <div>

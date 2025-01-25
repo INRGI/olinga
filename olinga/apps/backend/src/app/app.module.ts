@@ -11,6 +11,7 @@ import { ConsultationModule } from './Сonsultation/consultation.module';
 import { MassageModule } from './Massage/massage.module';
 import { CoursesModule } from './Courses/courses.module';
 import { AbonementsModule } from './Abonements/Abonements.module';
+import { PromotionModule } from './Promotion/promotion.module';
 
 @Module({
   imports: [
@@ -36,7 +37,8 @@ import { AbonementsModule } from './Abonements/Abonements.module';
     ConsultationModule,
     MassageModule,
     CoursesModule,
-    AbonementsModule
+    AbonementsModule,
+    PromotionModule
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import CourseAdmin from '../../components/CoursesAdmin/CoursesAdmin';
 import AbonementsAdmin from '../../components/AbonementsAdmin';
 import AdminLeads from '../../components/AdminLeads';
+import PromotionAdmin from '../../components/PromotionAdmin/PromotionAdmin';
 
 const AdminDashboard: React.FC = () => {
   const [activeTab, setActiveTab] = useState('categories');
@@ -35,6 +36,8 @@ const AdminDashboard: React.FC = () => {
         return <AbonementsAdmin />;
       case 'leads':
         return <AdminLeads />;
+        case 'promotion':
+        return  <PromotionAdmin />;
       default:
         return null;
     }
@@ -67,6 +70,12 @@ const AdminDashboard: React.FC = () => {
         >
           Leads
         </TabButton>
+        <TabButton
+          active={activeTab === 'promotion'}
+          onClick={() => setActiveTab('promotion')}
+        >
+          Promotion
+        </TabButton>
         <Button onClick={handleLogout}>
           Log Out<LuLogOut />
         </Button>
@@ -74,7 +83,6 @@ const AdminDashboard: React.FC = () => {
       {
         <>
           {renderContent()}
-
           <ToastContainer />
         </>
       }

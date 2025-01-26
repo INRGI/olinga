@@ -6,6 +6,7 @@ import {
   HeaderContainer,
   LeftContainer,
   RightContainer,
+  SaveButton
 } from './PromotionAdmin.styled';
 import { ServicesBlockHeader } from '../CategoryAdmin/CategoryAdmin.styled';
 import {
@@ -104,7 +105,7 @@ const PromotionAdmin: React.FC = () => {
                 promotion_percent: Number(e.target.value),
               })
             }
-            placeholder="Promotion Percent (PLN)"
+            placeholder="Promotion Percent (%)"
           />
 
           <FloatingLabelInput
@@ -117,6 +118,11 @@ const PromotionAdmin: React.FC = () => {
             }
             placeholder="Promotion Code"
           />
+          <SaveButton
+              onClick={() => handleUpdatePromotion(promotion)}
+            >
+              Save
+            </SaveButton>
         </RightContainer>
       </PromotionContainer>
     </Container>

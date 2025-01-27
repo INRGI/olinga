@@ -968,4 +968,21 @@ export const defaultTranslations = [
       ru: 'Абонементы на массажи',
     },
   },
+  // promotion
+  {
+    key: 'promotion.code',
+    translations: {
+      pl: 'Użyj kod',
+      uk: 'Використай код',
+      ru: 'Используйте код',
+    },
+  },
+  {
+    key: 'promotion.discount',
+    translations: {
+      pl: 'Rabat',
+      uk:'Знижка',
+      ru: 'Скидка',
+    },
+  },
 ];

@@ -15,6 +15,101 @@ export const Container = styled.div`
   }
 `;
 
+export const PromotionContainer = styled.div`
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const ActivePromotion = styled.div`
+  position: relative;
+  min-height: 250px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+  text-align: center;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+    }
+    50% {
+      box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
+    }
+  }
+`;
+
+export const PromotionHeader = styled.h3`
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+`;
+
+export const PromotionDetails = styled.p`
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+
+  @media (max-width: 425px) {
+    font-size: 12px;
+  }
+`;
+
+export const PromotionCode = styled.p`
+  font-size: 18px;
+  color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+
+  span {
+    font-weight: bold;
+    color: #ff4500;
+  }
+`;
+
+export const PromotionPercent = styled.p`
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  background: rgba(255, 69, 0, 0.9);
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: inline-block;
+  animation: glow 3s infinite;
+  margin: 0;
+  margin-bottom: 10px;
+  transition: box-shadow 3s ease;
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.9);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+    }
+  }
+`;
+
 export const LeftContainer = styled.div`
   flex: 2;
   display: flex;
@@ -81,9 +176,9 @@ export const ServicesBlockHeader = styled.div`
   }
 
   @media (max-width: 425px) {
-    p{
+    p {
       font-size: 14px;
-    };
+    }
   }
 `;
 
@@ -133,8 +228,8 @@ export const CategoryCard = styled.div`
     border-top-right-radius: 6px;
 
     @media (max-width: 425px) {
-    width: 400px;
-  }
+      width: 400px;
+    }
   }
 
   h3 {

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: olinga
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: starter
+    branch: main
+    numInstances: 1
+    healthCheckPath: /
+    ports:
+      - port: 4200
+        name: frontend
+      - port: 3000
+        name: backend

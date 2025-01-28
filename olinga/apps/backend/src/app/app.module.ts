@@ -14,12 +14,7 @@ import { AbonementsModule } from './Abonements/Abonements.module';
 import { PromotionModule } from './Promotion/promotion.module';
 
 @Module({
-  imports: [
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, 'uploads'),
-      serveRoot: '/uploads',
-    }),
-    
+  imports: [    
     ConfigModule.forRoot({
       isGlobal: true,
     }),

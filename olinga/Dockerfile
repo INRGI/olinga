@@ -5,16 +5,15 @@ WORKDIR /app
 COPY package*.json ./
 COPY nx.json ./
 COPY tsconfig*.json ./
+COPY .env ./
 COPY apps/backend/webpack.config.js ./apps/backend/
 COPY apps/frontend/vite.config.ts ./apps/frontend/
 
-RUN npm install
+RUN npm install --force
 
 COPY . .
 
-RUN mkdir -p dist/apps/frontend dist/apps/backend
-
-EXPOSE 4200
 EXPOSE 3000
+EXPOSE 4200
 
-CMD ["sh", "-c", "npx nx serve frontend --host 0.0.0.0 --port 4200 & npx nx serve backend --host 0.0.0.0 --port 3000"]
+CMD ["sh", "-c", "npx nx serve backend --port 3000 & npx nx serve frontend --port 4200"]

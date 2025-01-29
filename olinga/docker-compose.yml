@@ -1,16 +1,9 @@
-version: '3.7'
-
 services:
   app:
     build: .
     ports:
-      - "4200:4200"
       - "3000:3000"
-    volumes:
-      - .:/app
-      - /app/node_modules
-      - /app/apps/frontend/node_modules
-      - /app/apps/backend/node_modules
+      - "4200:4200"
     environment:
       MONGODB_URL: ${MONGODB_URL}
       ADMIN_USERNAME: ${ADMIN_USERNAME}
@@ -22,3 +15,4 @@ services:
       MAIL_PASS: ${MAIL_PASS}
       MAIL_FROM: ${MAIL_FROM}
       ADMIN_EMAIL: ${ADMIN_EMAIL}
+    command: sh -c "npx nx serve backend --host 0.0.0.0 --port 3000 & npx nx serve frontend --host 0.0.0.0 --port 4200"

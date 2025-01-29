@@ -7,8 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, new FastifyAdapter());
   app.enableCors({
     origin: '*',
-    methods: '*',
-    allowedHeaders: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: "Content-Type,Authorization",
   });
   const fastifyInstance = app.getHttpAdapter().getInstance();
   fastifyInstance.register(fastifyMultipart, {

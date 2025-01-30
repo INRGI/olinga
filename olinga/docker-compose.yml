@@ -15,4 +15,4 @@ services:
       MAIL_PASS: ${MAIL_PASS}
       MAIL_FROM: ${MAIL_FROM}
       ADMIN_EMAIL: ${ADMIN_EMAIL}
-    command: sh -c "npx nx serve backend --host 0.0.0.0 --port 3000 & npx nx serve frontend --host 0.0.0.0 --port 4200"
+    # command: sh -c "npx nx serve backend --host 0.0.0.0 --port 3000 & npx nx serve frontend --host 0.0.0.0 --port 4200"

@@ -7,6 +7,17 @@ export const Container = styled.div`
   gap: 20px;
   justify-content: flex-start;
 `;
+
+export const ContainerEmpty = styled.div`
+  padding: 20px;
+  background-color: #121212;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const TopContainer = styled.div`
   display: flex;
   width: 100%;

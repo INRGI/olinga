@@ -66,10 +66,10 @@ const BenefitsBlock: React.FC = () => {
 
       <RightContainer>
         <ImageContainer>
-          <img src="/public/adventages1.webp" alt="adventages1" />
+          <img src="/public/adventages1.jpg" alt="adventages1" />
         </ImageContainer>
         <ImageContainer>
-          <img src="/public/adventages2.webp" alt="adventages2" />
+          <img src="/public/adventages2.jpg" alt="adventages2" />
         </ImageContainer>
       </RightContainer>
     </Container>

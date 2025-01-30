@@ -14,7 +14,6 @@ const Galery = () => {
     '/public/slide2.jpg',
     '/public/slide3.jpg',
     '/public/slide4.jpg',
-    '/public/slide5.jpg',
     '/public/slide6.jpg',
     '/public/slide7.jpg',
     '/public/slide8.jpg',

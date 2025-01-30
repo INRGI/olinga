@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
 
       <RightContainer>
         <ImageContainer>
-          <img src="/public/about.webp" alt="About Us" />
+          <img src="/public/about.jpg" alt="About Us" />
         </ImageContainer>
 
         <TextContainer>

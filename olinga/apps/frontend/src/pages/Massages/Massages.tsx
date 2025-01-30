@@ -24,6 +24,7 @@ import {
 } from './Massages.styled';
 import { BsDot } from 'react-icons/bs';
 import MassageDetailsModal from '../../components/MassageDetailsModal';
+import { ContainerEmpty } from '../Abonements/Abonements.styled';
 
 const Massages: React.FC = () => {
   const categoryId = useParams().categoryId || '';
@@ -68,7 +69,7 @@ const Massages: React.FC = () => {
   };
 
   if (noMassages)
-    return <Placeholder>{t('MassagesBlock.noMassages')}</Placeholder>;
+    return <ContainerEmpty><Placeholder>{t('MassagesBlock.noMassages')}</Placeholder></ContainerEmpty>;
 
   return (
     <CardContainer>

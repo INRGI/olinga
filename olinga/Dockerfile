@@ -2,6 +2,8 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+RUN apk add --no-cache tini
+
 COPY package*.json ./
 COPY nx.json ./
 COPY tsconfig*.json ./
@@ -16,4 +18,5 @@ COPY . .
 EXPOSE 3000
 EXPOSE 4200
 
-CMD ["sh", "-c", "npx nx serve backend --port 3000 & npx nx serve frontend --port 4200"]
+ENTRYPOINT ["/sbin/tini", "--"]
+CMD ["sh", "-c", "npx nx serve backend --host 0.0.0.0 --port 3000 & npx nx serve frontend --host 0.0.0.0 --port 4200"]

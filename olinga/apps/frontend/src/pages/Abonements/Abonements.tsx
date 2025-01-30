@@ -16,6 +16,7 @@ import {
   AbonementsBlockHeader,
   ButtonBack,
   ButtonOnlyContainer,
+  ContainerEmpty,
 } from './Abonements.styled';
 import { BsDot } from 'react-icons/bs';
 import { Abonement, getAbonements } from '../AdminDashboard/AbonementService';
@@ -55,7 +56,7 @@ const Abonements: React.FC = () => {
   };
 
   if (noAbonements)
-    return <Placeholder>{t('AbonementsBlock.noAbonements')}</Placeholder>;
+    return <ContainerEmpty><Placeholder>{t('AbonementsBlock.noAbonements')}</Placeholder></ContainerEmpty>;
 
   return (
     <CardContainer>

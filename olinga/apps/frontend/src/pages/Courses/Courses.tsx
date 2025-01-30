@@ -44,16 +44,15 @@ const Courses: React.FC = () => {
     setModalIsOpen(true);
   };
 
-  if (!courses || courses.length === 0) return null;
-
   return (
     <>
       <BannerCourses />
 
-      <CardContainer>
+      {courses.length > 0 && <CardContainer>
         <CoursesBlockHeader>{t('courses_list.title')}</CoursesBlockHeader>
 
         <Container>
+
           {courses.map((course) => (
             <Card key={course._id} background={course?.imageUrl || ''}>
               <Overlay>
@@ -81,7 +80,7 @@ const Courses: React.FC = () => {
             </Card>
           ))}
         </Container>
-      </CardContainer>
+      </CardContainer>}
 
       <SertificateCourses />
       <CoursesBlock />

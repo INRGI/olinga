@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:backend": "nx serve backend --host 0.0.0.0 --port 3000",
-    "start:frontend": "nx serve frontend --host 0.0.0.0 --port 4200"
+    "serve:backend": "nx serve backend",
+    "serve:frontend": "nx serve frontend"
   },
   "private": true,
   "dependencies": {

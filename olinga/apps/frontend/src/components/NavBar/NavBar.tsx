@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ isOpen, onClose }) => {
         <CloseButton onClick={onClose}>×</CloseButton>
         <SidebarContent>
           <LogoWrapper>
-            <img src="/public/logo2.webp" alt="Logo" />
+            <img src="/logo2.webp" alt="Logo" />
           </LogoWrapper>
           <NavLink
             onClick={onClose}

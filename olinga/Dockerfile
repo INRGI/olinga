@@ -8,4 +8,4 @@ RUN npm install
 
 EXPOSE 3000 4200
 
-CMD ["sh", "-c", "npx nx serve frontend & npx nx serve backend"]
+CMD ["sh", "-c", "npx nx run backend:serve:production & npx nx run frontend:serve:production"]

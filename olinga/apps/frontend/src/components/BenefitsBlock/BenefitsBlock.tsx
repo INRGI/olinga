@@ -20,7 +20,7 @@ const BenefitsBlock: React.FC = () => {
         </BenefitsHeader>
         <Item>
           <img
-            src="/public/adv_ico1.png"
+            src="/adv_ico1.png"
             alt="Booksy"
             style={{ width: '60px', height: '60px' }}
           />
@@ -31,7 +31,7 @@ const BenefitsBlock: React.FC = () => {
         </Item>
         <Item>
           <img
-            src="/public/adv_ico2.png"
+            src="/adv_ico2.png"
             alt="Booksy"
             style={{ width: '60px', height: '60px' }}
           />
@@ -42,7 +42,7 @@ const BenefitsBlock: React.FC = () => {
         </Item>
         <Item>
           <img
-            src="/public/adv_ico3.png"
+            src="/adv_ico3.png"
             alt="Booksy"
             style={{ width: '60px', height: '60px' }}
           />
@@ -53,7 +53,7 @@ const BenefitsBlock: React.FC = () => {
         </Item>
         <Item>
           <img
-            src="/public/adv_ico4.png"
+            src="/adv_ico4.png"
             alt="Booksy"
             style={{ width: '60px', height: '60px' }}
           />
@@ -66,10 +66,10 @@ const BenefitsBlock: React.FC = () => {
 
       <RightContainer>
         <ImageContainer>
-          <img src="/public/adventages1.jpg" alt="adventages1" />
+          <img src="/adventages1.JPG" alt="adventages1" />
         </ImageContainer>
         <ImageContainer>
-          <img src="/public/adventages2.jpg" alt="adventages2" />
+          <img src="/adventages2.JPG" alt="adventages2" />
         </ImageContainer>
       </RightContainer>
     </Container>

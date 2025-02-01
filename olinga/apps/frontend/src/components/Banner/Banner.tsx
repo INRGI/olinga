@@ -36,7 +36,7 @@ const Banner: React.FC = () => {
           </SocialItem>
           <SocialItem href="https://studiomasazuzdrowiaiurodyolinga.booksy.com/" target="_blank" rel="noopener noreferrer">
             <img
-              src="/public/booksy_review.png"
+              src="/booksy_review.png"
               alt="Booksy"
               style={{ width: '26px', height: '26px' }}
             />

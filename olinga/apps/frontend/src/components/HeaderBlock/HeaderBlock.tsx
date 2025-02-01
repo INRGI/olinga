@@ -61,7 +61,7 @@ const HeaderBlock: React.FC = () => {
       <HeaderWrapper>
         <LogoWrapper>
           <NavLinkStyled to="/">
-            <img src="/public/logo1.webp" alt="Logo" />
+            <img src="/logo1.webp" alt="Logo" />
           </NavLinkStyled>
         </LogoWrapper>
 

@@ -10,14 +10,14 @@ import { useTranslation } from 'react-i18next';
 const Galery = () => {
   const { t } = useTranslation();
   const images = [
-    '/public/slide1.jpg',
-    '/public/slide2.jpg',
-    '/public/slide3.jpg',
-    '/public/slide4.jpg',
-    '/public/slide6.jpg',
-    '/public/slide7.jpg',
-    '/public/slide8.jpg',
-    '/public/slide9.jpg',
+    '/slide1.JPG',
+    '/slide2.jpg',
+    '/slide3.JPG',
+    '/slide4.JPG',
+    '/slide6.JPG',
+    '/slide7.JPG',
+    '/slide8.JPG',
+    '/slide9.JPG',
   ];
 
   return (

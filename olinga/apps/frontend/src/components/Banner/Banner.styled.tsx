@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: 80vh;
   display: flex;
-  background-image: url('/public/header.webp');
+  background-image: url('/header.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

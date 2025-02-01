@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
     <FooterContainer>
       <LogoContainer>
         <NavLinkStyled to="/">
-          <img src="/public/logo2.webp" alt="Logo" />
+          <img src="/logo2.webp" alt="Logo" />
         </NavLinkStyled>
       </LogoContainer>
       <LinksContainer>

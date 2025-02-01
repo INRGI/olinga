@@ -30,7 +30,7 @@ const Reviews: React.FC = () => {
               target="_blank"
             >
               <img
-              src="/public/booksy_review.png"
+              src="/booksy_review.png"
               alt="Booksy"
               style={{ width: '32px', height: '32px' }}
             />

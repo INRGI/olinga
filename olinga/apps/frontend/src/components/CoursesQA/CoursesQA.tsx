@@ -59,10 +59,10 @@ const CoursesQA: React.FC = () => {
       </LeftContainer>
       <RightContainer>
         <ImageContainer>
-          <img src="/public/acordeon_img_1.webp" alt="courses_qa" />
+          <img src="/acordeon_img_1.webp" alt="courses_qa" />
         </ImageContainer>
         <ImageContainer>
-          <img src="/public/acordeon_img_2.webp" alt="courses_qa" />
+          <img src="/acordeon_img_2.webp" alt="courses_qa" />
         </ImageContainer>
       </RightContainer>
     </Container>

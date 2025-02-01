@@ -9,7 +9,7 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { useLocation } from 'react-router-dom';
 
-const images = ['/public/school1.jpg', '/public/school2.jpg'];
+const images = ['/school1.JPG', '/school2.JPG'];
 
 const CoursesBlock: React.FC = () => {
   const { t } = useTranslation();

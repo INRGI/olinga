@@ -2,12 +2,18 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+COPY package*.json ./
+COPY nx.json ./
+COPY tsconfig*.json ./
+COPY .env ./
+COPY apps/backend/webpack.config.js ./apps/backend/
+COPY apps/frontend/vite.config.ts ./apps/frontend/
+
+RUN npm install
+
 COPY . .
 
-RUN npm install --production
+EXPOSE 3000
+EXPOSE 4200
 
-RUN npx nx reset
-
-EXPOSE 3000 4200
-
-CMD sh -c "npx nx run backend:serve:production & npx nx run frontend:serve:production && wait"
+CMD ["sh", "-c", "npx nx serve backend & npx nx serve frontend"]

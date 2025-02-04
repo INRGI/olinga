@@ -12,6 +12,8 @@ RUN npm install
 
 COPY . .
 
+RUN npx nx reset
+
 EXPOSE 3000
 EXPOSE 4200
 

@@ -12,9 +12,7 @@ RUN npm install
 
 COPY . .
 
-RUN npx nx reset
-
 EXPOSE 3000
 EXPOSE 4200
 
-CMD ["sh", "-c", "npx nx serve backend & npx nx serve frontend"]
+CMD ["sh", "-c", "npx nx reset & npx nx serve backend & npx nx serve frontend"]

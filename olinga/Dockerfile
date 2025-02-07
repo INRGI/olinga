@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 3000
 EXPOSE 4200
 
-CMD ["sh", "-c", "npx nx serve backend & npx nx serve frontend"]
+CMD ["sh", "-c", "npx nx build olinga"]

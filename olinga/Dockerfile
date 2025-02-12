@@ -13,6 +13,5 @@ RUN npm install --force
 COPY . .
 
 EXPOSE 3000
-EXPOSE 4200
 
-CMD ["sh", "-c", "npx nx build olinga"]
+CMD ["sh", "-c", "npx nx serve backend"]

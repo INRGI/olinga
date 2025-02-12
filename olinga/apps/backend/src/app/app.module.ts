@@ -15,6 +15,9 @@ import { PromotionModule } from './Promotion/promotion.module';
 
 @Module({
   imports: [    
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'frontend'),
+    }),
     ConfigModule.forRoot({
       isGlobal: true,
     }),

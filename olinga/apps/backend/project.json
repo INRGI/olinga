@@ -30,7 +30,9 @@
           "buildTarget": "backend:build:development"
         },
         "production": {
-          "buildTarget": "backend:build:production"
+          "buildTarget": "backend:build:production",
+          "port": 3000,
+          "host": "0.0.0.0"
         }
       }
     }

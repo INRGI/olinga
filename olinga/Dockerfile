@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx nx serve backend"]
+CMD ["sh", "-c", "npx nx serve backend --host=0.0.0.0 --port=3000"]

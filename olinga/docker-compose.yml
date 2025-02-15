@@ -15,3 +15,5 @@ services:
       MAIL_PASS: ${MAIL_PASS}
       MAIL_FROM: ${MAIL_FROM}
       ADMIN_EMAIL: ${ADMIN_EMAIL}
+      PORT: ${PORT}
+      HOST: ${HOST}

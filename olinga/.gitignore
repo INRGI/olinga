@@ -47,3 +47,4 @@ vite.config.*.timestamp*
 *CategoryManager.tsx
 *StyledModal.tsx
 **/uploads
+.prettier*

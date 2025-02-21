@@ -32,7 +32,7 @@ export const RightContainer = styled.div`
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
-  @media (max-width: 425px) {
+  @media (max-width: 500px) {
     flex-direction: column;
     border-radius: 0;
     border-radius: 8px;
@@ -103,7 +103,7 @@ export const ImageContainer = styled.div`
     border-bottom-left-radius: 8px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 500px) {
     img {
       border-radius: 0;
       border-top-left-radius: 8px;
@@ -121,7 +121,7 @@ export const TextContainer = styled.div`
   padding-left: 0px;
   align-content: space-between;
   justify-content: space-between;
-  @media (max-width: 425px) {
+  @media (max-width: 500px) {
     padding-left: 20px;
   }
 `;
@@ -134,7 +134,7 @@ export const RightTitle = styled.p`
   padding: 0;
   margin: 0;
 
-  @media (max-width: 425px) {
+  @media (max-width: 500px) {
     font-size: 20px;
   }
 `;

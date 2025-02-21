@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import HttpApi from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-export const apiUrl = `${window.location.protocol}//${window.location.hostname}:3000`;
+export const apiUrl = `${window.location.protocol}//${window.location.hostname}`;
 
 
 i18n

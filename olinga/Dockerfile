@@ -11,7 +11,11 @@ COPY apps/frontend/vite.config.ts ./apps/frontend/
 RUN npm install --force
 
 COPY . .
-RUN npx nx build frontend
+
+# RUN npx nx build frontend
+
+# RUN npx nx build backend
+
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx nx serve backend"]
+CMD ["node", "dist/apps/backend/main.js"]

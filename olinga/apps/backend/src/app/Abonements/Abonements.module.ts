@@ -4,6 +4,8 @@ import { TranslationModule } from '../Language/translation.module';
 import { Abonement, AbonementSchema } from './schemas/abonement.schema';
 import { AbonementsController } from './Abonements.controller';
 import { AbonementsService } from './Abonements.service';
+import { GoogleDriveService } from '../Courses/google-drive.service';
+import { CoursesModule } from '../Courses/courses.module';
 
 @Module({
   imports: [
@@ -11,8 +13,9 @@ import { AbonementsService } from './Abonements.service';
       { name: Abonement.name, schema: AbonementSchema },
     ]),
     TranslationModule,
+    CoursesModule,
   ],
   controllers: [AbonementsController],
-  providers: [AbonementsService],
+  providers: [AbonementsService, GoogleDriveService],
 })
 export class AbonementsModule {}

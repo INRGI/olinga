@@ -19,12 +19,12 @@ export const Container = styled.div`
     padding: 20px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-top: 57.8px;
     padding: 20px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-top: 51px;
   }
 
@@ -54,7 +54,7 @@ export const BlockHeader = styled.div`
     text-transform: uppercase;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h2 {
       font-size: 18px;
     }

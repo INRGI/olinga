@@ -22,7 +22,7 @@ export const Container = styled.div`
     z-index: 1;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-top: 50px;
 
     &::before {
@@ -50,7 +50,7 @@ export const RightContainer = styled.div`
     margin-right: 30px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-right: 0px;
     padding: 20px;
     background: rgba(30, 30, 30, 0.6);
@@ -103,7 +103,7 @@ export const TitleContainer = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     background: none;
     padding: 0;
   }
@@ -121,7 +121,7 @@ export const ItemText = styled.p`
   display: flex;
   gap: 5px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     font-size: 16px;
   }
 `;

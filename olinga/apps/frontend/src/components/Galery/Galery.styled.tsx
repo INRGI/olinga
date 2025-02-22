@@ -84,7 +84,7 @@ export const GaleryHeader = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h2{
        font-size: 16px;
     }

@@ -10,13 +10,13 @@ export const FooterContainer = styled.footer`
   display: flex;
   align-items: center;
   column-gap: 40px;
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     flex-direction: column;
     height: 300px;
     gap: 20px;
   }
 
-  @media only screen and (min-width: 425px) and (max-width: 768px) {
+  @media only screen and (min-width: 430px) and (max-width: 768px) {
     column-gap: 40px;
     flex-wrap: wrap;
     height: 300px;
@@ -72,10 +72,10 @@ export const LogoContainer = styled.div`
     }
   }
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     display: none;
   }
-  @media only screen and (min-width: 425px) and (max-width: 768px) {
+  @media only screen and (min-width: 430px) and (max-width: 768px) {
     width: 30%;
     max-width: 200px;
   }
@@ -118,10 +118,10 @@ export const LinksContainer = styled.div`
         font-size: 15px;
     }
   }
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     display: none;
   }
-  @media only screen and (min-width: 425px) and (max-width: 768px) {
+  @media only screen and (min-width: 430px) and (max-width: 768px) {
     display: none;
   }
 `;
@@ -134,12 +134,12 @@ export const InfoContainer = styled.div`
   @media only screen and (max-width: 1080px) {
     width: 250px;
   }
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     width: 90%;
     font-size: 12px;
     padding-top: 20px;
   }
-  @media only screen and (min-width: 425px) and (max-width: 768px) {
+  @media only screen and (min-width: 430px) and (max-width: 768px) {
     width: 50%;
     font-size: 12px;
   }
@@ -182,7 +182,7 @@ export const PrivacyContainer = styled.div`
   @media only screen and (max-width: 1080px) {
     font-size: 14px;
   }
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     width: 90%;
     border: none;
     flex-direction: row;
@@ -195,7 +195,7 @@ export const PrivacyContainer = styled.div`
         border: none;
     }
   }
-  @media only screen and (min-width: 425px) and (max-width: 768px) {
+  @media only screen and (min-width: 430px) and (max-width: 768px) {
     width: 90%;
     border: none;
     flex-direction: row;

@@ -31,7 +31,7 @@ export const RightContainer = styled.div`
     flex: 2;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     flex-direction: column;
   }
 `;
@@ -97,7 +97,7 @@ export const ImageContainer = styled.div`
   }
 
   &:nth-of-type(2) {
-    @media (max-width: 425px) {
+    @media (max-width: 430px) {
       display: none;
     }
   }
@@ -147,7 +147,7 @@ export const AccordionHeader = styled.div<{ isActive: boolean }>`
     transition: transform 0.3s ease;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     font-size: 15px;
     svg {
       max-width: 16px;

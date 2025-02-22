@@ -116,7 +116,7 @@ export const Button = styled(NavLink)`
     background-color: #444;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     width: 100%;
     max-width: 90%;
   }

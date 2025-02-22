@@ -13,7 +13,7 @@ export const Container = styled.div`
   border-bottom: 4px solid #fff2;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     flex-direction: column;
     align-items: center;
   }
@@ -57,7 +57,7 @@ export const TextContainer = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h2 {
       font-size: 16px;
     }
@@ -121,7 +121,7 @@ export const SertificateButton = styled.button`
     padding: 12px 35px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     width: 100%;
   }
 `;

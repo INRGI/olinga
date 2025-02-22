@@ -18,6 +18,8 @@ async function bootstrap() {
       fileSize: 10000000,
     },
   });
+
+  app.setGlobalPrefix('api');
   
   await app.listen(port);
 }

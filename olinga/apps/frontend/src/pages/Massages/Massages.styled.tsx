@@ -15,7 +15,7 @@ export const TopContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
    padding-bottom: 10px;
   }
 `;
@@ -43,7 +43,7 @@ export const MassagesBlockHeader = styled.div`
     margin: 0;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h2{
       font-size: 20px;
     }
@@ -71,12 +71,12 @@ export const CardContainer = styled.div`
     padding: 20px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-top: 57.8px;
     padding: 20px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-top: 51px;
   }
 
@@ -111,7 +111,7 @@ export const Card = styled.div<{ background: string }>`
     width: 350px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     width: 400px;
   }
 
@@ -160,7 +160,7 @@ export const Title = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h3 {
       font-size: 16px;
     }
@@ -188,7 +188,7 @@ export const Content = styled.div`
       font-size: 14px;
       align-content: center;
 
-      @media (max-width: 425px) {
+      @media (max-width: 430px) {
         font-size: 12px;
       }
     }
@@ -227,7 +227,7 @@ export const Button = styled.button`
     width: 80%;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     max-width: 140px;
     width: 90%;
   }
@@ -285,7 +285,7 @@ export const DateContainer = styled.div`
       font-size: 12px;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 430px) {
       font-size: 14px;
     }
 
@@ -317,7 +317,7 @@ export const ButtonBack = styled(NavLink)`
   }
 
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     display: none;
   }
 `;

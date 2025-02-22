@@ -11,7 +11,7 @@ export const Form = styled.form`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
   text-align: center;
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     padding: 15px;
     max-width: 290px;
   }
@@ -154,7 +154,7 @@ export const Tooltip = styled.div`
   transition: opacity 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     max-width: 260px;
   }
 `;

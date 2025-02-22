@@ -34,7 +34,7 @@ export const LogoWrapper = styled.div`
     width: 20%;
   }
 
-  @media only screen and (max-width: 426px) {
+  @media only screen and (max-width: 430px) {
     width: 40%;
   }
 `;
@@ -49,7 +49,7 @@ export const HeaderBox = styled.div`
   align-items: center;
   gap: 20px;
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     gap: 5px;
   }
 `;
@@ -160,7 +160,7 @@ export const MenuBlock = styled.div`
     color: #87bdd8;
   }
 
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 430px) {
     margin-left: 0px;
   }
 `;

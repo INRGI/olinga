@@ -20,7 +20,7 @@ export const HeaderBox = styled.div`
     padding: 0 10px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     padding: 0 5px;
   }
 `;
@@ -61,7 +61,7 @@ export const ReviewHeader = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h2{
        font-size: 16px;
     }

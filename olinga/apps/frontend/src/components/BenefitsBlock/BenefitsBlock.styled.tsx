@@ -31,7 +31,7 @@ export const RightContainer = styled.div`
       flex: 2;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 430px) {
      flex-direction: column;
     }
 `;
@@ -141,7 +141,7 @@ export const ImageContainer = styled.div`
   }
 
   &:nth-of-type(2) {
-    @media (max-width: 425px) {
+    @media (max-width: 430px) {
       display: none;
     }
   }

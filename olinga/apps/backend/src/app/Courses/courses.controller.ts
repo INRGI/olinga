@@ -21,7 +21,6 @@ export class CoursesController {
   async create(@Req() req: FastifyRequest) {
     try {
       const file: MultipartFile = await req.file();
-
       const fields = file.fields as Record<string, any>;
 
       const courseData = {

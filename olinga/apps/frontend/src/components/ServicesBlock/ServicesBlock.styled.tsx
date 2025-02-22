@@ -9,7 +9,7 @@ export const Container = styled.div`
   align-items: flex-start;
   height: 948px;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     flex-direction: column;
     height: auto;
   }
@@ -70,7 +70,7 @@ export const PromotionDetails = styled.p`
   margin: 0;
   padding: 0;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     font-size: 12px;
   }
 `;
@@ -123,7 +123,7 @@ export const LeftContainer = styled.div`
   justify-content: space-between;
   align-self: stretch;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -148,7 +148,7 @@ export const RightContainer = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `;
@@ -175,7 +175,7 @@ export const ServicesBlockHeader = styled.div`
     margin: 0;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     p {
       font-size: 14px;
     }
@@ -202,7 +202,7 @@ export const PromotionText = styled.p`
   text-transform: uppercase;
   border-bottom: 4px solid #76a7c0;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     font-size: 12px;
   }
 `;
@@ -227,7 +227,7 @@ export const CategoryCard = styled.div`
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 
-    @media (max-width: 425px) {
+    @media (max-width: 430px) {
       width: 400px;
     }
   }
@@ -278,7 +278,7 @@ export const Button = styled(NavLink)`
     transform: scale(1.02);
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     width: 100%;
     max-width: 90%;
   }

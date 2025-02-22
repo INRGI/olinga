@@ -19,7 +19,7 @@ export const ModalContainer = styled.div`
     min-width: 740px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     max-width: 400px;
     min-width: 400px;
     height: 90vh;
@@ -43,7 +43,7 @@ export const ModalHeader = styled.h2`
   padding: 0;
   margin: 0;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     font-size: 18px;
   }
 `;
@@ -93,7 +93,7 @@ export const LeftContainer = styled.div`
   height: 90%;
   overflow: scroll;
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     gap: 10px;
   }
 `;
@@ -107,7 +107,7 @@ export const RightContainer = styled.div`
     flex: 1;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     flex-direction: column;
     display: none;
   }
@@ -131,7 +131,7 @@ export const ImageContainer = styled.div`
     filter: brightness(60%);
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     img {
       border-radius: 0;
       border-top-right-radius: 8px;
@@ -154,7 +154,7 @@ export const DateContainer = styled.div`
     padding: 0;
     margin: 0;
 
-    @media (max-width: 425px) {
+    @media (max-width: 430px) {
       font-size: 14px;
     }
 

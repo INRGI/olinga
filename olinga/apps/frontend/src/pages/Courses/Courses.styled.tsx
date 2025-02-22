@@ -53,7 +53,7 @@ export const Card = styled.div<{ background: string }>`
     width: 350px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     width: 400px;
   }
 
@@ -102,7 +102,7 @@ export const Title = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h3 {
       font-size: 16px;
     }
@@ -130,7 +130,7 @@ export const Content = styled.div`
       font-size: 14px;
       align-content: center;
 
-      @media (max-width: 425px) {
+      @media (max-width: 430px) {
         font-size: 12px;
       }
     }
@@ -150,7 +150,7 @@ export const DateContainer = styled.div`
     padding: 0;
     margin: 0;
 
-    @media (max-width: 425px) {
+    @media (max-width: 430px) {
       font-size: 14px;
     }
 
@@ -192,7 +192,7 @@ export const Button = styled.button`
     font-size: 16px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     width: 90%;
   }
 
@@ -250,7 +250,7 @@ export const PriceContainer = styled.div`
       font-size: 25px;
     }
 
-    @media (max-width: 425px) {
+    @media (max-width: 430px) {
       font-size: 20px;
     }
   }

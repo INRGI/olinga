@@ -22,7 +22,7 @@ export const Container = styled.div`
     z-index: 1;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-top: 50px;
 
     &::before {
@@ -50,7 +50,7 @@ export const RightContainer = styled.div`
     margin-right: 30px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-right: 0px;
     padding: 20px;
     gap: 25px;
@@ -104,7 +104,7 @@ export const TitleContainer = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     background: none;
     padding: 0;
 
@@ -134,7 +134,7 @@ export const ItemText = styled.p`
     max-width: 500px;;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     font-size: 16px;
   }
 `;

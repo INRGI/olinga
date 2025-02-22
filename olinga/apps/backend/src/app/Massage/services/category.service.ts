@@ -4,16 +4,13 @@ import { Model } from 'mongoose';
 import { Category } from '../schemas/category.schema';
 import { CreateCategoryDto } from '../dto/create-category.dto';
 import { UpdateCategoryDto } from '../dto/update-category.dto';
-import { TranslationService } from '../../Language/translation.service';
-import * as fs from 'fs';
-import * as path from 'path';
-import pump from 'pump';
+import { GoogleDriveService } from '../../Courses/google-drive.service';
 
 @Injectable()
 export class CategoryService {
   constructor(
     @InjectModel(Category.name) private categoryModel: Model<Category>,
-    private translationService: TranslationService
+    private googleDriveService: GoogleDriveService
   ) {}
 
   async createCategory(
@@ -23,7 +20,7 @@ export class CategoryService {
     const newCategory = new this.categoryModel(createCategoryDto);
 
     if (file) {
-      const imageUrl = await this.saveImage(file);
+      const imageUrl = await this.googleDriveService.uploadFile(file);
       newCategory.imageUrl = imageUrl;
     }
 
@@ -39,18 +36,10 @@ export class CategoryService {
   }
 
   async updateCategoryImage(id: string, file?: any): Promise<Category> {
-    const existingCategory = await this.categoryModel.findById(id).exec();
-    
-    if (existingCategory.imageUrl) {
-      await this.deleteImage(existingCategory.imageUrl);
-    }
-
-    const imageUrl = await this.saveImage(file);
-
-    const updateCategoryDto = { imageUrl };
+    const imageUrl = await this.googleDriveService.uploadFile(file);
 
     return this.categoryModel
-      .findByIdAndUpdate(id, updateCategoryDto, { new: true })
+      .findByIdAndUpdate(id, { imageUrl }, { new: true })
       .exec();
   }
 
@@ -62,43 +51,5 @@ export class CategoryService {
 
   async deleteCategory(id: string): Promise<Category> {
     return this.categoryModel.findByIdAndDelete(id).exec();
-  }
-
-  private async saveImage(file: any): Promise<string> {
-    const uploadDir = path.join(
-      __dirname,
-      '..',
-      '..',
-      '..',
-      'apps',
-      'frontend',
-      'public',
-      'uploads'
-    );
-    await fs.promises.mkdir(uploadDir, { recursive: true });
-    const filename = `${Date.now()}-${file.filename}`;
-    const filePath = path.join(uploadDir, filename);
-    const writeStream = fs.createWriteStream(filePath);
-    await pump(file.file, writeStream);
-    return `uploads/${filename}`;
-  }
-
-  private async deleteImage(imageUrl: string): Promise<void> {
-    const filePath = path.join(
-      __dirname,
-      '..',
-      '..',
-      '..',
-      'apps',
-      'frontend',
-      'public',
-      'uploads',
-      imageUrl.replace('uploads/', '')
-    );
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-    } else {
-      console.log('File does not exist:', filePath);
-    }
   }
 }

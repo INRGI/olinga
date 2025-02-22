@@ -14,12 +14,12 @@ export const Container = styled.div`
     margin-top: 52px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-top: 57.8px;
     padding: 20px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     margin-top: 51px;
   }
 
@@ -71,7 +71,7 @@ export const TitleContainer = styled.div`
         width: 60%;
     }
   }
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h2 {
         width: 100%;
     }

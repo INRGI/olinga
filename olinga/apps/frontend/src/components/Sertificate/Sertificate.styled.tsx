@@ -18,7 +18,7 @@ export const Container = styled.div`
     align-items: flex-start;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     flex-direction: column;
     align-items: center;
   }
@@ -62,7 +62,7 @@ export const TextContainer = styled.div`
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 430px) {
     h2 {
       font-size: 16px;
     }

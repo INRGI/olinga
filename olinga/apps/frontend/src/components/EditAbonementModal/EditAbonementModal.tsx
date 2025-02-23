@@ -200,7 +200,7 @@ const EditAbonementModal: React.FC<EditAbonementModalProps> = ({
               />
               {previewImage && (
                 <PreviewButton
-                  href={`/${previewImage}`}
+                  href={`${previewImage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

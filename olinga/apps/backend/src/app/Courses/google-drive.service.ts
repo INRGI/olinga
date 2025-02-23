@@ -39,6 +39,6 @@ export class GoogleDriveService {
       fields: 'id',
     });
 
-    return `https://drive.google.com/uc?export=view&id=${response.data.id}`;
+    return `https://drive.google.com/thumbnail?id=${response.data.id}&sz=w1000`;
   }
 }

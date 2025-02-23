@@ -10,7 +10,7 @@ import { GoogleDriveService } from './google-drive.service';
 export class CoursesService {
   constructor(
     @InjectModel(Course.name) private courseModel: Model<Course>,
-    private googleDriveService: GoogleDriveService
+    private googleDriveService: GoogleDriveService,
   ) {}
 
   async createCourse(

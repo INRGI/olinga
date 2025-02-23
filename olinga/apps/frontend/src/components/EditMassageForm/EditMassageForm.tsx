@@ -198,7 +198,7 @@ const EditMassageModal: React.FC<EditMassageModalProps> = ({
               />
               {previewImage && (
                 <PreviewButton
-                  href={`/${previewImage}`}
+                  href={`${previewImage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >

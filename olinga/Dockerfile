@@ -16,6 +16,6 @@ COPY . .
 
 # RUN npx nx build backend
 
-EXPOSE 3000
+EXPOSE ${PORT}
 
 CMD ["node", "dist/apps/backend/main.js"]

@@ -7,20 +7,21 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, new FastifyAdapter());
   const port  = process.env.PORT || 3000;
 
+  app.setGlobalPrefix('api');
+
   app.enableCors({
     origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: "Content-Type,Authorization",
   });
+  
   const fastifyInstance = app.getHttpAdapter().getInstance();
   fastifyInstance.register(fastifyMultipart, {
     limits: {
       fileSize: 10000000,
     },
   });
-
-  app.setGlobalPrefix('api');
   
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
 }
 bootstrap();

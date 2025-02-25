@@ -12,10 +12,6 @@ RUN npm install --force
 
 COPY . .
 
-# RUN npx nx build frontend
-
-# RUN npx nx build backend
-
 EXPOSE ${PORT}
 
 CMD ["node", "dist/apps/backend/main.js"]

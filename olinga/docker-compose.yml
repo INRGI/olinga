@@ -3,7 +3,7 @@ services:
     platform: linux/amd64
     build: .
     ports:
-      - "${PORT}:${PORT}"
+      - "3000:3000"
     environment:
       MONGODB_URL: ${MONGODB_URL}
       ADMIN_USERNAME: ${ADMIN_USERNAME}
@@ -16,4 +16,4 @@ services:
       MAIL_FROM: ${MAIL_FROM}
       ADMIN_EMAIL: ${ADMIN_EMAIL}
       PORT: 3000
-      HOST: ${HOST}
+      HOST: 0.0.0.0

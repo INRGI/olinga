@@ -14,7 +14,7 @@ export default defineConfig({
   },
   preview: {
     port: 4300,
-    host: 'localhost',
+    host: '0.0.0.0',
   },
   plugins: [react(), nxViteTsPaths(), nxCopyAssetsPlugin(['*.md'])],
   // Uncomment this if you are using workers.

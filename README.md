@@ -7,3 +7,7 @@
 <img width="1470" alt="image" src="https://github.com/user-attachments/assets/5e4e48ff-415e-427e-986b-e7f3ea03bd91" />
 Admin Panel
 <img width="1470" alt="image" src="https://github.com/user-attachments/assets/67d35617-f1ef-4a0f-8320-c020b5f95bca" />
+Courses
+<img width="1469" alt="image" src="https://github.com/user-attachments/assets/c8e4fc95-1763-40a4-8d8b-b317c12b4125" />
+<img width="1469" alt="image" src="https://github.com/user-attachments/assets/6461defb-9617-4181-b445-065765496263" />
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/d6677968-e8db-4337-969e-92eaf429b420" />

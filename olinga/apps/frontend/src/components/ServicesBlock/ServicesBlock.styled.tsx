@@ -222,7 +222,7 @@ export const CategoryCard = styled.div`
 
   img {
     width: 100%;
-    height: 325px;
+    height: 300px;
     object-fit: cover;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;

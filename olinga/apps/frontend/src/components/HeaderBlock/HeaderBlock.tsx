@@ -87,13 +87,13 @@ const HeaderBlock: React.FC = () => {
                   <div>
                     <FaPhoneAlt size={14} /> {t("header.administrator_name1")}:
                   </div>{" "}
-                  <a href="tel:+48515432123">+48 515 432 123</a>
+                  <a href="tel:+48575324652">+48 575 324 652</a>
                 </DropdownItem>
                 <DropdownItem>
                   <div>
                     <FaPhoneAlt size={14} /> {t("header.administrator_name2")}:
                   </div>{" "}
-                  <a href="tel:+48765432123">+48 765 432 123</a>
+                  <a href="tel:+48799056077">+48 799 056 077</a>
                 </DropdownItem>
               </DropdownContacts>
             )}
